@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph author="diego.guedes" created="Fri May 11 07:47:44 CDT 2018" guiVersion="3.4.4.P" id="1526048085478" licenseType="Commercial" modified="Mon May 11 08:14:35 CDT 2020" modifiedBy="diego.guedes" name="xxx_dim_Filial" revision="1.13" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata7" previewAttachment="${DATA_SOURCE_DIR}/Filial.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="Filial_Input" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="FILIAL" type="string"/>
+<Field name="CODIGO_FILIAL" type="string"/>
+<Field name="DESCRICAO_FILIAL" type="string"/>
+<Field name="COD_UNIDADE_NEGOCIO" type="string"/>
+<Field eofAsDelimiter="false" name="DESCRICAO_UNIDADE_NEGOCIO" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata1" previewAttachment="${DATA_SOURCE_DIR}/Filial.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="Filial_Output" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="FILIAL" type="string"/>
+<Field name="CODIGO_FILIAL" type="string"/>
+<Field name="DESCRICAO_FILIAL" type="string"/>
+<Field name="COD_UNIDADE_NEGOCIO" type="string"/>
+<Field eofAsDelimiter="false" name="DESCRICAO_UNIDADE_NEGOCIO" type="string"/>
+</Record>
+</Metadata>
+<Property fileURL="workspace.prm" id="GraphParameter0"/>
+<Sequence cached="8" id="Sequence0" name="SequenciaHom" start="1" step="1" type="PRIMITIVE_SEQUENCE"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="187" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. CARGA DO DATASET DE FILIAL (DIM)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="761" x="11" y="16"/>
+<Dictionary/>
+</Global>
+<Phase number="10">
+<Node charset="ISO-8859-1" enabled="enabled" fileURL="zip:(${DATA_SOURCE_DIR}/${gdc_agent_zip})#Filial.csv*" guiName="Filial" guiX="24" guiY="55" id="FILIAL" type="DATA_READER"/>
+<Node dataset="dataset.filial" datasetFieldMappings="{&quot;gd_dataset&quot;:{&quot;datasetId&quot;:&quot;dataset.filial&quot;,&quot;datasetTitle&quot;:&quot;Filial&quot;,&quot;attributes&quot;:[{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.filial.codigodafilial&quot;,&quot;title&quot;:&quot;ID Filial&quot;,&quot;prettyId&quot;:&quot;attr_filial_codigodafilial&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filial.codigodafilial&quot;,&quot;title&quot;:&quot;ID Filial&quot;,&quot;prettyId&quot;:&quot;codigodafilial&quot;,&quot;assignedMetadataField&quot;:&quot;FILIAL&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.filial.codigodafilial1&quot;,&quot;title&quot;:&quot;Código da Filial&quot;,&quot;prettyId&quot;:&quot;attr_filial_codigodafilial1&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filial.codigodafilial1&quot;,&quot;title&quot;:&quot;Código da Filial&quot;,&quot;prettyId&quot;:&quot;codigodafilial1&quot;,&quot;assignedMetadataField&quot;:&quot;CODIGO_FILIAL&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.filial.codigounidadedenegocio&quot;,&quot;title&quot;:&quot;Código Unidade de Negócio&quot;,&quot;prettyId&quot;:&quot;attr_filial_codigounidadedenegocio&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filial.codigounidadedenegocio&quot;,&quot;title&quot;:&quot;Código Unidade de Negócio&quot;,&quot;prettyId&quot;:&quot;codigounidadedenegocio&quot;,&quot;assignedMetadataField&quot;:&quot;COD_UNIDADE_NEGOCIO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.filial.filial&quot;,&quot;title&quot;:&quot;Filial&quot;,&quot;prettyId&quot;:&quot;attr_filial_filial&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filial.filial&quot;,&quot;title&quot;:&quot;Filial&quot;,&quot;prettyId&quot;:&quot;filial&quot;,&quot;assignedMetadataField&quot;:&quot;DESCRICAO_FILIAL&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filial.filial&quot;,&quot;title&quot;:&quot;Filial&quot;,&quot;prettyId&quot;:&quot;filial&quot;,&quot;assignedMetadataField&quot;:&quot;DESCRICAO_FILIAL&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.filial.unidadedenegocio&quot;,&quot;title&quot;:&quot;Unidade de Negócio&quot;,&quot;prettyId&quot;:&quot;attr_filial_unidadedenegocio&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filial.unidadedenegocio&quot;,&quot;title&quot;:&quot;Unidade de Negócio&quot;,&quot;prettyId&quot;:&quot;unidadedenegocio&quot;,&quot;assignedMetadataField&quot;:&quot;DESCRICAO_UNIDADE_NEGOCIO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}}],&quot;referencedAttributes&quot;:[],&quot;dateAttributes&quot;:[],&quot;simpleFacts&quot;:[],&quot;dateFacts&quot;:[],&quot;entitiesWithoutMetadata&quot;:[],&quot;unassigneddateFacts&quot;:[],&quot;entitiesWithoutValue&quot;:[],&quot;fieldsWithMetadataConflict&quot;:[],&quot;datesWithFactConflict&quot;:[]}}" enabled="enabled" guiName="Filial" guiX="628" guiY="49" id="FILIAL1" mode="${LOAD_MODE_DIM}" retriesInterval="60" retriesNumber="5" type="GD_DATASET_WRITER"/>
+<Node dataset="dataset.filialorigem" datasetFieldMappings="{&quot;gd_dataset&quot;:{&quot;datasetId&quot;:&quot;dataset.filialorigem&quot;,&quot;datasetTitle&quot;:&quot;Filial Origem&quot;,&quot;attributes&quot;:[{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.filialorigem.codigodafilialdeorigem&quot;,&quot;title&quot;:&quot;Código da Filial de Origem&quot;,&quot;prettyId&quot;:&quot;attr_filialorigem_codigodafilialdeorigem&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filialorigem.codigodafilialdeorigem&quot;,&quot;title&quot;:&quot;Código da Filial de Origem&quot;,&quot;prettyId&quot;:&quot;codigodafilialdeorigem&quot;,&quot;assignedMetadataField&quot;:&quot;CODIGO_FILIAL&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.filialorigem.codigodaunidadedenegocioorigem&quot;,&quot;title&quot;:&quot;Código da Unidade de Negócio Origem&quot;,&quot;prettyId&quot;:&quot;attr_filialorigem_codigodaunidadedenegocioorigem&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filialorigem.codigodaunidadedenegocioorigem&quot;,&quot;title&quot;:&quot;Código da Unidade de Negócio Origem&quot;,&quot;prettyId&quot;:&quot;codigodaunidadedenegocioorigem&quot;,&quot;assignedMetadataField&quot;:&quot;COD_UNIDADE_NEGOCIO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.filialorigem.filialorigem&quot;,&quot;title&quot;:&quot;Filial Origem&quot;,&quot;prettyId&quot;:&quot;attr_filialorigem_filialorigem&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filialorigem.filialorigem&quot;,&quot;title&quot;:&quot;Filial Origem&quot;,&quot;prettyId&quot;:&quot;filialorigem&quot;,&quot;assignedMetadataField&quot;:&quot;DESCRICAO_FILIAL&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.filialorigem.idfilialorigem&quot;,&quot;title&quot;:&quot;ID Filial Origem&quot;,&quot;prettyId&quot;:&quot;attr_filialorigem_idfilialorigem&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filialorigem.idfilialorigem&quot;,&quot;title&quot;:&quot;ID Filial Origem&quot;,&quot;prettyId&quot;:&quot;idfilialorigem&quot;,&quot;assignedMetadataField&quot;:&quot;FILIAL&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.filialorigem.unidadedenegocioorigem&quot;,&quot;title&quot;:&quot;Unidade de Negócio Origem&quot;,&quot;prettyId&quot;:&quot;attr_filialorigem_unidadedenegocioorigem&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filialorigem.unidadedenegocioorigem&quot;,&quot;title&quot;:&quot;Unidade de Negócio Origem&quot;,&quot;prettyId&quot;:&quot;unidadedenegocioorigem&quot;,&quot;assignedMetadataField&quot;:&quot;DESCRICAO_UNIDADE_NEGOCIO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}}],&quot;referencedAttributes&quot;:[],&quot;dateAttributes&quot;:[],&quot;simpleFacts&quot;:[],&quot;dateFacts&quot;:[],&quot;entitiesWithoutMetadata&quot;:[],&quot;unassigneddateFacts&quot;:[],&quot;entitiesWithoutValue&quot;:[],&quot;fieldsWithMetadataConflict&quot;:[],&quot;datesWithFactConflict&quot;:[]}}" enabled="enabled" guiName="Filial Origem" guiX="628" guiY="125" id="FILIAL_ORIGEM" mode="${LOAD_MODE_DIM}" retriesInterval="60" retriesNumber="5" type="GD_DATASET_WRITER"/>
+<Node enabled="enabled" guiName="SimpleCopy" guiX="320" guiY="55" id="SIMPLE_COPY" type="SIMPLE_COPY"/>
+<Node enabled="disabled" guiName="Trash" guiX="490" guiY="125" id="TRASH" type="TRASH"/>
+<Node enabled="disabled" guiName="Trash" guiX="490" guiY="49" id="TRASH1" type="TRASH"/>
+<Node enabled="enabled" guiName="Treatment" guiX="168" guiY="55" id="TREATMENT" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import "trans/lib.ctl";
+
+// Transforms input record into output record.
+function integer transform() {
+	if (GOODDATA_DEMO_MODE == 'S') sequence(SequenciaHom).next();
+	
+	$out.0.COD_UNIDADE_NEGOCIO = $in.0.COD_UNIDADE_NEGOCIO;
+	$out.0.CODIGO_FILIAL = $in.0.CODIGO_FILIAL;
+	$out.0.FILIAL = $in.0.FILIAL;
+	
+	$out.0.DESCRICAO_FILIAL = formatString($in.0.DESCRICAO_FILIAL, 'FILIAL ' + (1 + sequence(SequenciaHom).current()));
+	$out.0.DESCRICAO_UNIDADE_NEGOCIO = formatString($in.0.DESCRICAO_UNIDADE_NEGOCIO, 'UN. NEG. ' + (1 + sequence(SequenciaHom).current()));
+		
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge fromNode="FILIAL:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata7" outPort="Port 0 (output)" toNode="TREATMENT:0"/>
+<Edge fromNode="SIMPLE_COPY:0" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="FILIAL1:0"/>
+<Edge fromNode="SIMPLE_COPY:1" guiBendpoints="" guiRouter="Manhattan" id="Edge3" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 1 (out)" toNode="FILIAL_ORIGEM:0"/>
+<Edge fromNode="TREATMENT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="SIMPLE_COPY:0"/>
+</Phase>
+</Graph>

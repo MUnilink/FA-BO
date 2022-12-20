@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph author="mateus.romero" created="Tue Nov 21 06:08:43 CST 2017" guiVersion="3.4.4.P" id="1511348377577" licenseType="Commercial" modified="Wed May 13 07:56:08 CDT 2020" modifiedBy="diego.guedes" name="ctr_fct_LancamentoContabil" revision="1.27" showComponentDetails="true">
+<Global>
+<Metadata fileURL="${META_DIR}/_2Dates.fmt" id="Metadata3"/>
+<Metadata fileURL="${META_DIR}/sintax.fmt" id="Metadata4"/>
+<Metadata id="Metadata0" previewAttachment="zip:(${DATA_SOURCE_DIR}/PROTHEUS.zip)#LancamentoContabil.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="LancamentoContabil_Input" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="BK_EMPRESA" type="string"/>
+<Field name="BK_FILIAL" type="string"/>
+<Field name="BK_CONTA" type="string"/>
+<Field name="BK_FILIAL_ORIGEM" type="string"/>
+<Field name="BK_ITEM_CONTABIL" type="string"/>
+<Field name="BK_CENTRO_CUSTO" type="string"/>
+<Field name="BK_CLASSE_VALOR" type="string"/>
+<Field name="DATA" type="string"/>
+<Field name="TPSALD" type="string"/>
+<Field name="DC" type="string"/>
+<Field name="LOTE" type="string"/>
+<Field name="SUBLOTE" type="string"/>
+<Field name="DOC" type="string"/>
+<Field name="LINHA" type="string"/>
+<Field name="CONTA_PARTIDA" type="string"/>
+<Field name="HISTORICO" type="string"/>
+<Field name="SEQUENCIA_HISTORICO" type="string"/>
+<Field name="SEQUENCIA_AUXILIAR" type="string"/>
+<Field name="VALOR_DEBITO" type="string"/>
+<Field name="VALOR_CREDITO" type="string"/>
+<Field eofAsDelimiter="false" name="TIPOLAN" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata2" previewAttachment="zip:(${DATA_SOURCE_DIR}/PROTHEUS.zip)#LancamentoContabil.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="LancamentoContabil_Output" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="BK_EMPRESA" type="string"/>
+<Field name="BK_FILIAL" type="string"/>
+<Field name="BK_CONTA" type="string"/>
+<Field name="BK_FILIAL_ORIGEM" type="string"/>
+<Field name="BK_ITEM_CONTABIL" type="string"/>
+<Field name="BK_CENTRO_CUSTO" type="string"/>
+<Field name="BK_CLASSE_VALOR" type="string"/>
+<Field format="yyyyMMdd HH:mm:ss" name="DATA" type="date"/>
+<Field name="TPSALD" type="string"/>
+<Field name="DC" type="string"/>
+<Field name="LOTE" type="string"/>
+<Field name="SUBLOTE" type="string"/>
+<Field name="DOC" type="string"/>
+<Field name="LINHA" type="string"/>
+<Field name="CONTA_PARTIDA" type="string"/>
+<Field name="HISTORICO" type="string"/>
+<Field name="SEQUENCIA_HISTORICO" type="string"/>
+<Field name="SEQUENCIA_AUXILIAR" type="string"/>
+<Field length="15" name="VALOR_DEBITO" type="decimal"/>
+<Field length="15" name="VALOR_CREDITO" type="decimal"/>
+<Field eofAsDelimiter="false" name="TIPOLAN" type="string"/>
+<Field name="Tabela" type="string"/>
+<Field name="Modulo" type="string"/>
+<Field name="pk_Modulo" type="string"/>
+</Record>
+</Metadata>
+<Property fileURL="workspace.prm" id="GraphParameter0"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="175" id="Note1" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="2. REMOVER DADOS" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="483" x="801" y="4">
+<attr name="text"><![CDATA[Realiza a remoção dos dados duplicados do ambiente, de acordo com o método de carga (Full Load / Incremental).]]></attr>
+</Note>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="160" id="Note6" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="3. REMOVER DADOS (MONTHS_TO_LOAD)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="483" x="801" y="194">
+<attr name="text"><![CDATA[Apaga os dados históricos do workspace do GoodData, caso estes sejam muito antigos, garantindo assim a eficiência na geração de relatórios da plataforma.]]></attr>
+</Note>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="113" id="Note2" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="4. CARGA DO DATASET DE LANÇAMENTO CONTÁBIL (FATO)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="483" x="801" y="366"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="165" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. LEITURA / TRATAMENTO DOS DADOS" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="767" x="7" y="9"/>
+<Dictionary/>
+</Global>
+<Phase number="10">
+<Node enabled="enabled" guiName="ExtFilter" guiX="363" guiY="69" id="EXT_FILTER1" type="EXT_FILTER">
+<attr name="filterExpression"><![CDATA[//#CTL2
+$in.0.BK_EMPRESA <> null]]></attr>
+</Node>
+<Node charset="ISO-8859-1" enabled="enabled" fileURL="zip:(${DATA_SOURCE_DIR}/${gdc_agent_zip})#LancamentoContabil.csv*" guiName="Lancamento Contabil" guiX="19" guiY="69" id="LANCAMENTO_CONTABIL" type="DATA_READER"/>
+<Node enabled="enabled" guiName="MONTHS_TO_LOAD Filter" guiX="179" guiY="69" id="MONTHS_TO_LOAD_FILTER" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import 'trans/lib.ctl';
+
+// Transforms input record into output record.
+function integer transform() {
+	if(($in.0.DATA == null) or (trim($in.0.DATA) == '')) {
+		$out.0.* = null;
+	} else {
+		data = str2date($in.0.DATA, '${DATE_PATTERN}', '${DATE_LOCALE}');
+		if ((data < GOODDATA_MINDATE) || (data > GOODDATA_MAXDATE) || (data < ETL_MAXDATE)) {
+			$out.0.* = null;
+		} else {
+			$out.0.* = $in.0.*;
+		}
+	}
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node enabled="enabled" guiName="SimpleCopy" guiX="638" guiY="70" id="SIMPLE_COPY" type="SIMPLE_COPY"/>
+<Node enabled="enabled" guiName="Treatment" guiX="500" guiY="69" id="TREATMENT" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import "trans/lib.ctl";
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.BK_EMPRESA = $in.0.BK_EMPRESA;
+	$out.0.BK_FILIAL = $in.0.BK_FILIAL;
+	$out.0.BK_CONTA = $in.0.BK_CONTA;
+	$out.0.BK_FILIAL_ORIGEM = $in.0.BK_FILIAL_ORIGEM;
+	$out.0.BK_ITEM_CONTABIL = $in.0.BK_ITEM_CONTABIL;
+	$out.0.BK_CENTRO_CUSTO = $in.0.BK_CENTRO_CUSTO;
+	$out.0.BK_CLASSE_VALOR = $in.0.BK_CLASSE_VALOR;
+	
+	$out.0.TPSALD = formatString($in.0.TPSALD, null);
+	$out.0.DC = formatString($in.0.DC, null);
+	$out.0.LOTE = formatString($in.0.LOTE, null);
+	$out.0.SUBLOTE = formatString($in.0.SUBLOTE, null);
+	$out.0.DOC = formatString($in.0.DOC, null);
+	$out.0.LINHA = formatString($in.0.LINHA, null);
+	$out.0.CONTA_PARTIDA = formatString($in.0.CONTA_PARTIDA, null);
+	$out.0.HISTORICO = formatString($in.0.HISTORICO, null);
+	$out.0.SEQUENCIA_HISTORICO = formatString($in.0.SEQUENCIA_HISTORICO, null);
+	$out.0.SEQUENCIA_AUXILIAR = formatString($in.0.SEQUENCIA_AUXILIAR, null);
+	$out.0.TIPOLAN = formatString($in.0.TIPOLAN, null);
+	
+	$out.0.DATA = formatDate($in.0.DATA);
+	
+	$out.0.VALOR_DEBITO = formatDecimal($in.0.VALOR_DEBITO, true);
+	$out.0.VALOR_CREDITO = formatDecimal($in.0.VALOR_CREDITO, true);
+	
+	$out.0.Modulo = 'CONTROLADORIA';
+	$out.0.Tabela = 'LANCAMENTO CONTABIL';
+	$out.0.pk_Modulo = $out.0.Modulo + '|' + $out.0.Tabela;
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge debugMode="false" fromNode="EXT_FILTER1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge8" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (accepted)" toNode="TREATMENT:0"/>
+<Edge debugMode="false" fromNode="LANCAMENTO_CONTABIL:0" guiBendpoints="" guiRouter="Manhattan" id="Edge3" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (output)" toNode="MONTHS_TO_LOAD_FILTER:0"/>
+<Edge debugMode="false" fromNode="MONTHS_TO_LOAD_FILTER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge13" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (out)" toNode="EXT_FILTER1:0"/>
+<Edge debugMode="false" fromNode="SIMPLE_COPY:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="AGGREGATE_MENOR_DATA2:0"/>
+<Edge debugMode="false" fromNode="SIMPLE_COPY:1" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 1 (out)" toNode="AGGREGATE_MENOR_DATA1:0"/>
+<Edge fromNode="SIMPLE_COPY:2" guiBendpoints="" guiRouter="Manhattan" id="Edge7" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 2 (out)" toNode="SIMPLE_COPY1:0"/>
+<Edge debugMode="false" fromNode="TREATMENT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="SIMPLE_COPY:0"/>
+</Phase>
+<Phase number="20">
+<Node enabled="enabled" guiName="Aggregate" guiX="822" guiY="76" id="AGGREGATE_MENOR_DATA2" mapping="$Min_Date:=min($DATA);$Max_Date:=max($DATA);" type="AGGREGATE">
+<attr name="guiDescription"><![CDATA[OBTÉM MAIOR E MENOR DATA]]></attr>
+</Node>
+<Node enabled="enabled" guiName="MAQL DML Execute" guiX="1122" guiY="76" id="MAQL_DML_EXECUTE_DELETE_DATA_FATO_HKL1" maqlInputField="syntax_content" type="MAQL_DML_EXECUTE">
+<attr name="guiDescription"><![CDATA[APAGA DADOS FATO HKL]]></attr>
+</Node>
+<Node enabled="enabled" guiName="Reformat" guiX="974" guiY="76" id="REFORMAT_MENOR_DATA2" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	string loadMode = '${LOAD_MODE_FCT}';
+	if (upperCase(loadMode) == 'INCREMENTAL') {
+		$out.0.syntax_content = 'DELETE FROM {attr.lancamentocontabil.factsof} WHERE {datadeextracao.date.yyyymmdd} BETWEEN '+'"'+date2str($in.0.Min_Date, "yyyy-MM-dd")+'" AND "'+date2str($in.0.Max_Date, "yyyy-MM-dd")+'"';
+	} else {
+		$out.0.syntax_content = 'DELETE FROM {attr.lancamentocontabil.factsof}';
+	}
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+<attr name="guiDescription"><![CDATA[GERA STATEMENT DE DELETE]]></attr>
+</Node>
+<Edge debugMode="false" fromNode="AGGREGATE_MENOR_DATA2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge6" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="REFORMAT_MENOR_DATA2:0"/>
+<Edge debugMode="false" fromNode="REFORMAT_MENOR_DATA2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge16" inPort="Port 0 (input)" metadata="Metadata4" outPort="Port 0 (out)" toNode="MAQL_DML_EXECUTE_DELETE_DATA_FATO_HKL1:0"/>
+</Phase>
+<Phase number="25">
+<Node enabled="enabled" guiName="Aggregate" guiX="822" guiY="251" id="AGGREGATE_MENOR_DATA1" mapping="$Min_Date:=min($DATA);$Max_Date:=max($DATA);" type="AGGREGATE">
+<attr name="guiDescription"><![CDATA[OBTÉM MAIOR E MENOR DATA]]></attr>
+</Node>
+<Node enabled="enabled" guiName="MAQL DML Execute" guiX="1122" guiY="251" id="MAQL_DML_EXECUTE_DELETE_DATA_FATO_HKL2" maqlInputField="syntax_content" type="MAQL_DML_EXECUTE">
+<attr name="guiDescription"><![CDATA[APAGA DADOS FATO HKL]]></attr>
+</Node>
+<Node enabled="enabled" guiName="Reformat" guiX="974" guiY="251" id="REFORMAT_MENOR_DATA1" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import 'trans/lib.ctl';
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.syntax_content = 'DELETE FROM {attr.lancamentocontabil.factsof} WHERE {datadeextracao.date.yyyymmdd} < "' + ETL_MAXDATE + '"';
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+<attr name="guiDescription"><![CDATA[GERA STATEMENT DE DELETE]]></attr>
+</Node>
+<Edge debugMode="false" fromNode="AGGREGATE_MENOR_DATA1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge9" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="REFORMAT_MENOR_DATA1:0"/>
+<Edge debugMode="false" fromNode="REFORMAT_MENOR_DATA1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge12" inPort="Port 0 (input)" metadata="Metadata4" outPort="Port 0 (out)" toNode="MAQL_DML_EXECUTE_DELETE_DATA_FATO_HKL2:0"/>
+</Phase>
+<Phase number="30">
+<Node dataset="dataset.lancamentocontabil" datasetFieldMappings="{&quot;gd_dataset&quot;:{&quot;datasetId&quot;:&quot;dataset.lancamentocontabil&quot;,&quot;datasetTitle&quot;:&quot;Lançamento Contabil&quot;,&quot;attributes&quot;:[{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.lancamentocontabil.contapartida&quot;,&quot;title&quot;:&quot;Conta Partida&quot;,&quot;prettyId&quot;:&quot;attr_lancamentocontabil_contapartida&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.lancamentocontabil.contapartida&quot;,&quot;title&quot;:&quot;Conta Partida&quot;,&quot;prettyId&quot;:&quot;contapartida&quot;,&quot;assignedMetadataField&quot;:&quot;CONTA_PARTIDA&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.lancamentocontabil.dc&quot;,&quot;title&quot;:&quot;DC&quot;,&quot;prettyId&quot;:&quot;attr_lancamentocontabil_dc&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.lancamentocontabil.dc&quot;,&quot;title&quot;:&quot;DC&quot;,&quot;prettyId&quot;:&quot;dc&quot;,&quot;assignedMetadataField&quot;:&quot;DC&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.lancamentocontabil.dc&quot;,&quot;title&quot;:&quot;DC&quot;,&quot;prettyId&quot;:&quot;dc&quot;,&quot;assignedMetadataField&quot;:&quot;DC&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.lancamentocontabil.doc&quot;,&quot;title&quot;:&quot;DOC&quot;,&quot;prettyId&quot;:&quot;attr_lancamentocontabil_doc&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.lancamentocontabil.doc&quot;,&quot;title&quot;:&quot;DOC&quot;,&quot;prettyId&quot;:&quot;doc&quot;,&quot;assignedMetadataField&quot;:&quot;DOC&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.lancamentocontabil.doc&quot;,&quot;title&quot;:&quot;DOC&quot;,&quot;prettyId&quot;:&quot;doc&quot;,&quot;assignedMetadataField&quot;:&quot;DOC&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.lancamentocontabil.historico&quot;,&quot;title&quot;:&quot;Histórico&quot;,&quot;prettyId&quot;:&quot;attr_lancamentocontabil_historico&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.lancamentocontabil.historico&quot;,&quot;title&quot;:&quot;Histórico&quot;,&quot;prettyId&quot;:&quot;historico&quot;,&quot;assignedMetadataField&quot;:&quot;HISTORICO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.lancamentocontabil.historico&quot;,&quot;title&quot;:&quot;Histórico&quot;,&quot;prettyId&quot;:&quot;historico&quot;,&quot;assignedMetadataField&quot;:&quot;HISTORICO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.lancamentocontabil.linha&quot;,&quot;title&quot;:&quot;Linha&quot;,&quot;prettyId&quot;:&quot;attr_lancamentocontabil_linha&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.lancamentocontabil.linha&quot;,&quot;title&quot;:&quot;Linha&quot;,&quot;prettyId&quot;:&quot;linha&quot;,&quot;assignedMetadataField&quot;:&quot;LINHA&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.lancamentocontabil.linha&quot;,&quot;title&quot;:&quot;Linha&quot;,&quot;prettyId&quot;:&quot;linha&quot;,&quot;assignedMetadataField&quot;:&quot;LINHA&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.lancamentocontabil.lote&quot;,&quot;title&quot;:&quot;Lote&quot;,&quot;prettyId&quot;:&quot;attr_lancamentocontabil_lote&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.lancamentocontabil.lote&quot;,&quot;title&quot;:&quot;Lote&quot;,&quot;prettyId&quot;:&quot;lote&quot;,&quot;assignedMetadataField&quot;:&quot;LOTE&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.lancamentocontabil.lote&quot;,&quot;title&quot;:&quot;Lote&quot;,&quot;prettyId&quot;:&quot;lote&quot;,&quot;assignedMetadataField&quot;:&quot;LOTE&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.lancamentocontabil.sequenciaauxiliar&quot;,&quot;title&quot;:&quot;Sequência Auxiliar&quot;,&quot;prettyId&quot;:&quot;attr_lancamentocontabil_sequenciaauxiliar&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.lancamentocontabil.sequenciaauxiliar&quot;,&quot;title&quot;:&quot;Sequência Auxiliar&quot;,&quot;prettyId&quot;:&quot;sequenciaauxiliar&quot;,&quot;assignedMetadataField&quot;:&quot;SEQUENCIA_AUXILIAR&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.lancamentocontabil.sequenciahistorico&quot;,&quot;title&quot;:&quot;Sequência Histórico&quot;,&quot;prettyId&quot;:&quot;attr_lancamentocontabil_sequenciahistorico&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.lancamentocontabil.sequenciahistorico&quot;,&quot;title&quot;:&quot;Sequência Histórico&quot;,&quot;prettyId&quot;:&quot;sequenciahistorico&quot;,&quot;assignedMetadataField&quot;:&quot;SEQUENCIA_HISTORICO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.lancamentocontabil.sublote&quot;,&quot;title&quot;:&quot;SubLote&quot;,&quot;prettyId&quot;:&quot;attr_lancamentocontabil_sublote&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.lancamentocontabil.sublote&quot;,&quot;title&quot;:&quot;SubLote&quot;,&quot;prettyId&quot;:&quot;sublote&quot;,&quot;assignedMetadataField&quot;:&quot;SUBLOTE&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.lancamentocontabil.sublote&quot;,&quot;title&quot;:&quot;SubLote&quot;,&quot;prettyId&quot;:&quot;sublote&quot;,&quot;assignedMetadataField&quot;:&quot;SUBLOTE&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.lancamentocontabil.tipodesaldo&quot;,&quot;title&quot;:&quot;Tipo de Saldo&quot;,&quot;prettyId&quot;:&quot;attr_lancamentocontabil_tipodesaldo&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.lancamentocontabil.tipodesaldo&quot;,&quot;title&quot;:&quot;Tipo de Saldo&quot;,&quot;prettyId&quot;:&quot;tipodesaldo&quot;,&quot;assignedMetadataField&quot;:&quot;TPSALD&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.lancamentocontabil.tipolancamento&quot;,&quot;title&quot;:&quot;Tipo Lançamento&quot;,&quot;prettyId&quot;:&quot;attr_lancamentocontabil_tipolancamento&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.lancamentocontabil.tipolancamento&quot;,&quot;title&quot;:&quot;Tipo Lançamento&quot;,&quot;prettyId&quot;:&quot;tipolancamento&quot;,&quot;assignedMetadataField&quot;:&quot;TIPOLAN&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}}],&quot;referencedAttributes&quot;:[{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.idcentrodecusto&quot;,&quot;title&quot;:&quot;Chave do centro de custo 11&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_idcentrodecusto&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.idcentrodecusto&quot;,&quot;title&quot;:&quot;Chave do centro de custo 11&quot;,&quot;prettyId&quot;:&quot;centrodecusto__idcentrodecusto&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_CENTRO_CUSTO&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.idcentrodecusto&quot;,&quot;title&quot;:&quot;Chave do centro de custo 11&quot;,&quot;prettyId&quot;:&quot;centrodecusto__idcentrodecusto&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.classevalor.classevalor11&quot;,&quot;title&quot;:&quot;Chave da classe de valor 11&quot;,&quot;prettyId&quot;:&quot;attr_classevalor_classevalor11&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.classevalor.classevalor11&quot;,&quot;title&quot;:&quot;Chave da classe de valor 11&quot;,&quot;prettyId&quot;:&quot;classevalor__classevalor11&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_CLASSE_VALOR&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.classevalor.classevalor11&quot;,&quot;title&quot;:&quot;Chave da classe de valor 11&quot;,&quot;prettyId&quot;:&quot;classevalor__classevalor11&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.contacontabil.conta11&quot;,&quot;title&quot;:&quot;Chave da conta contábil&quot;,&quot;prettyId&quot;:&quot;attr_contacontabil_conta11&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.contacontabil.conta11&quot;,&quot;title&quot;:&quot;Chave da conta contábil&quot;,&quot;prettyId&quot;:&quot;contacontabil__conta11&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_CONTA&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.contacontabil.conta11&quot;,&quot;title&quot;:&quot;Chave da conta contábil&quot;,&quot;prettyId&quot;:&quot;contacontabil__conta11&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.empresa.codigodaempresa&quot;,&quot;title&quot;:&quot;ID Empresa&quot;,&quot;prettyId&quot;:&quot;attr_empresa_codigodaempresa&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.empresa.codigodaempresa&quot;,&quot;title&quot;:&quot;ID Empresa&quot;,&quot;prettyId&quot;:&quot;empresa__codigodaempresa&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_EMPRESA&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.empresa.codigodaempresa&quot;,&quot;title&quot;:&quot;ID Empresa&quot;,&quot;prettyId&quot;:&quot;empresa__codigodaempresa&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.filial.codigodafilial&quot;,&quot;title&quot;:&quot;ID Filial&quot;,&quot;prettyId&quot;:&quot;attr_filial_codigodafilial&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filial.codigodafilial&quot;,&quot;title&quot;:&quot;ID Filial&quot;,&quot;prettyId&quot;:&quot;filial__codigodafilial&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_FILIAL&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filial.codigodafilial&quot;,&quot;title&quot;:&quot;ID Filial&quot;,&quot;prettyId&quot;:&quot;filial__codigodafilial&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.filialorigem.idfilialorigem&quot;,&quot;title&quot;:&quot;ID Filial Origem&quot;,&quot;prettyId&quot;:&quot;attr_filialorigem_idfilialorigem&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filialorigem.idfilialorigem&quot;,&quot;title&quot;:&quot;ID Filial Origem&quot;,&quot;prettyId&quot;:&quot;filialorigem__idfilialorigem&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_FILIAL_ORIGEM&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filialorigem.idfilialorigem&quot;,&quot;title&quot;:&quot;ID Filial Origem&quot;,&quot;prettyId&quot;:&quot;filialorigem__idfilialorigem&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.itemcontabil11&quot;,&quot;title&quot;:&quot;Chave do item contábil 11&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_itemcontabil11&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.itemcontabil11&quot;,&quot;title&quot;:&quot;Chave do item contábil 11&quot;,&quot;prettyId&quot;:&quot;itemcontabil__itemcontabil11&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_ITEM_CONTABIL&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.itemcontabil11&quot;,&quot;title&quot;:&quot;Chave do item contábil 11&quot;,&quot;prettyId&quot;:&quot;itemcontabil__itemcontabil11&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.modulo.iddomodulo&quot;,&quot;title&quot;:&quot;Id do módulo&quot;,&quot;prettyId&quot;:&quot;attr_modulo_iddomodulo&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.modulo.iddomodulo&quot;,&quot;title&quot;:&quot;Id do módulo&quot;,&quot;prettyId&quot;:&quot;modulo__iddomodulo&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;pk_Modulo&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.modulo.iddomodulo&quot;,&quot;title&quot;:&quot;Id do módulo&quot;,&quot;prettyId&quot;:&quot;modulo__iddomodulo&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}}],&quot;dateAttributes&quot;:[{&quot;gd_dataset_date_attribute&quot;:{&quot;id&quot;:&quot;datadeextracao.date&quot;,&quot;title&quot;:&quot;Date (Data)&quot;,&quot;prettyId&quot;:&quot;datadeextracao&quot;,&quot;assignedMetadataField&quot;:&quot;DATA&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;datadeextracao.date.yyyymmdd&quot;,&quot;title&quot;:&quot;yyyy-mm-dd (Data)&quot;,&quot;prettyId&quot;:&quot;datadeextracao_date_yyyymmdd&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;datadeextracao.date.yyyymmdd&quot;,&quot;title&quot;:&quot;yyyy-mm-dd (Data)&quot;,&quot;prettyId&quot;:&quot;datadeextracao_date_yyyymmdd&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}},&quot;associatedFact&quot;:null}}],&quot;simpleFacts&quot;:[{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.lancamentocontabil.valorcredito&quot;,&quot;title&quot;:&quot;Valor Crédito&quot;,&quot;prettyId&quot;:&quot;valorcredito&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;VALOR_CREDITO&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.lancamentocontabil.valordebito&quot;,&quot;title&quot;:&quot;Valor Débito&quot;,&quot;prettyId&quot;:&quot;valordebito&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;VALOR_DEBITO&quot;}}],&quot;dateFacts&quot;:[],&quot;entitiesWithoutValue&quot;:[],&quot;entitiesWithoutMetadata&quot;:[],&quot;datesWithFactConflict&quot;:[],&quot;unassigneddateFacts&quot;:[],&quot;fieldsWithMetadataConflict&quot;:[]}}" enabled="enabled" guiName="Lancamento Contabil" guiX="1120" guiY="405" id="LANCAMENTO_CONTABIL1" mode="${LOAD_MODE_FCT}" retriesInterval="60" retriesNumber="5" type="GD_DATASET_WRITER"/>
+<Node enabled="enabled" guiName="SimpleCopy" guiX="822" guiY="405" id="SIMPLE_COPY1" type="SIMPLE_COPY"/>
+<Node enabled="disabled" guiName="Trash" guiX="974" guiY="405" id="TRASH" type="TRASH"/>
+<Edge fromNode="SIMPLE_COPY1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge10" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="LANCAMENTO_CONTABIL1:0"/>
+</Phase>
+</Graph>

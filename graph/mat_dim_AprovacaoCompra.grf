@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph author="manoel.jose" created="Tue Jan 04 13:42:22 CDT 2022" guiVersion="3.4.4.P" id="1526048085478" licenseType="Commercial" modified="Wed Jan 05 11:10:24 BRST 2022" modifiedBy="Usuário" name="mat_dim_Comprador" revision="1.19" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata0" previewAttachment="${DATA_SOURCE_DIR}/Comprador.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," label="Comprador.csv" name="AprovCompra_Input" previewAttachment="${DATA_SOURCE_DIR}/Comprador.csv" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="BK_APROV_COMPRA" type="string"/>
+<Field name="CODIGO_APROVCOMPRA" type="string"/>
+<Field eofAsDelimiter="false" name="DESCRICAO_APROVCOMPRA" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata1" previewAttachment="${DATA_SOURCE_DIR}/Comprador.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," label="Comprador.csv" name="AprovCompra_Output" previewAttachment="${DATA_SOURCE_DIR}/Comprador.csv" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="BK_APROV_COMPRA" type="string"/>
+<Field name="CODIGO_APROVCOMPRA" type="string"/>
+<Field eofAsDelimiter="false" name="DESCRICAO_APROVCOMPRA" type="string"/>
+</Record>
+</Metadata>
+<Property fileURL="workspace.prm" id="GraphParameter0"/>
+<Sequence cached="8" id="Sequence0" name="SequenciaHom" start="1" step="1" type="PRIMITIVE_SEQUENCE"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="150" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. CARGA DO DATASET DE APROVAÇÃO DE COMPRA (DIM)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="643" x="135" y="47"/>
+<Dictionary/>
+</Global>
+<Phase number="10">
+<Node charset="ISO-8859-1" enabled="enabled" fileURL="zip:(${DATA_SOURCE_DIR}/${gdc_agent_zip})#AprovCompra.csv*" guiName="Aprovacao de compra" guiX="142" guiY="86" id="APROVACAO_DE_COMPRA" type="DATA_READER"/>
+<Node dataset="dataset.aprovacaodecompra" datasetFieldMappings="{&quot;gd_dataset&quot;:{&quot;datasetId&quot;:&quot;dataset.aprovacaodecompra&quot;,&quot;datasetTitle&quot;:&quot;Aprovação de compra&quot;,&quot;attributes&quot;:[{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.aprovacaodecompra.iddasituacaodecompra&quot;,&quot;title&quot;:&quot;Id da aprovação de compra&quot;,&quot;prettyId&quot;:&quot;attr_aprovacaodecompra_iddasituacaodecompra&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.aprovacaodecompra.iddasituacaodecompra&quot;,&quot;title&quot;:&quot;Id da aprovação de compra&quot;,&quot;prettyId&quot;:&quot;iddasituacaodecompra&quot;,&quot;assignedMetadataField&quot;:&quot;BK_APROV_COMPRA&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.aprovacaodecompra.iddasituacaodecompra1&quot;,&quot;title&quot;:&quot;Descrição da aprovação de compra&quot;,&quot;prettyId&quot;:&quot;attr_aprovacaodecompra_iddasituacaodecompra1&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.aprovacaodecompra.iddasituacaodecompra1&quot;,&quot;title&quot;:&quot;Descrição da aprovação de compra&quot;,&quot;prettyId&quot;:&quot;iddasituacaodecompra1&quot;,&quot;assignedMetadataField&quot;:&quot;DESCRICAO_APROVCOMPRA&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.aprovacaodecompra.iddasituacaodecompra2&quot;,&quot;title&quot;:&quot;Código da aprovação de compra&quot;,&quot;prettyId&quot;:&quot;attr_aprovacaodecompra_iddasituacaodecompra2&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.aprovacaodecompra.iddasituacaodecompra2&quot;,&quot;title&quot;:&quot;Código da aprovação de compra&quot;,&quot;prettyId&quot;:&quot;iddasituacaodecompra2&quot;,&quot;assignedMetadataField&quot;:&quot;CODIGO_APROVCOMPRA&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}}],&quot;referencedAttributes&quot;:[],&quot;dateAttributes&quot;:[],&quot;simpleFacts&quot;:[],&quot;dateFacts&quot;:[],&quot;entitiesWithoutMetadata&quot;:[],&quot;unassigneddateFacts&quot;:[],&quot;datesWithFactConflict&quot;:[],&quot;entitiesWithoutValue&quot;:[],&quot;fieldsWithMetadataConflict&quot;:[]}}" enabled="enabled" guiName="Aprovacao de compra" guiX="620" guiY="86" id="APROVACAO_DE_COMPRA1" mode="${LOAD_MODE_DIM}" retriesInterval="60" retriesNumber="5" type="GD_DATASET_WRITER"/>
+<Node enabled="disabled" guiName="Trash" guiX="476" guiY="86" id="TRASH" type="TRASH"/>
+<Node enabled="enabled" guiName="Treatment" guiX="325" guiY="86" id="TREATMENT" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import "trans/lib.ctl";
+
+// Transforms input record into output record.
+function integer transform() {
+	if (GOODDATA_DEMO_MODE == 'S') sequence(SequenciaHom).next();
+	
+	$out.0.BK_APROV_COMPRA = $in.0.BK_APROV_COMPRA;
+	$out.0.CODIGO_APROVCOMPRA = $in.0.CODIGO_APROVCOMPRA;
+	
+	$out.0.DESCRICAO_APROVCOMPRA = formatString($in.0.DESCRICAO_APROVCOMPRA, 'COMPRADOR ' + (1 + sequence(SequenciaHom).current()));
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge fromNode="APROVACAO_DE_COMPRA:0" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (output)" toNode="TREATMENT:0"/>
+<Edge fromNode="TREATMENT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge4" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="APROVACAO_DE_COMPRA1:0"/>
+</Phase>
+</Graph>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph author="diego.guedes" created="Mon Oct 23 06:58:29 CDT 2017" guiVersion="3.4.4.P" id="1508859235635" licenseType="Commercial" modified="Thu Apr 30 15:42:31 CDT 2020" modifiedBy="diego.guedes" name="mat_xxx_UltimaCarga" revision="1.64" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata0" previewAttachment="zip:(${DATA_SOURCE_DIR}/FASTANALYTICS.zip)#UnidadeNegocio.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="UltimaCarga_Input" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field format="yyyyMMdd HH:mm:ss" name="Data" type="date"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata1" previewAttachment="zip:(${DATA_SOURCE_DIR}/FASTANALYTICS.zip)#UnidadeNegocio.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="UltimaCarga_Output" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field format="yyyyMMdd HH:mm:ss" name="Data" type="date"/>
+<Field name="Tempo" type="integer"/>
+<Field name="pk_Modulo" type="string"/>
+</Record>
+</Metadata>
+<Property fileURL="workspace.prm" id="GraphParameter0"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="114" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. CARGA DO DATASET DE ÚLTIMA CARGA DO ETL" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="567" x="8" y="10"/>
+<Dictionary/>
+</Global>
+<Phase number="10">
+<Node enabled="enabled" guiName="DataGenerator" guiX="18" guiY="41" id="DATA_GENERATOR" recordsNumber="1" type="DATA_GENERATOR">
+<attr name="generate"><![CDATA[//#CTL2
+
+// Generates output record.
+function integer generate() {
+	$out.0.Data = today();
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the generate. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if generate() throws an exception.
+// function integer generateOnError(string errorMessage, string stackTrace) {
+// }
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node enabled="enabled" guiName="Reformat" guiX="156" guiY="41" id="REFORMAT" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import 'trans/lib.ctl';
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.Data = $in.0.Data;
+	$out.0.Tempo = getSecondsFromTime($in.0.Data);
+	$out.0.pk_Modulo = 'MATERIAIS|RECEBIMENTO DE COMPRAS';
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node enabled="disabled" guiName="Trash" guiX="295" guiY="41" id="TRASH" type="TRASH"/>
+<Node dataset="dataset.cargasdoetl" datasetFieldMappings="{&quot;gd_dataset&quot;:{&quot;datasetId&quot;:&quot;dataset.cargasdoetl&quot;,&quot;datasetTitle&quot;:&quot;Cargas do ETL&quot;,&quot;attributes&quot;:[],&quot;referencedAttributes&quot;:[{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.modulo.iddomodulo&quot;,&quot;title&quot;:&quot;Id do módulo&quot;,&quot;prettyId&quot;:&quot;attr_modulo_iddomodulo&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.modulo.iddomodulo&quot;,&quot;title&quot;:&quot;Id do módulo&quot;,&quot;prettyId&quot;:&quot;modulo__iddomodulo&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;pk_Modulo&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.modulo.iddomodulo&quot;,&quot;title&quot;:&quot;Id do módulo&quot;,&quot;prettyId&quot;:&quot;modulo__iddomodulo&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}}],&quot;dateAttributes&quot;:[{&quot;gd_dataset_date_attribute&quot;:{&quot;id&quot;:&quot;datadecargadoetl.date&quot;,&quot;title&quot;:&quot;Date (Data de carga do ETL)&quot;,&quot;prettyId&quot;:&quot;datadecargadoetl&quot;,&quot;assignedMetadataField&quot;:&quot;Data&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;datadecargadoetl.date.yyyymmdd&quot;,&quot;title&quot;:&quot;yyyy-mm-dd (Data de carga do ETL)&quot;,&quot;prettyId&quot;:&quot;datadecargadoetl_date_yyyymmdd&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;datadecargadoetl.date.yyyymmdd&quot;,&quot;title&quot;:&quot;yyyy-mm-dd (Data de carga do ETL)&quot;,&quot;prettyId&quot;:&quot;datadecargadoetl_date_yyyymmdd&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}},&quot;associatedFact&quot;:null}}],&quot;simpleFacts&quot;:[{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.cargasdoetl.tempodacargadoetlsegundos&quot;,&quot;title&quot;:&quot;Tempo da carga do ETL (segundos)&quot;,&quot;prettyId&quot;:&quot;tempodacargadoetlsegundos&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;Tempo&quot;}}],&quot;dateFacts&quot;:[],&quot;datesWithFactConflict&quot;:[],&quot;entitiesWithoutValue&quot;:[],&quot;entitiesWithoutMetadata&quot;:[],&quot;fieldsWithMetadataConflict&quot;:[],&quot;unassigneddateFacts&quot;:[]}}" enabled="enabled" guiName="Última carga" guiX="433" guiY="41" id="ULTIMA_CARGA1" mode="INCREMENTAL" retriesInterval="60" retriesNumber="5" type="GD_DATASET_WRITER"/>
+<Edge debugMode="false" fromNode="DATA_GENERATOR:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (out)" toNode="REFORMAT:0"/>
+<Edge debugMode="false" fromNode="REFORMAT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="ULTIMA_CARGA1:0"/>
+</Phase>
+</Graph>

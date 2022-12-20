@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph author="diego.guedes" created="Fri May 11 07:47:44 CDT 2018" guiVersion="3.4.4.P" id="1526048085478" licenseType="Commercial" modified="Mon May 11 10:28:36 CDT 2020" modifiedBy="diego.guedes" name="com_dim_TES" revision="1.15" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata17" previewAttachment="${DATA_SOURCE_DIR}/TOTVSANALYTICS/TES.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="TES_Input" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="KEY_TES" type="string"/>
+<Field name="COD_TES" type="string"/>
+<Field name="DESC_TES" type="string"/>
+<Field name="GERA_DUPLICATA_TES" type="string"/>
+<Field name="GERA_ESTOQUE_TES" type="string"/>
+<Field eofAsDelimiter="false" name="TIPO_OPERACAO_TES" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata1" previewAttachment="${DATA_SOURCE_DIR}/TOTVSANALYTICS/TES.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="TES_Output" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="KEY_TES" type="string"/>
+<Field name="COD_TES" type="string"/>
+<Field name="DESC_TES" type="string"/>
+<Field name="GERA_DUPLICATA_TES" type="string"/>
+<Field name="GERA_ESTOQUE_TES" type="string"/>
+<Field eofAsDelimiter="false" name="TIPO_OPERACAO_TES" type="string"/>
+</Record>
+</Metadata>
+<Property fileURL="workspace.prm" id="GraphParameter0"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="150" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. CARGA DO DATASET DE TES (DIM)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="580" x="11" y="16"/>
+<Dictionary/>
+</Global>
+<Phase number="10">
+<Node charset="ISO-8859-1" enabled="enabled" fileURL="zip:(${DATA_SOURCE_DIR}/${gdc_agent_zip})#TES.csv*" guiName="TES" guiX="24" guiY="55" id="TES" type="DATA_READER"/>
+<Node dataset="dataset.tes" datasetFieldMappings="{&quot;gd_dataset&quot;:{&quot;datasetId&quot;:&quot;dataset.tes&quot;,&quot;datasetTitle&quot;:&quot;TES&quot;,&quot;attributes&quot;:[{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.tes.codigodates&quot;,&quot;title&quot;:&quot;Código da TES&quot;,&quot;prettyId&quot;:&quot;attr_tes_codigodates&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.tes.codigodates&quot;,&quot;title&quot;:&quot;Código da TES&quot;,&quot;prettyId&quot;:&quot;codigodates&quot;,&quot;assignedMetadataField&quot;:&quot;COD_TES&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.tes.geraestoquetes&quot;,&quot;title&quot;:&quot;Gera Estoque TES&quot;,&quot;prettyId&quot;:&quot;attr_tes_geraestoquetes&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.tes.geraestoquetes&quot;,&quot;title&quot;:&quot;Gera Estoque TES&quot;,&quot;prettyId&quot;:&quot;geraestoquetes&quot;,&quot;assignedMetadataField&quot;:&quot;GERA_ESTOQUE_TES&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.tes.getaduplicatates&quot;,&quot;title&quot;:&quot;Gera Duplicata TES&quot;,&quot;prettyId&quot;:&quot;attr_tes_getaduplicatates&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.tes.getaduplicatates&quot;,&quot;title&quot;:&quot;Gera Duplicata TES&quot;,&quot;prettyId&quot;:&quot;getaduplicatates&quot;,&quot;assignedMetadataField&quot;:&quot;GERA_DUPLICATA_TES&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.tes.idtes&quot;,&quot;title&quot;:&quot;ID TES&quot;,&quot;prettyId&quot;:&quot;attr_tes_idtes&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.tes.idtes&quot;,&quot;title&quot;:&quot;ID TES&quot;,&quot;prettyId&quot;:&quot;idtes&quot;,&quot;assignedMetadataField&quot;:&quot;KEY_TES&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.tes.tes&quot;,&quot;title&quot;:&quot;TES&quot;,&quot;prettyId&quot;:&quot;attr_tes_tes&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.tes.tes&quot;,&quot;title&quot;:&quot;TES&quot;,&quot;prettyId&quot;:&quot;tes&quot;,&quot;assignedMetadataField&quot;:&quot;DESC_TES&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.tes.tes&quot;,&quot;title&quot;:&quot;TES&quot;,&quot;prettyId&quot;:&quot;tes&quot;,&quot;assignedMetadataField&quot;:&quot;DESC_TES&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.tes.tipooperacaotes&quot;,&quot;title&quot;:&quot;Tipo Operação TES&quot;,&quot;prettyId&quot;:&quot;attr_tes_tipooperacaotes&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.tes.tipooperacaotes&quot;,&quot;title&quot;:&quot;Tipo Operação TES&quot;,&quot;prettyId&quot;:&quot;tipooperacaotes&quot;,&quot;assignedMetadataField&quot;:&quot;TIPO_OPERACAO_TES&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}}],&quot;referencedAttributes&quot;:[],&quot;dateAttributes&quot;:[],&quot;simpleFacts&quot;:[],&quot;dateFacts&quot;:[],&quot;entitiesWithoutMetadata&quot;:[],&quot;unassigneddateFacts&quot;:[],&quot;entitiesWithoutValue&quot;:[],&quot;fieldsWithMetadataConflict&quot;:[],&quot;datesWithFactConflict&quot;:[]}}" enabled="enabled" guiName="TES" guiX="449" guiY="55" id="TES1" mode="${LOAD_MODE_DIM}" retriesInterval="60" retriesNumber="5" type="GD_DATASET_WRITER"/>
+<Node enabled="disabled" guiName="Trash" guiX="307" guiY="55" id="TRASH" type="TRASH"/>
+<Node enabled="enabled" guiName="Treatment" guiX="168" guiY="55" id="TREATMENT" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import "trans/lib.ctl";
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.KEY_TES = formatString($in.0.KEY_TES, null);
+	$out.0.DESC_TES = formatString($in.0.DESC_TES, null);
+	$out.0.COD_TES = formatString($in.0.COD_TES, null);
+	$out.0.GERA_ESTOQUE_TES = formatString($in.0.GERA_ESTOQUE_TES, null);
+	$out.0.GERA_DUPLICATA_TES = formatString($in.0.GERA_DUPLICATA_TES, null);
+	$out.0.TIPO_OPERACAO_TES = formatString($in.0.TIPO_OPERACAO_TES, null);
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge fromNode="TES:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata17" outPort="Port 0 (output)" toNode="TREATMENT:0"/>
+<Edge fromNode="TREATMENT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="TES1:0"/>
+</Phase>
+</Graph>

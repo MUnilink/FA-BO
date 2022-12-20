@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph author="mateus.romero" created="Tue Nov 21 06:08:43 CST 2017" guiVersion="3.4.4.P" id="1511348377577" licenseType="Commercial" modified="Thu Apr 15 14:49:59 GFT 2021" modifiedBy="paulo" name="com_fct_Devolucoes" revision="1.29" showComponentDetails="true">
+<Global>
+<Metadata fileURL="${META_DIR}/_2Dates.fmt" id="Metadata3"/>
+<Metadata fileURL="${META_DIR}/sintax.fmt" id="Metadata4"/>
+<Metadata id="Metadata1" previewAttachment="${DATA_SOURCE_DIR}/TOTVSANALYTICS/Devolucoes.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="Devolucoes_Input" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="BK_EMPRESA" type="string"/>
+<Field name="BK_FILIAL" type="string"/>
+<Field name="DATA_DE_DEVOLUCAO" type="string"/>
+<Field name="BK_CFOP" type="string"/>
+<Field name="SERIE_DOCUMENTO_CLIENTE" type="string"/>
+<Field name="NUMERO_DOCUMENTO_CLIENTE" type="string"/>
+<Field name="SERIE_NOTA_FISCAL" type="string"/>
+<Field name="NUMERO_DA_NOTA_FISCAL" type="string"/>
+<Field name="NUMERO_DO_ITEM_DO_DOCUMENTO" type="string"/>
+<Field name="NUMERO_DO_ITEM_DA_NF" type="string"/>
+<Field name="NUMERO_DO_REMITO" type="string"/>
+<Field name="SERIE_DO_REMITO" type="string"/>
+<Field name="ITEM_DO_REMITO" type="string"/>
+<Field name="BK_TES" type="string"/>
+<Field name="BK_CONDICAO_DE_PAGAMENTO" type="string"/>
+<Field name="BK_ITEM" type="string"/>
+<Field name="BK_GRUPO_DE_ESTOQUE" type="string"/>
+<Field name="BK_VENDEDOR" type="string"/>
+<Field name="BK_CLIENTE" type="string"/>
+<Field name="BK_UNIDADE_DE_MEDIDA" type="string"/>
+<Field name="BK_REGIAO" type="string"/>
+<Field name="BK_ITEM_CONTABIL" type="string"/>
+<Field name="QTDE_DEVOLVIDA_ITEM" type="string"/>
+<Field name="VL_DEVOLUCAO_TOTAL" type="string"/>
+<Field name="VL_ICMS_DEVOLUCAO" type="string"/>
+<Field name="VL_IPI_DEVOLUCAO" type="string"/>
+<Field name="VL_DEVOLUCAO_LIQUIDA" type="string"/>
+<Field name="VL_DEVOLUCAO_MERCADORIA" type="string"/>
+<Field name="VL_PIS_DEVOLUCAO" type="string"/>
+<Field name="VL_COFINS_DEVOLUCAO" type="string"/>
+<Field name="VL_ICMS_SUBST_DEVOLUCAO" type="string"/>
+<Field name="VL_DESCONTO_DEVOLUCAO" type="string"/>
+<Field eofAsDelimiter="false" name="VL_INSS_DEVOLUCAO" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata2" previewAttachment="${DATA_SOURCE_DIR}/TOTVSANALYTICS/Devolucoes.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="Devolucoes_Output" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="BK_EMPRESA" type="string"/>
+<Field name="BK_FILIAL" type="string"/>
+<Field format="yyyyMMdd HH:mm:ss" name="DATA_DE_DEVOLUCAO" type="date"/>
+<Field name="BK_CFOP" type="string"/>
+<Field name="SERIE_DOCUMENTO_CLIENTE" type="string"/>
+<Field name="NUMERO_DOCUMENTO_CLIENTE" type="string"/>
+<Field name="SERIE_NOTA_FISCAL" type="string"/>
+<Field name="NUMERO_DA_NOTA_FISCAL" type="string"/>
+<Field name="NUMERO_DO_ITEM_DO_DOCUMENTO" type="string"/>
+<Field name="NUMERO_DO_ITEM_DA_NF" type="string"/>
+<Field name="NUMERO_DO_REMITO" type="string"/>
+<Field name="SERIE_DO_REMITO" type="string"/>
+<Field name="ITEM_DO_REMITO" type="string"/>
+<Field name="BK_TES" type="string"/>
+<Field name="BK_CONDICAO_DE_PAGAMENTO" type="string"/>
+<Field name="BK_ITEM" type="string"/>
+<Field name="BK_GRUPO_DE_ESTOQUE" type="string"/>
+<Field name="BK_VENDEDOR" type="string"/>
+<Field name="BK_CLIENTE" type="string"/>
+<Field name="BK_UNIDADE_DE_MEDIDA" type="string"/>
+<Field name="BK_REGIAO" type="string"/>
+<Field name="BK_ITEM_CONTABIL" type="string"/>
+<Field name="QTDE_DEVOLVIDA_ITEM" type="decimal"/>
+<Field name="VL_DEVOLUCAO_TOTAL" type="decimal"/>
+<Field name="VL_ICMS_DEVOLUCAO" type="decimal"/>
+<Field name="VL_IPI_DEVOLUCAO" type="decimal"/>
+<Field name="VL_DEVOLUCAO_LIQUIDA" type="decimal"/>
+<Field name="VL_DEVOLUCAO_MERCADORIA" type="decimal"/>
+<Field name="VL_PIS_DEVOLUCAO" type="decimal"/>
+<Field name="VL_COFINS_DEVOLUCAO" type="decimal"/>
+<Field name="VL_ICMS_SUBST_DEVOLUCAO" type="decimal"/>
+<Field name="VL_DESCONTO_DEVOLUCAO" type="decimal"/>
+<Field eofAsDelimiter="false" name="VL_INSS_DEVOLUCAO" type="decimal"/>
+<Field name="Modulo" type="string"/>
+<Field name="Tabela" type="string"/>
+<Field name="pk_Modulo" type="string"/>
+</Record>
+</Metadata>
+<Property fileURL="workspace.prm" id="GraphParameter0"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="175" id="Note1" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="2. REMOVER DADOS" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="483" x="807" y="10">
+<attr name="text"><![CDATA[Realiza a remoção dos dados duplicados do ambiente, de acordo com o método de carga (Full Load / Incremental).]]></attr>
+</Note>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="160" id="Note6" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="3. REMOVER DADOS (MONTHS_TO_LOAD)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="483" x="807" y="200">
+<attr name="text"><![CDATA[Apaga os dados históricos do workspace do GoodData, caso estes sejam muito antigos, garantindo assim a eficiência na geração de relatórios da plataforma.]]></attr>
+</Note>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="113" id="Note2" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="4. CARGA DO DATASET DE DEVOLUÇÕES DE VENDA (FATO)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="483" x="807" y="372"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="165" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. LEITURA / TRATAMENTO DOS DADOS" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="767" x="13" y="15"/>
+<Dictionary/>
+</Global>
+<Phase number="10">
+<Node charset="ISO-8859-1" enabled="enabled" fileURL="zip:(${DATA_SOURCE_DIR}/${gdc_agent_zip})#Devolucoes.csv*" guiName="Devolucoes" guiX="25" guiY="75" id="DEVOLUCOES" type="DATA_READER"/>
+<Node enabled="enabled" guiName="ExtFilter" guiX="347" guiY="75" id="EXT_FILTER1" type="EXT_FILTER">
+<attr name="filterExpression"><![CDATA[//#CTL2
+$in.0.BK_EMPRESA <> null]]></attr>
+</Node>
+<Node enabled="enabled" guiName="MONTHS_TO_LOAD Filter" guiX="168" guiY="75" id="MONTHS_TO_LOAD_FILTER" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import 'trans/lib.ctl';
+
+// Transforms input record into output record.
+function integer transform() {
+	if(($in.0.DATA_DE_DEVOLUCAO == null) or (trim($in.0.DATA_DE_DEVOLUCAO) == '')) {
+		$out.0.* = null;
+	} else {
+		data = str2date($in.0.DATA_DE_DEVOLUCAO, '${DATE_PATTERN}', '${DATE_LOCALE}');
+		if ((data < GOODDATA_MINDATE) || (data > GOODDATA_MAXDATE) || (data < ETL_MAXDATE)) {
+			$out.0.* = null;
+		} else {
+			$out.0.* = $in.0.*;
+		}
+	}
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node enabled="enabled" guiName="SimpleCopy" guiX="631" guiY="73" id="SIMPLE_COPY" type="SIMPLE_COPY"/>
+<Node enabled="enabled" guiName="Treatment" guiX="488" guiY="75" id="TREATMENT" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import "trans/lib.ctl";
+
+// Transforms input record into output record.
+function integer transform() {	
+	$out.0.BK_EMPRESA = $in.0.BK_EMPRESA;
+	$out.0.BK_FILIAL = $in.0.BK_FILIAL;
+	$out.0.BK_CFOP = $in.0.BK_CFOP;
+	$out.0.BK_TES = $in.0.BK_TES;
+	$out.0.BK_CONDICAO_DE_PAGAMENTO = $in.0.BK_CONDICAO_DE_PAGAMENTO;
+	$out.0.BK_ITEM = $in.0.BK_ITEM;
+	$out.0.BK_GRUPO_DE_ESTOQUE = $in.0.BK_GRUPO_DE_ESTOQUE;
+	$out.0.BK_VENDEDOR = $in.0.BK_VENDEDOR;
+	$out.0.BK_CLIENTE = $in.0.BK_CLIENTE;
+	$out.0.BK_UNIDADE_DE_MEDIDA = $in.0.BK_UNIDADE_DE_MEDIDA;
+	$out.0.BK_REGIAO = $in.0.BK_REGIAO;
+	$out.0.BK_ITEM_CONTABIL = $in.0.BK_ITEM_CONTABIL;
+	
+	$out.0.QTDE_DEVOLVIDA_ITEM = formatDecimal($in.0.QTDE_DEVOLVIDA_ITEM, true);
+	$out.0.VL_DEVOLUCAO_TOTAL = formatDecimal($in.0.VL_DEVOLUCAO_TOTAL, true);
+	$out.0.VL_ICMS_DEVOLUCAO = formatDecimal($in.0.VL_ICMS_DEVOLUCAO, true);
+	$out.0.VL_IPI_DEVOLUCAO = formatDecimal($in.0.VL_IPI_DEVOLUCAO, true);
+	$out.0.VL_DEVOLUCAO_LIQUIDA = formatDecimal($in.0.VL_DEVOLUCAO_LIQUIDA, true);
+	$out.0.VL_DEVOLUCAO_MERCADORIA = formatDecimal($in.0.VL_DEVOLUCAO_MERCADORIA, true);
+	$out.0.VL_PIS_DEVOLUCAO = formatDecimal($in.0.VL_PIS_DEVOLUCAO, true);
+	$out.0.VL_COFINS_DEVOLUCAO = formatDecimal($in.0.VL_COFINS_DEVOLUCAO, true);
+	$out.0.VL_ICMS_SUBST_DEVOLUCAO = formatDecimal($in.0.VL_ICMS_SUBST_DEVOLUCAO, true);
+	$out.0.VL_DESCONTO_DEVOLUCAO = formatDecimal($in.0.VL_DESCONTO_DEVOLUCAO, true);
+	$out.0.VL_INSS_DEVOLUCAO = formatDecimal($in.0.VL_INSS_DEVOLUCAO, true);
+	
+	$out.0.SERIE_DOCUMENTO_CLIENTE = formatString($in.0.SERIE_DOCUMENTO_CLIENTE, null);
+	$out.0.NUMERO_DOCUMENTO_CLIENTE = formatString($in.0.NUMERO_DOCUMENTO_CLIENTE, null);
+	$out.0.SERIE_NOTA_FISCAL = formatString($in.0.SERIE_NOTA_FISCAL, null);
+	$out.0.NUMERO_DO_ITEM_DO_DOCUMENTO = formatString($in.0.NUMERO_DO_ITEM_DO_DOCUMENTO, null);
+	$out.0.NUMERO_DA_NOTA_FISCAL = formatString($in.0.NUMERO_DA_NOTA_FISCAL, null);
+	$out.0.NUMERO_DO_ITEM_DA_NF = formatString($in.0.NUMERO_DO_ITEM_DA_NF, null);
+	$out.0.NUMERO_DO_REMITO = formatString($in.0.NUMERO_DO_REMITO, null);
+	$out.0.SERIE_DO_REMITO = formatString($in.0.SERIE_DO_REMITO, null);
+	$out.0.ITEM_DO_REMITO = formatString($in.0.ITEM_DO_REMITO, null);
+	
+	$out.0.DATA_DE_DEVOLUCAO = formatDate($in.0.DATA_DE_DEVOLUCAO);
+	
+	$out.0.Modulo = 'COMERCIAL';
+	$out.0.Tabela = 'DEVOLUCOES';
+	$out.0.pk_Modulo = $out.0.Modulo + '|' + $out.0.Tabela;
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge fromNode="DEVOLUCOES:0" guiBendpoints="" guiRouter="Manhattan" id="Edge3" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (output)" toNode="MONTHS_TO_LOAD_FILTER:0"/>
+<Edge debugMode="false" fromNode="EXT_FILTER1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge8" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (accepted)" toNode="TREATMENT:0"/>
+<Edge debugMode="false" fromNode="MONTHS_TO_LOAD_FILTER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge13" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="EXT_FILTER1:0"/>
+<Edge debugMode="false" fromNode="SIMPLE_COPY:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="AGGREGATE_MENOR_DATA2:0"/>
+<Edge debugMode="false" fromNode="SIMPLE_COPY:1" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 1 (out)" toNode="AGGREGATE_MENOR_DATA1:0"/>
+<Edge fromNode="SIMPLE_COPY:2" guiBendpoints="" guiRouter="Manhattan" id="Edge7" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 2 (out)" toNode="SIMPLE_COPY1:0"/>
+<Edge fromNode="TREATMENT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="SIMPLE_COPY:0"/>
+</Phase>
+<Phase number="20">
+<Node enabled="enabled" guiName="Aggregate" guiX="828" guiY="82" id="AGGREGATE_MENOR_DATA2" mapping="$Min_Date:=min($DATA_DE_DEVOLUCAO);$Max_Date:=max($DATA_DE_DEVOLUCAO);" type="AGGREGATE">
+<attr name="guiDescription"><![CDATA[OBTÉM MAIOR E MENOR DATA]]></attr>
+</Node>
+<Node enabled="enabled" guiName="MAQL DML Execute" guiX="1128" guiY="82" id="MAQL_DML_EXECUTE_DELETE_DATA_FATO_HKL1" maqlInputField="syntax_content" type="MAQL_DML_EXECUTE">
+<attr name="guiDescription"><![CDATA[APAGA DADOS FATO HKL]]></attr>
+</Node>
+<Node enabled="enabled" guiName="Reformat" guiX="980" guiY="82" id="REFORMAT_MENOR_DATA2" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	string loadMode = '${LOAD_MODE_FCT}';
+	if (upperCase(loadMode) == 'INCREMENTAL') {
+		$out.0.syntax_content = 'DELETE FROM {attr.devolucoes.factsof} WHERE {datadeextracao.date.yyyymmdd} BETWEEN '+'"'+date2str($in.0.Min_Date, "yyyy-MM-dd")+'" AND "'+date2str($in.0.Max_Date, "yyyy-MM-dd")+'"';
+	} else {
+		$out.0.syntax_content = 'DELETE FROM {attr.devolucoes.factsof}';
+	}
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+<attr name="guiDescription"><![CDATA[GERA STATEMENT DE DELETE]]></attr>
+</Node>
+<Edge debugMode="false" fromNode="AGGREGATE_MENOR_DATA2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge6" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="REFORMAT_MENOR_DATA2:0"/>
+<Edge debugMode="false" fromNode="REFORMAT_MENOR_DATA2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge16" inPort="Port 0 (input)" metadata="Metadata4" outPort="Port 0 (out)" toNode="MAQL_DML_EXECUTE_DELETE_DATA_FATO_HKL1:0"/>
+</Phase>
+<Phase number="25">
+<Node enabled="enabled" guiName="Aggregate" guiX="828" guiY="257" id="AGGREGATE_MENOR_DATA1" mapping="$Min_Date:=min($DATA_DE_DEVOLUCAO);$Max_Date:=max($DATA_DE_DEVOLUCAO);" type="AGGREGATE">
+<attr name="guiDescription"><![CDATA[OBTÉM MAIOR E MENOR DATA]]></attr>
+</Node>
+<Node enabled="enabled" guiName="MAQL DML Execute" guiX="1128" guiY="257" id="MAQL_DML_EXECUTE_DELETE_DATA_FATO_HKL2" maqlInputField="syntax_content" type="MAQL_DML_EXECUTE">
+<attr name="guiDescription"><![CDATA[APAGA DADOS FATO HKL]]></attr>
+</Node>
+<Node enabled="enabled" guiName="Reformat" guiX="980" guiY="257" id="REFORMAT_MENOR_DATA1" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import 'trans/lib.ctl';
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.syntax_content = 'DELETE FROM {attr.devolucoes.factsof} WHERE {datadeextracao.date.yyyymmdd} < "' + ETL_MAXDATE + '"';
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+<attr name="guiDescription"><![CDATA[GERA STATEMENT DE DELETE]]></attr>
+</Node>
+<Edge debugMode="false" fromNode="AGGREGATE_MENOR_DATA1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge9" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="REFORMAT_MENOR_DATA1:0"/>
+<Edge debugMode="false" fromNode="REFORMAT_MENOR_DATA1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge12" inPort="Port 0 (input)" metadata="Metadata4" outPort="Port 0 (out)" toNode="MAQL_DML_EXECUTE_DELETE_DATA_FATO_HKL2:0"/>
+</Phase>
+<Phase number="30">
+<Node dataset="dataset.devolucoes" datasetFieldMappings="{&quot;gd_dataset&quot;:{&quot;datasetId&quot;:&quot;dataset.devolucoes&quot;,&quot;datasetTitle&quot;:&quot;Devoluções&quot;,&quot;attributes&quot;:[{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.devolucoes.numerodanotafiscal&quot;,&quot;title&quot;:&quot;Número da Nota Fiscal&quot;,&quot;prettyId&quot;:&quot;attr_devolucoes_numerodanotafiscal&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.devolucoes.numerodanotafiscal&quot;,&quot;title&quot;:&quot;Número da Nota Fiscal&quot;,&quot;prettyId&quot;:&quot;numerodanotafiscal&quot;,&quot;assignedMetadataField&quot;:&quot;NUMERO_DA_NOTA_FISCAL&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.devolucoes.numerodocumentodocliente&quot;,&quot;title&quot;:&quot;Número Documento do Cliente&quot;,&quot;prettyId&quot;:&quot;attr_devolucoes_numerodocumentodocliente&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.devolucoes.numerodocumentodocliente&quot;,&quot;title&quot;:&quot;Número Documento do Cliente&quot;,&quot;prettyId&quot;:&quot;numerodocumentodocliente&quot;,&quot;assignedMetadataField&quot;:&quot;NUMERO_DOCUMENTO_CLIENTE&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.devolucoes.numerodoitemdanf&quot;,&quot;title&quot;:&quot;Número do Item da NF&quot;,&quot;prettyId&quot;:&quot;attr_devolucoes_numerodoitemdanf&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.devolucoes.numerodoitemdanf&quot;,&quot;title&quot;:&quot;Número do Item da NF&quot;,&quot;prettyId&quot;:&quot;numerodoitemdanf&quot;,&quot;assignedMetadataField&quot;:&quot;NUMERO_DO_ITEM_DA_NF&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.devolucoes.numerodoitemdodocumento&quot;,&quot;title&quot;:&quot;Número do Item do Documento&quot;,&quot;prettyId&quot;:&quot;attr_devolucoes_numerodoitemdodocumento&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.devolucoes.numerodoitemdodocumento&quot;,&quot;title&quot;:&quot;Número do Item do Documento&quot;,&quot;prettyId&quot;:&quot;numerodoitemdodocumento&quot;,&quot;assignedMetadataField&quot;:&quot;NUMERO_DO_ITEM_DO_DOCUMENTO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.devolucoes.seriedocumentodocliente&quot;,&quot;title&quot;:&quot;Série Documento do Cliente&quot;,&quot;prettyId&quot;:&quot;attr_devolucoes_seriedocumentodocliente&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.devolucoes.seriedocumentodocliente&quot;,&quot;title&quot;:&quot;Série Documento do Cliente&quot;,&quot;prettyId&quot;:&quot;seriedocumentodocliente&quot;,&quot;assignedMetadataField&quot;:&quot;SERIE_DOCUMENTO_CLIENTE&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.devolucoes.serienotafiscal&quot;,&quot;title&quot;:&quot;Série Nota Fiscal&quot;,&quot;prettyId&quot;:&quot;attr_devolucoes_serienotafiscal&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.devolucoes.serienotafiscal&quot;,&quot;title&quot;:&quot;Série Nota Fiscal&quot;,&quot;prettyId&quot;:&quot;serienotafiscal&quot;,&quot;assignedMetadataField&quot;:&quot;SERIE_NOTA_FISCAL&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}}],&quot;referencedAttributes&quot;:[{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.cfop.idcfop&quot;,&quot;title&quot;:&quot;Id da CFOP&quot;,&quot;prettyId&quot;:&quot;attr_cfop_idcfop&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.cfop.idcfop&quot;,&quot;title&quot;:&quot;Id da CFOP&quot;,&quot;prettyId&quot;:&quot;cfop__idcfop&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_CFOP&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.cfop.idcfop&quot;,&quot;title&quot;:&quot;Id da CFOP&quot;,&quot;prettyId&quot;:&quot;cfop__idcfop&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.cliente.key_cliente&quot;,&quot;title&quot;:&quot;Id do cliente&quot;,&quot;prettyId&quot;:&quot;attr_cliente_key_cliente&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.cliente.key_cliente&quot;,&quot;title&quot;:&quot;Id do cliente&quot;,&quot;prettyId&quot;:&quot;cliente__key_cliente&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_CLIENTE&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.cliente.key_cliente&quot;,&quot;title&quot;:&quot;Id do cliente&quot;,&quot;prettyId&quot;:&quot;cliente__key_cliente&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.condicaodepagamento.idcondicaodepagamento&quot;,&quot;title&quot;:&quot;Id da condição de pagamento&quot;,&quot;prettyId&quot;:&quot;attr_condicaodepagamento_idcondicaodepagamento&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.condicaodepagamento.idcondicaodepagamento&quot;,&quot;title&quot;:&quot;Id da condição de pagamento&quot;,&quot;prettyId&quot;:&quot;condicaodepagamento__idcondicaodepagamento&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_CONDICAO_DE_PAGAMENTO&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.condicaodepagamento.idcondicaodepagamento&quot;,&quot;title&quot;:&quot;Id da condição de pagamento&quot;,&quot;prettyId&quot;:&quot;condicaodepagamento__idcondicaodepagamento&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.empresa.codigodaempresa&quot;,&quot;title&quot;:&quot;Id da empresa&quot;,&quot;prettyId&quot;:&quot;attr_empresa_codigodaempresa&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.empresa.codigodaempresa&quot;,&quot;title&quot;:&quot;Id da empresa&quot;,&quot;prettyId&quot;:&quot;empresa__codigodaempresa&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_EMPRESA&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.empresa.codigodaempresa&quot;,&quot;title&quot;:&quot;Id da empresa&quot;,&quot;prettyId&quot;:&quot;empresa__codigodaempresa&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.filial.codigodafilial&quot;,&quot;title&quot;:&quot;Id da filial&quot;,&quot;prettyId&quot;:&quot;attr_filial_codigodafilial&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filial.codigodafilial&quot;,&quot;title&quot;:&quot;Id da filial&quot;,&quot;prettyId&quot;:&quot;filial__codigodafilial&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_FILIAL&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filial.codigodafilial&quot;,&quot;title&quot;:&quot;Id da filial&quot;,&quot;prettyId&quot;:&quot;filial__codigodafilial&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.grupodeestoque.key_grupo_de_estoque&quot;,&quot;title&quot;:&quot;Id do grupo de estoque&quot;,&quot;prettyId&quot;:&quot;attr_grupodeestoque_key_grupo_de_estoque&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.grupodeestoque.key_grupo_de_estoque&quot;,&quot;title&quot;:&quot;Id do grupo de estoque&quot;,&quot;prettyId&quot;:&quot;grupodeestoque__key_grupo_de_estoque&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_GRUPO_DE_ESTOQUE&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.grupodeestoque.key_grupo_de_estoque&quot;,&quot;title&quot;:&quot;Id do grupo de estoque&quot;,&quot;prettyId&quot;:&quot;grupodeestoque__key_grupo_de_estoque&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.itemcontabil11&quot;,&quot;title&quot;:&quot;Id do item contábil&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_itemcontabil11&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.itemcontabil11&quot;,&quot;title&quot;:&quot;Id do item contábil&quot;,&quot;prettyId&quot;:&quot;itemcontabil__itemcontabil11&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_ITEM_CONTABIL&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.itemcontabil11&quot;,&quot;title&quot;:&quot;Id do item contábil&quot;,&quot;prettyId&quot;:&quot;itemcontabil__itemcontabil11&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.modulo.iddomodulo&quot;,&quot;title&quot;:&quot;Id do módulo&quot;,&quot;prettyId&quot;:&quot;attr_modulo_iddomodulo&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.modulo.iddomodulo&quot;,&quot;title&quot;:&quot;Id do módulo&quot;,&quot;prettyId&quot;:&quot;modulo__iddomodulo&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;pk_Modulo&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.modulo.iddomodulo&quot;,&quot;title&quot;:&quot;Id do módulo&quot;,&quot;prettyId&quot;:&quot;modulo__iddomodulo&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.produto.idproduto&quot;,&quot;title&quot;:&quot;Id do produto&quot;,&quot;prettyId&quot;:&quot;attr_produto_idproduto&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.produto.idproduto&quot;,&quot;title&quot;:&quot;Id do produto&quot;,&quot;prettyId&quot;:&quot;produto__idproduto&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_ITEM&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.produto.idproduto&quot;,&quot;title&quot;:&quot;Id do produto&quot;,&quot;prettyId&quot;:&quot;produto__idproduto&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.regiao.codigoeestadodomunicipio&quot;,&quot;title&quot;:&quot;Id da região&quot;,&quot;prettyId&quot;:&quot;attr_regiao_codigoeestadodomunicipio&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.regiao.codigoeestadodomunicipio&quot;,&quot;title&quot;:&quot;Id da região&quot;,&quot;prettyId&quot;:&quot;regiao__codigoeestadodomunicipio&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_REGIAO&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.regiao.codigoeestadodomunicipio&quot;,&quot;title&quot;:&quot;Id da região&quot;,&quot;prettyId&quot;:&quot;regiao__codigoeestadodomunicipio&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.tes.idtes&quot;,&quot;title&quot;:&quot;Id da TES&quot;,&quot;prettyId&quot;:&quot;attr_tes_idtes&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.tes.idtes&quot;,&quot;title&quot;:&quot;Id da TES&quot;,&quot;prettyId&quot;:&quot;tes__idtes&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_TES&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.tes.idtes&quot;,&quot;title&quot;:&quot;Id da TES&quot;,&quot;prettyId&quot;:&quot;tes__idtes&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.unidadedemedida.idunidadedemedida&quot;,&quot;title&quot;:&quot;Id da unidade de medida&quot;,&quot;prettyId&quot;:&quot;attr_unidadedemedida_idunidadedemedida&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.unidadedemedida.idunidadedemedida&quot;,&quot;title&quot;:&quot;Id da unidade de medida&quot;,&quot;prettyId&quot;:&quot;unidadedemedida__idunidadedemedida&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_UNIDADE_DE_MEDIDA&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.unidadedemedida.idunidadedemedida&quot;,&quot;title&quot;:&quot;Id da unidade de medida&quot;,&quot;prettyId&quot;:&quot;unidadedemedida__idunidadedemedida&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.vendedor.idvendedor&quot;,&quot;title&quot;:&quot;Id do vendedor&quot;,&quot;prettyId&quot;:&quot;attr_vendedor_idvendedor&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.vendedor.idvendedor&quot;,&quot;title&quot;:&quot;Id do vendedor&quot;,&quot;prettyId&quot;:&quot;vendedor__idvendedor&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_VENDEDOR&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.vendedor.idvendedor&quot;,&quot;title&quot;:&quot;Id do vendedor&quot;,&quot;prettyId&quot;:&quot;vendedor__idvendedor&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}}],&quot;dateAttributes&quot;:[{&quot;gd_dataset_date_attribute&quot;:{&quot;id&quot;:&quot;datadeextracao.date&quot;,&quot;title&quot;:&quot;Date (Data)&quot;,&quot;prettyId&quot;:&quot;datadeextracao&quot;,&quot;assignedMetadataField&quot;:&quot;DATA_DE_DEVOLUCAO&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;datadeextracao.date.yyyymmdd&quot;,&quot;title&quot;:&quot;yyyy-mm-dd (Data)&quot;,&quot;prettyId&quot;:&quot;datadeextracao_date_yyyymmdd&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;datadeextracao.date.yyyymmdd&quot;,&quot;title&quot;:&quot;yyyy-mm-dd (Data)&quot;,&quot;prettyId&quot;:&quot;datadeextracao_date_yyyymmdd&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}},&quot;associatedFact&quot;:null}}],&quot;simpleFacts&quot;:[{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.devolucoes.vldescontodevolucao&quot;,&quot;title&quot;:&quot;Descontos da devolução&quot;,&quot;prettyId&quot;:&quot;vldescontodevolucao&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;VL_DESCONTO_DEVOLUCAO&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.devolucoes.vlcofinsdevolucao&quot;,&quot;title&quot;:&quot;Imposto COFINS da devolução&quot;,&quot;prettyId&quot;:&quot;vlcofinsdevolucao&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;VL_COFINS_DEVOLUCAO&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.devolucoes.vlicmsdevolucao&quot;,&quot;title&quot;:&quot;Imposto ICMS da devolução&quot;,&quot;prettyId&quot;:&quot;vlicmsdevolucao&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;VL_ICMS_DEVOLUCAO&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.devolucoes.vlicmssubstdevolucao&quot;,&quot;title&quot;:&quot;Imposto ICMS de substituição da devolução&quot;,&quot;prettyId&quot;:&quot;vlicmssubstdevolucao&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;VL_ICMS_SUBST_DEVOLUCAO&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.devolucoes.vlinssdevolucao&quot;,&quot;title&quot;:&quot;Imposto INSS da devolução&quot;,&quot;prettyId&quot;:&quot;vlinssdevolucao&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;VL_INSS_DEVOLUCAO&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.devolucoes.vlipidevolucao&quot;,&quot;title&quot;:&quot;Imposto IPI da devolução&quot;,&quot;prettyId&quot;:&quot;vlipidevolucao&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;VL_IPI_DEVOLUCAO&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.devolucoes.vlpisdevolucao&quot;,&quot;title&quot;:&quot;Imposto PIS da devolução&quot;,&quot;prettyId&quot;:&quot;vlpisdevolucao&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;VL_PIS_DEVOLUCAO&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.devolucoes.qtdedevolvidaitem&quot;,&quot;title&quot;:&quot;Quantidade da devolução&quot;,&quot;prettyId&quot;:&quot;qtdedevolvidaitem&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;QTDE_DEVOLVIDA_ITEM&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.devolucoes.vldevolucaototal&quot;,&quot;title&quot;:&quot;Valor bruto da devolução&quot;,&quot;prettyId&quot;:&quot;vldevolucaototal&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;VL_DEVOLUCAO_TOTAL&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.devolucoes.vldevolucaomercadoria&quot;,&quot;title&quot;:&quot;Valor de mercadoria da devolução&quot;,&quot;prettyId&quot;:&quot;vldevolucaomercadoria&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;VL_DEVOLUCAO_MERCADORIA&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.devolucoes.vldevolucaoliquida&quot;,&quot;title&quot;:&quot;Valor líquido da devolução&quot;,&quot;prettyId&quot;:&quot;vldevolucaoliquida&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;VL_DEVOLUCAO_LIQUIDA&quot;}}],&quot;dateFacts&quot;:[],&quot;entitiesWithoutMetadata&quot;:[],&quot;entitiesWithoutValue&quot;:[],&quot;fieldsWithMetadataConflict&quot;:[],&quot;unassigneddateFacts&quot;:[],&quot;datesWithFactConflict&quot;:[]}}" enabled="enabled" guiName="Devoluções" guiX="1135" guiY="411" id="DEVOLUCOES2" mode="${LOAD_MODE_FCT}" retriesInterval="60" retriesNumber="5" type="GD_DATASET_WRITER"/>
+<Node enabled="enabled" guiName="SimpleCopy" guiX="828" guiY="411" id="SIMPLE_COPY1" type="SIMPLE_COPY"/>
+<Node enabled="disabled" guiName="Trash" guiX="985" guiY="411" id="TRASH" type="TRASH"/>
+<Edge fromNode="SIMPLE_COPY1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge10" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="DEVOLUCOES2:0"/>
+</Phase>
+</Graph>

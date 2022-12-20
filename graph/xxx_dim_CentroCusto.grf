@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph author="diego.guedes" created="Fri May 11 07:47:44 CDT 2018" guiVersion="3.4.4.P" id="1526048085478" licenseType="Commercial" modified="Wed May 13 12:44:14 CDT 2020" modifiedBy="diego.guedes" name="xxx_dim_CentroCusto" revision="1.20" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata18" previewAttachment="${DATA_SOURCE_DIR}/CentroCusto.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="CentroCusto_Input" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="BK_CENTRO_CUSTO11" type="string"/>
+<Field name="BK_CENTRO_CUSTO10" type="string"/>
+<Field name="BK_CENTRO_CUSTO9" type="string"/>
+<Field name="BK_CENTRO_CUSTO8" type="string"/>
+<Field name="BK_CENTRO_CUSTO7" type="string"/>
+<Field name="BK_CENTRO_CUSTO6" type="string"/>
+<Field name="BK_CENTRO_CUSTO5" type="string"/>
+<Field name="BK_CENTRO_CUSTO4" type="string"/>
+<Field name="BK_CENTRO_CUSTO3" type="string"/>
+<Field name="BK_CENTRO_CUSTO2" type="string"/>
+<Field name="BK_CENTRO_CUSTO1" type="string"/>
+<Field name="CTT_DESC01_11" type="string"/>
+<Field name="CTT_DESC01_10" type="string"/>
+<Field name="CTT_DESC01_9" type="string"/>
+<Field name="CTT_DESC01_8" type="string"/>
+<Field name="CTT_DESC01_7" type="string"/>
+<Field name="CTT_DESC01_6" type="string"/>
+<Field name="CTT_DESC01_5" type="string"/>
+<Field name="CTT_DESC01_4" type="string"/>
+<Field name="CTT_DESC01_3" type="string"/>
+<Field name="CTT_DESC01_2" type="string"/>
+<Field name="CTT_DESC01_1" type="string"/>
+<Field name="CTT_CUSTO_11" type="string"/>
+<Field name="CTT_CUSTO_10" type="string"/>
+<Field name="CTT_CUSTO_9" type="string"/>
+<Field name="CTT_CUSTO_8" type="string"/>
+<Field name="CTT_CUSTO_7" type="string"/>
+<Field name="CTT_CUSTO_6" type="string"/>
+<Field name="CTT_CUSTO_5" type="string"/>
+<Field name="CTT_CUSTO_4" type="string"/>
+<Field name="CTT_CUSTO_3" type="string"/>
+<Field name="CTT_CUSTO_2" type="string"/>
+<Field eofAsDelimiter="false" name="CTT_CUSTO_1" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata1" previewAttachment="${DATA_SOURCE_DIR}/CentroCusto.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="CentroCusto_Output" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="BK_CENTRO_CUSTO11" type="string"/>
+<Field name="BK_CENTRO_CUSTO10" type="string"/>
+<Field name="BK_CENTRO_CUSTO9" type="string"/>
+<Field name="BK_CENTRO_CUSTO8" type="string"/>
+<Field name="BK_CENTRO_CUSTO7" type="string"/>
+<Field name="BK_CENTRO_CUSTO6" type="string"/>
+<Field name="BK_CENTRO_CUSTO5" type="string"/>
+<Field name="BK_CENTRO_CUSTO4" type="string"/>
+<Field name="BK_CENTRO_CUSTO3" type="string"/>
+<Field name="BK_CENTRO_CUSTO2" type="string"/>
+<Field name="BK_CENTRO_CUSTO1" type="string"/>
+<Field name="CTT_DESC01_11" type="string"/>
+<Field name="CTT_DESC01_10" type="string"/>
+<Field name="CTT_DESC01_9" type="string"/>
+<Field name="CTT_DESC01_8" type="string"/>
+<Field name="CTT_DESC01_7" type="string"/>
+<Field name="CTT_DESC01_6" type="string"/>
+<Field name="CTT_DESC01_5" type="string"/>
+<Field name="CTT_DESC01_4" type="string"/>
+<Field name="CTT_DESC01_3" type="string"/>
+<Field name="CTT_DESC01_2" type="string"/>
+<Field name="CTT_DESC01_1" type="string"/>
+<Field name="CTT_CUSTO_11" type="string"/>
+<Field name="CTT_CUSTO_10" type="string"/>
+<Field name="CTT_CUSTO_9" type="string"/>
+<Field name="CTT_CUSTO_8" type="string"/>
+<Field name="CTT_CUSTO_7" type="string"/>
+<Field name="CTT_CUSTO_6" type="string"/>
+<Field name="CTT_CUSTO_5" type="string"/>
+<Field name="CTT_CUSTO_4" type="string"/>
+<Field name="CTT_CUSTO_3" type="string"/>
+<Field name="CTT_CUSTO_2" type="string"/>
+<Field eofAsDelimiter="false" name="CTT_CUSTO_1" type="string"/>
+</Record>
+</Metadata>
+<Property fileURL="workspace.prm" id="GraphParameter0"/>
+<Sequence cached="8" id="Sequence0" name="SequenciaHom" start="1" step="1" type="PRIMITIVE_SEQUENCE"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="150" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. CARGA DO DATASET DE CENTRO DE CUSTO (DIM)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="580" x="11" y="16"/>
+<Dictionary/>
+</Global>
+<Phase number="10">
+<Node charset="ISO-8859-1" enabled="enabled" fileURL="zip:(${DATA_SOURCE_DIR}/${gdc_agent_zip})#CentroCusto.csv*" guiName="CentroCusto" guiX="24" guiY="55" id="CENTRO_CUSTO" type="DATA_READER"/>
+<Node dataset="dataset.centrodecusto" datasetFieldMappings="{&quot;gd_dataset&quot;:{&quot;datasetId&quot;:&quot;dataset.centrodecusto&quot;,&quot;datasetTitle&quot;:&quot;Centro de Custo&quot;,&quot;attributes&quot;:[{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.centrodecusto&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 11&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_centrodecusto&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.centrodecusto&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 11&quot;,&quot;prettyId&quot;:&quot;centrodecusto&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_DESC01_11&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.codigocentrodecusto&quot;,&quot;title&quot;:&quot;Código do centro de custo 11&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_codigocentrodecusto&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.codigocentrodecusto&quot;,&quot;title&quot;:&quot;Código do centro de custo 11&quot;,&quot;prettyId&quot;:&quot;codigocentrodecusto&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_CUSTO_11&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.codigocentrodecusto01&quot;,&quot;title&quot;:&quot;Código do centro de custo 01&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_codigocentrodecusto01&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.codigocentrodecusto01&quot;,&quot;title&quot;:&quot;Código do centro de custo 01&quot;,&quot;prettyId&quot;:&quot;codigocentrodecusto01&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_CUSTO_1&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.codigocentrodecusto02&quot;,&quot;title&quot;:&quot;Código do centro de custo 02&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_codigocentrodecusto02&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.codigocentrodecusto02&quot;,&quot;title&quot;:&quot;Código do centro de custo 02&quot;,&quot;prettyId&quot;:&quot;codigocentrodecusto02&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_CUSTO_2&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.codigocentrodecusto03&quot;,&quot;title&quot;:&quot;Código do centro de custo 03&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_codigocentrodecusto03&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.codigocentrodecusto03&quot;,&quot;title&quot;:&quot;Código do centro de custo 03&quot;,&quot;prettyId&quot;:&quot;codigocentrodecusto03&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_CUSTO_3&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.codigocentrodecusto04&quot;,&quot;title&quot;:&quot;Código do centro de custo 04&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_codigocentrodecusto04&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.codigocentrodecusto04&quot;,&quot;title&quot;:&quot;Código do centro de custo 04&quot;,&quot;prettyId&quot;:&quot;codigocentrodecusto04&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_CUSTO_4&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.codigocentrodecusto05&quot;,&quot;title&quot;:&quot;Código do centro de custo 05&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_codigocentrodecusto05&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.codigocentrodecusto05&quot;,&quot;title&quot;:&quot;Código do centro de custo 05&quot;,&quot;prettyId&quot;:&quot;codigocentrodecusto05&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_CUSTO_5&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.codigocentrodecusto06&quot;,&quot;title&quot;:&quot;Código do centro de custo 06&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_codigocentrodecusto06&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.codigocentrodecusto06&quot;,&quot;title&quot;:&quot;Código do centro de custo 06&quot;,&quot;prettyId&quot;:&quot;codigocentrodecusto06&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_CUSTO_6&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.codigocentrodecusto07&quot;,&quot;title&quot;:&quot;Código do centro de custo 07&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_codigocentrodecusto07&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.codigocentrodecusto07&quot;,&quot;title&quot;:&quot;Código do centro de custo 07&quot;,&quot;prettyId&quot;:&quot;codigocentrodecusto07&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_CUSTO_7&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.codigocentrodecusto08&quot;,&quot;title&quot;:&quot;Código do centro de custo 08&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_codigocentrodecusto08&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.codigocentrodecusto08&quot;,&quot;title&quot;:&quot;Código do centro de custo 08&quot;,&quot;prettyId&quot;:&quot;codigocentrodecusto08&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_CUSTO_8&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.codigocentrodecusto09&quot;,&quot;title&quot;:&quot;Código do centro de custo 09&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_codigocentrodecusto09&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.codigocentrodecusto09&quot;,&quot;title&quot;:&quot;Código do centro de custo 09&quot;,&quot;prettyId&quot;:&quot;codigocentrodecusto09&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_CUSTO_9&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.codigocentrodecusto10&quot;,&quot;title&quot;:&quot;Código do centro de custo 10&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_codigocentrodecusto10&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.codigocentrodecusto10&quot;,&quot;title&quot;:&quot;Código do centro de custo 10&quot;,&quot;prettyId&quot;:&quot;codigocentrodecusto10&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_CUSTO_10&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.desccentrodecusto01&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 01&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_desccentrodecusto01&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.desccentrodecusto01&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 01&quot;,&quot;prettyId&quot;:&quot;desccentrodecusto01&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_DESC01_1&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.desccentrodecusto02&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 02&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_desccentrodecusto02&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.desccentrodecusto02&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 02&quot;,&quot;prettyId&quot;:&quot;desccentrodecusto02&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_DESC01_2&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.desccentrodecusto03&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 03&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_desccentrodecusto03&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.desccentrodecusto03&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 03&quot;,&quot;prettyId&quot;:&quot;desccentrodecusto03&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_DESC01_3&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.desccentrodecusto04&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 04&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_desccentrodecusto04&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.desccentrodecusto04&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 04&quot;,&quot;prettyId&quot;:&quot;desccentrodecusto04&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_DESC01_4&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.desccentrodecusto05&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 05&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_desccentrodecusto05&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.desccentrodecusto05&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 05&quot;,&quot;prettyId&quot;:&quot;desccentrodecusto05&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_DESC01_5&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.desccentrodecusto06&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 06&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_desccentrodecusto06&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.desccentrodecusto06&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 06&quot;,&quot;prettyId&quot;:&quot;desccentrodecusto06&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_DESC01_6&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.desccentrodecusto07&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 07&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_desccentrodecusto07&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.desccentrodecusto07&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 07&quot;,&quot;prettyId&quot;:&quot;desccentrodecusto07&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_DESC01_7&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.desccentrodecusto08&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 08&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_desccentrodecusto08&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.desccentrodecusto08&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 08&quot;,&quot;prettyId&quot;:&quot;desccentrodecusto08&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_DESC01_8&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.desccentrodecusto09&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 09&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_desccentrodecusto09&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.desccentrodecusto09&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 09&quot;,&quot;prettyId&quot;:&quot;desccentrodecusto09&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_DESC01_9&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.desccentrodecusto10&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 10&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_desccentrodecusto10&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.desccentrodecusto10&quot;,&quot;title&quot;:&quot;Descrição do centro de custo 10&quot;,&quot;prettyId&quot;:&quot;desccentrodecusto10&quot;,&quot;assignedMetadataField&quot;:&quot;CTT_DESC01_10&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.idcentrodecusto&quot;,&quot;title&quot;:&quot;Chave do centro de custo 11&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_idcentrodecusto&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.idcentrodecusto&quot;,&quot;title&quot;:&quot;Chave do centro de custo 11&quot;,&quot;prettyId&quot;:&quot;idcentrodecusto&quot;,&quot;assignedMetadataField&quot;:&quot;BK_CENTRO_CUSTO11&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}}],&quot;referencedAttributes&quot;:[],&quot;dateAttributes&quot;:[],&quot;simpleFacts&quot;:[],&quot;dateFacts&quot;:[],&quot;unassigneddateFacts&quot;:[],&quot;entitiesWithoutMetadata&quot;:[],&quot;fieldsWithMetadataConflict&quot;:[],&quot;datesWithFactConflict&quot;:[],&quot;entitiesWithoutValue&quot;:[]}}" enabled="enabled" guiName="Centro de Custo" guiX="449" guiY="55" id="CENTRO_DE_CUSTO" mode="${LOAD_MODE_DIM}" retriesInterval="60" retriesNumber="5" type="GD_DATASET_WRITER"/>
+<Node enabled="disabled" guiName="Trash" guiX="307" guiY="55" id="TRASH" type="TRASH"/>
+<Node enabled="enabled" guiName="Treatment" guiX="168" guiY="55" id="TREATMENT" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import "trans/lib.ctl";
+
+// Transforms input record into output record.
+function integer transform() {
+	if (GOODDATA_DEMO_MODE == 'S') sequence(SequenciaHom).next();
+	
+	$out.0.BK_CENTRO_CUSTO11 = $in.0.BK_CENTRO_CUSTO11;
+	
+	$out.0.BK_CENTRO_CUSTO1 = $in.0.BK_CENTRO_CUSTO1;
+	$out.0.BK_CENTRO_CUSTO2 = $in.0.BK_CENTRO_CUSTO2;
+	$out.0.BK_CENTRO_CUSTO3 = $in.0.BK_CENTRO_CUSTO3;
+	$out.0.BK_CENTRO_CUSTO4 = $in.0.BK_CENTRO_CUSTO4;
+	$out.0.BK_CENTRO_CUSTO5 = $in.0.BK_CENTRO_CUSTO5;
+	$out.0.BK_CENTRO_CUSTO6 = $in.0.BK_CENTRO_CUSTO6;
+	$out.0.BK_CENTRO_CUSTO7 = $in.0.BK_CENTRO_CUSTO7;
+	$out.0.BK_CENTRO_CUSTO8 = $in.0.BK_CENTRO_CUSTO8;
+	$out.0.BK_CENTRO_CUSTO9 = $in.0.BK_CENTRO_CUSTO9;
+	$out.0.BK_CENTRO_CUSTO10 = $in.0.BK_CENTRO_CUSTO10;
+	
+	$out.0.CTT_CUSTO_1 = formatString($in.0.CTT_DESC01_1, null);
+	$out.0.CTT_CUSTO_2 = formatString($in.0.CTT_DESC01_2, null);
+	$out.0.CTT_CUSTO_3 = formatString($in.0.CTT_DESC01_3, null);
+	$out.0.CTT_CUSTO_4 = formatString($in.0.CTT_DESC01_4, '' + (1 + sequence(SequenciaHom).current()));
+	$out.0.CTT_CUSTO_5 = formatString($in.0.CTT_DESC01_5, '' + (1 + sequence(SequenciaHom).current()));
+	$out.0.CTT_CUSTO_6 = formatString($in.0.CTT_DESC01_6, '' + (1 + sequence(SequenciaHom).current()));
+	$out.0.CTT_CUSTO_7 = formatString($in.0.CTT_DESC01_7, '' + (1 + sequence(SequenciaHom).current()));
+	$out.0.CTT_CUSTO_8 = formatString($in.0.CTT_DESC01_8, '' + (1 + sequence(SequenciaHom).current()));
+	$out.0.CTT_CUSTO_9 = formatString($in.0.CTT_DESC01_9, '' + (1 + sequence(SequenciaHom).current()));
+	$out.0.CTT_CUSTO_10 = formatString($in.0.CTT_DESC01_10, '' + (1 + sequence(SequenciaHom).current()));
+	$out.0.CTT_CUSTO_11 = formatString($in.0.CTT_DESC01_11, '' + (1 + sequence(SequenciaHom).current()));
+	
+	$out.0.CTT_DESC01_1 = formatString($in.0.CTT_DESC01_1, null);
+	$out.0.CTT_DESC01_2 = formatString($in.0.CTT_DESC01_2, null);
+	$out.0.CTT_DESC01_3 = formatString($in.0.CTT_DESC01_3, null);
+	$out.0.CTT_DESC01_4 = formatString($in.0.CTT_DESC01_4, 'CC. ' + (1 + sequence(SequenciaHom).current()));
+	$out.0.CTT_DESC01_5 = formatString($in.0.CTT_DESC01_5, 'CC. ' + (1 + sequence(SequenciaHom).current()));
+	$out.0.CTT_DESC01_6 = formatString($in.0.CTT_DESC01_6, 'CC. ' + (1 + sequence(SequenciaHom).current()));
+	$out.0.CTT_DESC01_7 = formatString($in.0.CTT_DESC01_7, 'CC. ' + (1 + sequence(SequenciaHom).current()));
+	$out.0.CTT_DESC01_8 = formatString($in.0.CTT_DESC01_8, 'CC. ' + (1 + sequence(SequenciaHom).current()));
+	$out.0.CTT_DESC01_9 = formatString($in.0.CTT_DESC01_9, 'CC. ' + (1 + sequence(SequenciaHom).current()));
+	$out.0.CTT_DESC01_10 = formatString($in.0.CTT_DESC01_10, 'CC. ' + (1 + sequence(SequenciaHom).current()));
+	$out.0.CTT_DESC01_11 = formatString($in.0.CTT_DESC01_11, 'CC. ' + (1 + sequence(SequenciaHom).current()));
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge fromNode="CENTRO_CUSTO:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata18" outPort="Port 0 (output)" toNode="TREATMENT:0"/>
+<Edge debugMode="false" fromNode="TREATMENT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="CENTRO_DE_CUSTO:0"/>
+</Phase>
+</Graph>

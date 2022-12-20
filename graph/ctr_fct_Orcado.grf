@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph author="mateus.romero" created="Tue Nov 21 06:08:43 CST 2017" guiVersion="3.4.4.P" id="1511348377577" licenseType="Commercial" modified="Wed May 13 07:57:11 CDT 2020" modifiedBy="diego.guedes" name="ctr_fct_Orcado" revision="1.34" showComponentDetails="true">
+<Global>
+<Metadata fileURL="${META_DIR}/_2Dates.fmt" id="Metadata3"/>
+<Metadata fileURL="${META_DIR}/sintax.fmt" id="Metadata4"/>
+<Metadata id="Metadata0" previewAttachment="zip:(${DATA_SOURCE_DIR}/PROTHEUS.zip)#Orcado.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="Orcado_input" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="BK_EMPRESA" type="string"/>
+<Field name="BK_FILIAL" type="string"/>
+<Field name="BK_CONTA" type="string"/>
+<Field name="NORMAL" type="string"/>
+<Field name="CTARES" type="string"/>
+<Field name="TIPOCONTA" type="string"/>
+<Field name="GRUPO" type="string"/>
+<Field name="NATCTA" type="string"/>
+<Field name="CT1DTEXSF" type="string"/>
+<Field name="DESCCTA" type="string"/>
+<Field name="DATA" type="string"/>
+<Field name="SALDOANTDB" type="string"/>
+<Field name="SALDOANTCR" type="string"/>
+<Field name="SALDODEB" type="string"/>
+<Field name="SALDOCRD" type="string"/>
+<Field name="SALDOANTDBP" type="string"/>
+<Field name="SALDOANTCRP" type="string"/>
+<Field name="SALDODEBP" type="string"/>
+<Field name="SALDOCRDP" type="string"/>
+<Field name="SALDOANTDBE" type="string"/>
+<Field name="SALDOANTCRE" type="string"/>
+<Field name="SALDODEBE" type="string"/>
+<Field name="SALDOCRDE" type="string"/>
+<Field name="SALDOANTDBO" type="string"/>
+<Field name="SALDOANTCRO" type="string"/>
+<Field name="SALDODEBO" type="string"/>
+<Field eofAsDelimiter="false" name="SALDOCRDO" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata1" previewAttachment="zip:(${DATA_SOURCE_DIR}/PROTHEUS.zip)#Orcado.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="Orcado_output" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="BK_EMPRESA" type="string"/>
+<Field name="BK_FILIAL" type="string"/>
+<Field name="BK_CONTA" type="string"/>
+<Field name="NORMAL" type="string"/>
+<Field name="CTARES" type="string"/>
+<Field name="TIPOCONTA" type="string"/>
+<Field name="GRUPO" type="string"/>
+<Field name="NATCTA" type="string"/>
+<Field name="CT1DTEXSF" type="string"/>
+<Field name="DESCCTA" type="string"/>
+<Field format="yyyyMMdd HH:mm:ss" name="DATA" type="date"/>
+<Field length="15" name="SALDOANTDB" type="decimal"/>
+<Field length="15" name="SALDOANTCR" type="decimal"/>
+<Field length="15" name="SALDODEB" type="decimal"/>
+<Field length="15" name="SALDOCRD" type="decimal"/>
+<Field length="15" name="SALDOANTDBP" type="decimal"/>
+<Field length="15" name="SALDOANTCRP" type="decimal"/>
+<Field length="15" name="SALDODEBP" type="decimal"/>
+<Field length="15" name="SALDOCRDP" type="decimal"/>
+<Field length="15" name="SALDOANTDBE" type="decimal"/>
+<Field length="15" name="SALDOANTCRE" type="decimal"/>
+<Field length="15" name="SALDODEBE" type="decimal"/>
+<Field length="15" name="SALDOCRDE" type="decimal"/>
+<Field length="15" name="SALDOANTDBO" type="decimal"/>
+<Field length="15" name="SALDOANTCRO" type="decimal"/>
+<Field length="15" name="SALDODEBO" type="decimal"/>
+<Field eofAsDelimiter="false" length="15" name="SALDOCRDO" type="decimal"/>
+<Field name="Tabela" type="string"/>
+<Field name="Modulo" type="string"/>
+<Field name="pk_Modulo" type="string"/>
+</Record>
+</Metadata>
+<Property fileURL="workspace.prm" id="GraphParameter0"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="175" id="Note1" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="2. REMOVER DADOS" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="483" x="781" y="8">
+<attr name="text"><![CDATA[Realiza a remoção dos dados duplicados do ambiente, de acordo com o método de carga (Full Load / Incremental).]]></attr>
+</Note>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="160" id="Note6" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="3. REMOVER DADOS (MONTHS_TO_LOAD)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="483" x="781" y="198">
+<attr name="text"><![CDATA[Apaga os dados históricos do workspace do GoodData, caso estes sejam muito antigos, garantindo assim a eficiência na geração de relatórios da plataforma.]]></attr>
+</Note>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="113" id="Note2" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="4. CARGA DO DATASET DE ORÇAMENTO (FATO)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="483" x="781" y="370"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="165" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. LEITURA / TRATAMENTO DOS DADOS" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="743" x="11" y="13"/>
+<Dictionary/>
+</Global>
+<Phase number="10">
+<Node enabled="enabled" guiName="ExtFilter" guiX="343" guiY="73" id="EXT_FILTER1" type="EXT_FILTER">
+<attr name="filterExpression"><![CDATA[//#CTL2
+$in.0.BK_EMPRESA <> null]]></attr>
+</Node>
+<Node enabled="enabled" guiName="MONTHS_TO_LOAD Filter" guiX="159" guiY="73" id="MONTHS_TO_LOAD_FILTER" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import 'trans/lib.ctl';
+
+// Transforms input record into output record.
+function integer transform() {
+	if(($in.0.DATA == null) or (trim($in.0.DATA) == '')) {
+		$out.0.* = null;
+	} else {
+		data = str2date($in.0.DATA, '${DATE_PATTERN}', '${DATE_LOCALE}');
+		if ((data < GOODDATA_MINDATE) || (data > GOODDATA_MAXDATE) || (data < ETL_MAXDATE)) {
+			$out.0.* = null;
+		} else {
+			$out.0.* = $in.0.*;
+		}
+	}
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node charset="ISO-8859-1" enabled="enabled" fileURL="zip:(${DATA_SOURCE_DIR}/${gdc_agent_zip})#Orcado.csv*" guiName="Orcado" guiX="18" guiY="73" id="ORCADO" type="DATA_READER"/>
+<Node enabled="enabled" guiName="SimpleCopy" guiX="620" guiY="72" id="SIMPLE_COPY" type="SIMPLE_COPY"/>
+<Node enabled="enabled" guiName="Treatment" guiX="480" guiY="73" id="TREATMENT" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import "trans/lib.ctl";
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.BK_EMPRESA = $in.0.BK_EMPRESA;
+	$out.0.BK_FILIAL = $in.0.BK_FILIAL;
+	$out.0.BK_CONTA = $in.0.BK_CONTA;
+	
+	$out.0.NORMAL = formatString($in.0.NORMAL, null);
+	$out.0.CTARES = formatString($in.0.CTARES, null);
+	$out.0.TIPOCONTA = formatString($in.0.TIPOCONTA, null);
+	$out.0.GRUPO = formatString($in.0.GRUPO, null);
+	$out.0.NATCTA = formatString($in.0.NATCTA, null);
+	$out.0.CT1DTEXSF = formatString($in.0.CT1DTEXSF, null);
+	$out.0.DESCCTA = formatString($in.0.DESCCTA, null);
+	
+	$out.0.DATA = formatDate($in.0.DATA);
+		
+	$out.0.SALDOANTDB = formatDecimal($in.0.SALDOANTDB, true);
+	$out.0.SALDOANTCR = formatDecimal($in.0.SALDOANTCR, true);
+	$out.0.SALDODEB = formatDecimal($in.0.SALDODEB, true);
+	$out.0.SALDOCRD = formatDecimal($in.0.SALDOCRD, true);
+	$out.0.SALDOANTDBP = formatDecimal($in.0.SALDOANTDBP, true);
+	$out.0.SALDOANTCRP = formatDecimal($in.0.SALDOANTCRP, true);
+	$out.0.SALDODEBP = formatDecimal($in.0.SALDODEBP, true);
+	$out.0.SALDOCRDP = formatDecimal($in.0.SALDOCRDP, true);
+	$out.0.SALDOANTDBE = formatDecimal($in.0.SALDOANTDBE, true);
+	$out.0.SALDOANTCRE = formatDecimal($in.0.SALDOANTCRE, true);
+	$out.0.SALDODEBE = formatDecimal($in.0.SALDODEBE, true);
+	$out.0.SALDOCRDE = formatDecimal($in.0.SALDOCRDE, true);
+	$out.0.SALDOANTDBO = formatDecimal($in.0.SALDOANTDBO, true);
+	$out.0.SALDOANTCRO = formatDecimal($in.0.SALDOANTCRO, true);
+	$out.0.SALDODEBO = formatDecimal($in.0.SALDODEBO, true);
+	$out.0.SALDOCRDO = formatDecimal($in.0.SALDOCRDO, true);
+	
+	$out.0.Modulo = 'CONTROLADORIA';
+	$out.0.Tabela = 'ORCAMENTO';
+	$out.0.pk_Modulo = $out.0.Modulo + '|' + $out.0.Tabela;
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge debugMode="false" fromNode="EXT_FILTER1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge8" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (accepted)" toNode="TREATMENT:0"/>
+<Edge debugMode="false" fromNode="MONTHS_TO_LOAD_FILTER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge13" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (out)" toNode="EXT_FILTER1:0"/>
+<Edge debugMode="false" fromNode="ORCADO:0" guiBendpoints="" guiRouter="Manhattan" id="Edge3" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (output)" toNode="MONTHS_TO_LOAD_FILTER:0"/>
+<Edge debugMode="false" fromNode="SIMPLE_COPY:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="AGGREGATE_MENOR_DATA2:0"/>
+<Edge debugMode="false" fromNode="SIMPLE_COPY:1" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 1 (out)" toNode="AGGREGATE_MENOR_DATA1:0"/>
+<Edge debugMode="false" fromNode="SIMPLE_COPY:2" guiBendpoints="" guiRouter="Manhattan" id="Edge7" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 2 (out)" toNode="SIMPLE_COPY1:0"/>
+<Edge debugMode="false" fromNode="TREATMENT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="SIMPLE_COPY:0"/>
+</Phase>
+<Phase number="20">
+<Node enabled="enabled" guiName="Aggregate" guiX="802" guiY="80" id="AGGREGATE_MENOR_DATA2" mapping="$Min_Date:=min($DATA);$Max_Date:=max($DATA);" type="AGGREGATE">
+<attr name="guiDescription"><![CDATA[OBTÉM MAIOR E MENOR DATA]]></attr>
+</Node>
+<Node enabled="enabled" guiName="MAQL DML Execute" guiX="1102" guiY="80" id="MAQL_DML_EXECUTE_DELETE_DATA_FATO_HKL1" maqlInputField="syntax_content" type="MAQL_DML_EXECUTE">
+<attr name="guiDescription"><![CDATA[APAGA DADOS FATO HKL]]></attr>
+</Node>
+<Node enabled="enabled" guiName="Reformat" guiX="954" guiY="80" id="REFORMAT_MENOR_DATA2" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	string loadMode = '${LOAD_MODE_FCT}';
+	if (upperCase(loadMode) == 'INCREMENTAL') {
+		$out.0.syntax_content = 'DELETE FROM {attr.orcado.factsof} WHERE {datadeextracao.date.yyyymmdd} BETWEEN '+'"'+date2str($in.0.Min_Date, "yyyy-MM-dd")+'" AND "'+date2str($in.0.Max_Date, "yyyy-MM-dd")+'"';
+	} else {
+		$out.0.syntax_content = 'DELETE FROM {attr.orcado.factsof}';
+	}
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+<attr name="guiDescription"><![CDATA[GERA STATEMENT DE DELETE]]></attr>
+</Node>
+<Edge debugMode="false" fromNode="AGGREGATE_MENOR_DATA2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge6" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="REFORMAT_MENOR_DATA2:0"/>
+<Edge debugMode="false" fromNode="REFORMAT_MENOR_DATA2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge16" inPort="Port 0 (input)" metadata="Metadata4" outPort="Port 0 (out)" toNode="MAQL_DML_EXECUTE_DELETE_DATA_FATO_HKL1:0"/>
+</Phase>
+<Phase number="25">
+<Node enabled="enabled" guiName="Aggregate" guiX="802" guiY="255" id="AGGREGATE_MENOR_DATA1" mapping="$Min_Date:=min($DATA);$Max_Date:=max($DATA);" type="AGGREGATE">
+<attr name="guiDescription"><![CDATA[OBTÉM MAIOR E MENOR DATA]]></attr>
+</Node>
+<Node enabled="enabled" guiName="MAQL DML Execute" guiX="1102" guiY="255" id="MAQL_DML_EXECUTE_DELETE_DATA_FATO_HKL2" maqlInputField="syntax_content" type="MAQL_DML_EXECUTE">
+<attr name="guiDescription"><![CDATA[APAGA DADOS FATO HKL]]></attr>
+</Node>
+<Node enabled="enabled" guiName="Reformat" guiX="954" guiY="255" id="REFORMAT_MENOR_DATA1" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import 'trans/lib.ctl';
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.syntax_content = 'DELETE FROM {attr.orcado.factsof} WHERE {datadeextracao.date.yyyymmdd} < "' + ETL_MAXDATE + '"';
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+<attr name="guiDescription"><![CDATA[GERA STATEMENT DE DELETE]]></attr>
+</Node>
+<Edge debugMode="false" fromNode="AGGREGATE_MENOR_DATA1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge9" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="REFORMAT_MENOR_DATA1:0"/>
+<Edge debugMode="false" fromNode="REFORMAT_MENOR_DATA1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge12" inPort="Port 0 (input)" metadata="Metadata4" outPort="Port 0 (out)" toNode="MAQL_DML_EXECUTE_DELETE_DATA_FATO_HKL2:0"/>
+</Phase>
+<Phase number="30">
+<Node dataset="dataset.orcado" datasetFieldMappings="{&quot;gd_dataset&quot;:{&quot;datasetId&quot;:&quot;dataset.orcado&quot;,&quot;datasetTitle&quot;:&quot;Orçado&quot;,&quot;attributes&quot;:[{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.orcado.codigoreduzido&quot;,&quot;title&quot;:&quot;Código Reduzido&quot;,&quot;prettyId&quot;:&quot;attr_orcado_codigoreduzido&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.orcado.codigoreduzido&quot;,&quot;title&quot;:&quot;Código Reduzido&quot;,&quot;prettyId&quot;:&quot;codigoreduzido&quot;,&quot;assignedMetadataField&quot;:&quot;CTARES&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.orcado.datafinaldaexistencia&quot;,&quot;title&quot;:&quot;Data final da Existência&quot;,&quot;prettyId&quot;:&quot;attr_orcado_datafinaldaexistencia&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.orcado.datafinaldaexistencia&quot;,&quot;title&quot;:&quot;Data final da Existência&quot;,&quot;prettyId&quot;:&quot;datafinaldaexistencia&quot;,&quot;assignedMetadataField&quot;:&quot;CT1DTEXSF&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.orcado.descricaodaconta&quot;,&quot;title&quot;:&quot;Descrição da Conta&quot;,&quot;prettyId&quot;:&quot;attr_orcado_descricaodaconta&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.orcado.descricaodaconta&quot;,&quot;title&quot;:&quot;Descrição da Conta&quot;,&quot;prettyId&quot;:&quot;descricaodaconta&quot;,&quot;assignedMetadataField&quot;:&quot;DESCCTA&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.orcado.grupo&quot;,&quot;title&quot;:&quot;Grupo&quot;,&quot;prettyId&quot;:&quot;attr_orcado_grupo&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.orcado.grupo&quot;,&quot;title&quot;:&quot;Grupo&quot;,&quot;prettyId&quot;:&quot;grupo&quot;,&quot;assignedMetadataField&quot;:&quot;GRUPO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.orcado.grupo&quot;,&quot;title&quot;:&quot;Grupo&quot;,&quot;prettyId&quot;:&quot;grupo&quot;,&quot;assignedMetadataField&quot;:&quot;GRUPO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.orcado.naturezadaconta&quot;,&quot;title&quot;:&quot;Natureza da Conta&quot;,&quot;prettyId&quot;:&quot;attr_orcado_naturezadaconta&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.orcado.naturezadaconta&quot;,&quot;title&quot;:&quot;Natureza da Conta&quot;,&quot;prettyId&quot;:&quot;naturezadaconta&quot;,&quot;assignedMetadataField&quot;:&quot;NATCTA&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.orcado.normal&quot;,&quot;title&quot;:&quot;Normal&quot;,&quot;prettyId&quot;:&quot;attr_orcado_normal&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.orcado.normal&quot;,&quot;title&quot;:&quot;Normal&quot;,&quot;prettyId&quot;:&quot;normal&quot;,&quot;assignedMetadataField&quot;:&quot;NORMAL&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.orcado.normal&quot;,&quot;title&quot;:&quot;Normal&quot;,&quot;prettyId&quot;:&quot;normal&quot;,&quot;assignedMetadataField&quot;:&quot;NORMAL&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.orcado.tipodaconta&quot;,&quot;title&quot;:&quot;Tipo da Conta&quot;,&quot;prettyId&quot;:&quot;attr_orcado_tipodaconta&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.orcado.tipodaconta&quot;,&quot;title&quot;:&quot;Tipo da Conta&quot;,&quot;prettyId&quot;:&quot;tipodaconta&quot;,&quot;assignedMetadataField&quot;:&quot;TIPOCONTA&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}}],&quot;referencedAttributes&quot;:[{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.contacontabil.conta11&quot;,&quot;title&quot;:&quot;Chave da conta contábil&quot;,&quot;prettyId&quot;:&quot;attr_contacontabil_conta11&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.contacontabil.conta11&quot;,&quot;title&quot;:&quot;Chave da conta contábil&quot;,&quot;prettyId&quot;:&quot;contacontabil__conta11&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_CONTA&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.contacontabil.conta11&quot;,&quot;title&quot;:&quot;Chave da conta contábil&quot;,&quot;prettyId&quot;:&quot;contacontabil__conta11&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.empresa.codigodaempresa&quot;,&quot;title&quot;:&quot;ID Empresa&quot;,&quot;prettyId&quot;:&quot;attr_empresa_codigodaempresa&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.empresa.codigodaempresa&quot;,&quot;title&quot;:&quot;ID Empresa&quot;,&quot;prettyId&quot;:&quot;empresa__codigodaempresa&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_EMPRESA&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.empresa.codigodaempresa&quot;,&quot;title&quot;:&quot;ID Empresa&quot;,&quot;prettyId&quot;:&quot;empresa__codigodaempresa&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.filial.codigodafilial&quot;,&quot;title&quot;:&quot;ID Filial&quot;,&quot;prettyId&quot;:&quot;attr_filial_codigodafilial&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filial.codigodafilial&quot;,&quot;title&quot;:&quot;ID Filial&quot;,&quot;prettyId&quot;:&quot;filial__codigodafilial&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_FILIAL&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filial.codigodafilial&quot;,&quot;title&quot;:&quot;ID Filial&quot;,&quot;prettyId&quot;:&quot;filial__codigodafilial&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.modulo.iddomodulo&quot;,&quot;title&quot;:&quot;Id do módulo&quot;,&quot;prettyId&quot;:&quot;attr_modulo_iddomodulo&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.modulo.iddomodulo&quot;,&quot;title&quot;:&quot;Id do módulo&quot;,&quot;prettyId&quot;:&quot;modulo__iddomodulo&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;pk_Modulo&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.modulo.iddomodulo&quot;,&quot;title&quot;:&quot;Id do módulo&quot;,&quot;prettyId&quot;:&quot;modulo__iddomodulo&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}}],&quot;dateAttributes&quot;:[{&quot;gd_dataset_date_attribute&quot;:{&quot;id&quot;:&quot;datadeextracao.date&quot;,&quot;title&quot;:&quot;Date (Data)&quot;,&quot;prettyId&quot;:&quot;datadeextracao&quot;,&quot;assignedMetadataField&quot;:&quot;DATA&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;datadeextracao.date.yyyymmdd&quot;,&quot;title&quot;:&quot;yyyy-mm-dd (Data)&quot;,&quot;prettyId&quot;:&quot;datadeextracao_date_yyyymmdd&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;datadeextracao.date.yyyymmdd&quot;,&quot;title&quot;:&quot;yyyy-mm-dd (Data)&quot;,&quot;prettyId&quot;:&quot;datadeextracao_date_yyyymmdd&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}},&quot;associatedFact&quot;:null}}],&quot;simpleFacts&quot;:[{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.orcado.saldoanteriorcredito&quot;,&quot;title&quot;:&quot;Saldo Anterior Crédito&quot;,&quot;prettyId&quot;:&quot;saldoanteriorcredito&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;SALDOANTCR&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.orcado.saldoantcre&quot;,&quot;title&quot;:&quot;Saldo Anterior Crédito Empenhado&quot;,&quot;prettyId&quot;:&quot;saldoantcre&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;SALDOANTCRE&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.orcado.saldoantcro&quot;,&quot;title&quot;:&quot;Saldo Anterior Crédito Orçado&quot;,&quot;prettyId&quot;:&quot;saldoantcro&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;SALDOANTCRO&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.orcado.saldoantcrp&quot;,&quot;title&quot;:&quot;Saldo Anterior Crédito Previsto&quot;,&quot;prettyId&quot;:&quot;saldoantcrp&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;SALDOANTCRP&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.orcado.saldoanteriordebito&quot;,&quot;title&quot;:&quot;Saldo Anterior Débito&quot;,&quot;prettyId&quot;:&quot;saldoanteriordebito&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;SALDOANTDB&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.orcado.saldoantdbe&quot;,&quot;title&quot;:&quot;Saldo Anterior Débito Empenhado&quot;,&quot;prettyId&quot;:&quot;saldoantdbe&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;SALDOANTDBE&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.orcado.saldoantdbo&quot;,&quot;title&quot;:&quot;Saldo Anterior Débito Orçado&quot;,&quot;prettyId&quot;:&quot;saldoantdbo&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;SALDOANTDBO&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.orcado.saldoantdbp&quot;,&quot;title&quot;:&quot;Saldo Anterior Débito Previsto&quot;,&quot;prettyId&quot;:&quot;saldoantdbp&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;SALDOANTDBP&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.orcado.saldocredito&quot;,&quot;title&quot;:&quot;Saldo Crédito&quot;,&quot;prettyId&quot;:&quot;saldocredito&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;SALDOCRD&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.orcado.saldocrde&quot;,&quot;title&quot;:&quot;Saldo Crédito Empenhado&quot;,&quot;prettyId&quot;:&quot;saldocrde&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;SALDOCRDE&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.orcado.saldocrdo&quot;,&quot;title&quot;:&quot;Saldo Crédito Orçado&quot;,&quot;prettyId&quot;:&quot;saldocrdo&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;SALDOCRDO&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.orcado.saldocrdp&quot;,&quot;title&quot;:&quot;Saldo Crédito Previsto&quot;,&quot;prettyId&quot;:&quot;saldocrdp&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;SALDOCRDP&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.orcado.saldodebito&quot;,&quot;title&quot;:&quot;Saldo Débito&quot;,&quot;prettyId&quot;:&quot;saldodebito&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;SALDODEB&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.orcado.saldoantdebe&quot;,&quot;title&quot;:&quot;Saldo Débito Empenhado&quot;,&quot;prettyId&quot;:&quot;saldoantdebe&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;SALDODEBE&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.orcado.saldodebo&quot;,&quot;title&quot;:&quot;Saldo Débito Orçado&quot;,&quot;prettyId&quot;:&quot;saldodebo&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;SALDODEBO&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.orcado.saldodebp&quot;,&quot;title&quot;:&quot;Saldo Débito Previsto&quot;,&quot;prettyId&quot;:&quot;saldodebp&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;SALDODEBP&quot;}}],&quot;dateFacts&quot;:[],&quot;entitiesWithoutValue&quot;:[],&quot;entitiesWithoutMetadata&quot;:[],&quot;datesWithFactConflict&quot;:[],&quot;unassigneddateFacts&quot;:[],&quot;fieldsWithMetadataConflict&quot;:[]}}" enabled="enabled" guiName="Orçado" guiX="1109" guiY="409" id="ORCADO1" mode="${LOAD_MODE_FCT}" retriesInterval="60" retriesNumber="5" type="GD_DATASET_WRITER"/>
+<Node enabled="enabled" guiName="SimpleCopy" guiX="802" guiY="409" id="SIMPLE_COPY1" type="SIMPLE_COPY"/>
+<Node enabled="disabled" guiName="Trash" guiX="954" guiY="409" id="TRASH" type="TRASH"/>
+<Edge debugMode="false" fromNode="SIMPLE_COPY1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge10" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="ORCADO1:0"/>
+</Phase>
+</Graph>

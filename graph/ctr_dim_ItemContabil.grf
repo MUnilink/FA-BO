@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph author="diego.guedes" created="Fri May 11 07:47:44 CDT 2018" guiVersion="3.4.4.P" id="1526048085478" licenseType="Commercial" modified="Wed May 13 07:32:44 CDT 2020" modifiedBy="diego.guedes" name="ctr_dim_ItemContabil" revision="1.19" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata2" previewAttachment="zip:(${DATA_SOURCE_DIR}/PROTHEUS.zip)#ItemContabil.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="ItemContabil_Input" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="BK_ITEM_CONTABIL11" type="string"/>
+<Field name="BK_ITEM_CONTABIL10" type="string"/>
+<Field name="BK_ITEM_CONTABIL9" type="string"/>
+<Field name="BK_ITEM_CONTABIL8" type="string"/>
+<Field name="BK_ITEM_CONTABIL7" type="string"/>
+<Field name="BK_ITEM_CONTABIL6" type="string"/>
+<Field name="BK_ITEM_CONTABIL5" type="string"/>
+<Field name="BK_ITEM_CONTABIL4" type="string"/>
+<Field name="BK_ITEM_CONTABIL3" type="string"/>
+<Field name="BK_ITEM_CONTABIL2" type="string"/>
+<Field name="BK_ITEM_CONTABIL1" type="string"/>
+<Field name="CODIGO_ITEM11" type="string"/>
+<Field name="CODIGO_ITEM10" type="string"/>
+<Field name="CODIGO_ITEM9" type="string"/>
+<Field name="CODIGO_ITEM8" type="string"/>
+<Field name="CODIGO_ITEM7" type="string"/>
+<Field name="CODIGO_ITEM6" type="string"/>
+<Field name="CODIGO_ITEM5" type="string"/>
+<Field name="CODIGO_ITEM4" type="string"/>
+<Field name="CODIGO_ITEM3" type="string"/>
+<Field name="CODIGO_ITEM2" type="string"/>
+<Field name="CODIGO_ITEM1" type="string"/>
+<Field name="DESC_ITEM11" type="string"/>
+<Field name="DESC_ITEM10" type="string"/>
+<Field name="DESC_ITEM9" type="string"/>
+<Field name="DESC_ITEM8" type="string"/>
+<Field name="DESC_ITEM7" type="string"/>
+<Field name="DESC_ITEM6" type="string"/>
+<Field name="DESC_ITEM5" type="string"/>
+<Field name="DESC_ITEM4" type="string"/>
+<Field name="DESC_ITEM3" type="string"/>
+<Field name="DESC_ITEM2" type="string"/>
+<Field eofAsDelimiter="false" name="DESC_ITEM1" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata3" previewAttachment="zip:(${DATA_SOURCE_DIR}/PROTHEUS.zip)#ItemContabil.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="ItemContabil_Output" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="BK_ITEM_CONTABIL11" type="string"/>
+<Field name="BK_ITEM_CONTABIL10" type="string"/>
+<Field name="BK_ITEM_CONTABIL9" type="string"/>
+<Field name="BK_ITEM_CONTABIL8" type="string"/>
+<Field name="BK_ITEM_CONTABIL7" type="string"/>
+<Field name="BK_ITEM_CONTABIL6" type="string"/>
+<Field name="BK_ITEM_CONTABIL5" type="string"/>
+<Field name="BK_ITEM_CONTABIL4" type="string"/>
+<Field name="BK_ITEM_CONTABIL3" type="string"/>
+<Field name="BK_ITEM_CONTABIL2" type="string"/>
+<Field name="BK_ITEM_CONTABIL1" type="string"/>
+<Field name="CODIGO_ITEM11" type="string"/>
+<Field name="CODIGO_ITEM10" type="string"/>
+<Field name="CODIGO_ITEM9" type="string"/>
+<Field name="CODIGO_ITEM8" type="string"/>
+<Field name="CODIGO_ITEM7" type="string"/>
+<Field name="CODIGO_ITEM6" type="string"/>
+<Field name="CODIGO_ITEM5" type="string"/>
+<Field name="CODIGO_ITEM4" type="string"/>
+<Field name="CODIGO_ITEM3" type="string"/>
+<Field name="CODIGO_ITEM2" type="string"/>
+<Field name="CODIGO_ITEM1" type="string"/>
+<Field name="DESC_ITEM11" type="string"/>
+<Field name="DESC_ITEM10" type="string"/>
+<Field name="DESC_ITEM9" type="string"/>
+<Field name="DESC_ITEM8" type="string"/>
+<Field name="DESC_ITEM7" type="string"/>
+<Field name="DESC_ITEM6" type="string"/>
+<Field name="DESC_ITEM5" type="string"/>
+<Field name="DESC_ITEM4" type="string"/>
+<Field name="DESC_ITEM3" type="string"/>
+<Field name="DESC_ITEM2" type="string"/>
+<Field eofAsDelimiter="false" name="DESC_ITEM1" type="string"/>
+</Record>
+</Metadata>
+<Property fileURL="workspace.prm" id="GraphParameter0"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="150" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. CARGA DO DATASET DE ITEM CONTÁBIL (DIM)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="577" x="11" y="16"/>
+<Dictionary/>
+</Global>
+<Phase number="10">
+<Node dataset="dataset.itemcontabil" datasetFieldMappings="{&quot;gd_dataset&quot;:{&quot;datasetId&quot;:&quot;dataset.itemcontabil&quot;,&quot;datasetTitle&quot;:&quot;Item Contábil&quot;,&quot;attributes&quot;:[{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.coditem1&quot;,&quot;title&quot;:&quot;Código do item contábil 1&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_coditem1&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.coditem1&quot;,&quot;title&quot;:&quot;Código do item contábil 1&quot;,&quot;prettyId&quot;:&quot;coditem1&quot;,&quot;assignedMetadataField&quot;:&quot;CODIGO_ITEM1&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.coditem10&quot;,&quot;title&quot;:&quot;Código do item contábil 10&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_coditem10&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.coditem10&quot;,&quot;title&quot;:&quot;Código do item contábil 10&quot;,&quot;prettyId&quot;:&quot;coditem10&quot;,&quot;assignedMetadataField&quot;:&quot;CODIGO_ITEM10&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.coditem11&quot;,&quot;title&quot;:&quot;Código do item contábil 11&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_coditem11&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.coditem11&quot;,&quot;title&quot;:&quot;Código do item contábil 11&quot;,&quot;prettyId&quot;:&quot;coditem11&quot;,&quot;assignedMetadataField&quot;:&quot;CODIGO_ITEM11&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.coditem2&quot;,&quot;title&quot;:&quot;Código do item contábil 2&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_coditem2&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.coditem2&quot;,&quot;title&quot;:&quot;Código do item contábil 2&quot;,&quot;prettyId&quot;:&quot;coditem2&quot;,&quot;assignedMetadataField&quot;:&quot;CODIGO_ITEM2&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.coditem3&quot;,&quot;title&quot;:&quot;Código do item contábil 3&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_coditem3&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.coditem3&quot;,&quot;title&quot;:&quot;Código do item contábil 3&quot;,&quot;prettyId&quot;:&quot;coditem3&quot;,&quot;assignedMetadataField&quot;:&quot;CODIGO_ITEM3&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.coditem4&quot;,&quot;title&quot;:&quot;Código do item contábil 4&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_coditem4&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.coditem4&quot;,&quot;title&quot;:&quot;Código do item contábil 4&quot;,&quot;prettyId&quot;:&quot;coditem4&quot;,&quot;assignedMetadataField&quot;:&quot;CODIGO_ITEM4&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.coditem5&quot;,&quot;title&quot;:&quot;Código do item contábil 5&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_coditem5&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.coditem5&quot;,&quot;title&quot;:&quot;Código do item contábil 5&quot;,&quot;prettyId&quot;:&quot;coditem5&quot;,&quot;assignedMetadataField&quot;:&quot;CODIGO_ITEM5&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.coditem6&quot;,&quot;title&quot;:&quot;Código do item contábil 6&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_coditem6&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.coditem6&quot;,&quot;title&quot;:&quot;Código do item contábil 6&quot;,&quot;prettyId&quot;:&quot;coditem6&quot;,&quot;assignedMetadataField&quot;:&quot;CODIGO_ITEM6&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.coditem7&quot;,&quot;title&quot;:&quot;Código do item contábil 7&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_coditem7&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.coditem7&quot;,&quot;title&quot;:&quot;Código do item contábil 7&quot;,&quot;prettyId&quot;:&quot;coditem7&quot;,&quot;assignedMetadataField&quot;:&quot;CODIGO_ITEM7&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.coditem8&quot;,&quot;title&quot;:&quot;Código do item contábil 8&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_coditem8&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.coditem8&quot;,&quot;title&quot;:&quot;Código do item contábil 8&quot;,&quot;prettyId&quot;:&quot;coditem8&quot;,&quot;assignedMetadataField&quot;:&quot;CODIGO_ITEM8&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.coditem9&quot;,&quot;title&quot;:&quot;Código do item contábil 9&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_coditem9&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.coditem9&quot;,&quot;title&quot;:&quot;Código do item contábil 9&quot;,&quot;prettyId&quot;:&quot;coditem9&quot;,&quot;assignedMetadataField&quot;:&quot;CODIGO_ITEM9&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.descricaoitem1&quot;,&quot;title&quot;:&quot;Descrição do item contábil 1&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_descricaoitem1&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.descricaoitem1&quot;,&quot;title&quot;:&quot;Descrição do item contábil 1&quot;,&quot;prettyId&quot;:&quot;descricaoitem1&quot;,&quot;assignedMetadataField&quot;:&quot;DESC_ITEM1&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.descricaoitem10&quot;,&quot;title&quot;:&quot;Descrição do item contábil 10&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_descricaoitem10&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.descricaoitem10&quot;,&quot;title&quot;:&quot;Descrição do item contábil 10&quot;,&quot;prettyId&quot;:&quot;descricaoitem10&quot;,&quot;assignedMetadataField&quot;:&quot;DESC_ITEM10&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.descricaoitem11&quot;,&quot;title&quot;:&quot;Descrição do item contábil 11&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_descricaoitem11&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.descricaoitem11&quot;,&quot;title&quot;:&quot;Descrição do item contábil 11&quot;,&quot;prettyId&quot;:&quot;descricaoitem11&quot;,&quot;assignedMetadataField&quot;:&quot;DESC_ITEM11&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.descricaoitem2&quot;,&quot;title&quot;:&quot;Descrição do item contábil 2&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_descricaoitem2&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.descricaoitem2&quot;,&quot;title&quot;:&quot;Descrição do item contábil 2&quot;,&quot;prettyId&quot;:&quot;descricaoitem2&quot;,&quot;assignedMetadataField&quot;:&quot;DESC_ITEM2&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.descricaoitem3&quot;,&quot;title&quot;:&quot;Descrição do item contábil 3&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_descricaoitem3&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.descricaoitem3&quot;,&quot;title&quot;:&quot;Descrição do item contábil 3&quot;,&quot;prettyId&quot;:&quot;descricaoitem3&quot;,&quot;assignedMetadataField&quot;:&quot;DESC_ITEM3&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.descricaoitem4&quot;,&quot;title&quot;:&quot;Descrição do item contábil 4&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_descricaoitem4&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.descricaoitem4&quot;,&quot;title&quot;:&quot;Descrição do item contábil 4&quot;,&quot;prettyId&quot;:&quot;descricaoitem4&quot;,&quot;assignedMetadataField&quot;:&quot;DESC_ITEM4&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.descricaoitem5&quot;,&quot;title&quot;:&quot;Descrição do item contábil 5&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_descricaoitem5&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.descricaoitem5&quot;,&quot;title&quot;:&quot;Descrição do item contábil 5&quot;,&quot;prettyId&quot;:&quot;descricaoitem5&quot;,&quot;assignedMetadataField&quot;:&quot;DESC_ITEM5&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.descricaoitem6&quot;,&quot;title&quot;:&quot;Descrição do item contábil 6&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_descricaoitem6&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.descricaoitem6&quot;,&quot;title&quot;:&quot;Descrição do item contábil 6&quot;,&quot;prettyId&quot;:&quot;descricaoitem6&quot;,&quot;assignedMetadataField&quot;:&quot;DESC_ITEM6&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.descricaoitem7&quot;,&quot;title&quot;:&quot;Descrição do item contábil 7&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_descricaoitem7&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.descricaoitem7&quot;,&quot;title&quot;:&quot;Descrição do item contábil 7&quot;,&quot;prettyId&quot;:&quot;descricaoitem7&quot;,&quot;assignedMetadataField&quot;:&quot;DESC_ITEM7&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.descricaoitem8&quot;,&quot;title&quot;:&quot;Descrição do item contábil 8&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_descricaoitem8&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.descricaoitem8&quot;,&quot;title&quot;:&quot;Descrição do item contábil 8&quot;,&quot;prettyId&quot;:&quot;descricaoitem8&quot;,&quot;assignedMetadataField&quot;:&quot;DESC_ITEM8&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.descricaoitem9&quot;,&quot;title&quot;:&quot;Descrição do item contábil 9&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_descricaoitem9&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.descricaoitem9&quot;,&quot;title&quot;:&quot;Descrição do item contábil 9&quot;,&quot;prettyId&quot;:&quot;descricaoitem9&quot;,&quot;assignedMetadataField&quot;:&quot;DESC_ITEM9&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.itemcontabil1&quot;,&quot;title&quot;:&quot;Chave do item contábil 1&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_itemcontabil1&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.itemcontabil1&quot;,&quot;title&quot;:&quot;Chave do item contábil 1&quot;,&quot;prettyId&quot;:&quot;itemcontabil1&quot;,&quot;assignedMetadataField&quot;:&quot;BK_ITEM_CONTABIL1&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.itemcontabil10&quot;,&quot;title&quot;:&quot;Chave do item contábil 10&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_itemcontabil10&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.itemcontabil10&quot;,&quot;title&quot;:&quot;Chave do item contábil 10&quot;,&quot;prettyId&quot;:&quot;itemcontabil10&quot;,&quot;assignedMetadataField&quot;:&quot;BK_ITEM_CONTABIL10&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.itemcontabil11&quot;,&quot;title&quot;:&quot;Chave do item contábil 11&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_itemcontabil11&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.itemcontabil11&quot;,&quot;title&quot;:&quot;Chave do item contábil 11&quot;,&quot;prettyId&quot;:&quot;itemcontabil11&quot;,&quot;assignedMetadataField&quot;:&quot;BK_ITEM_CONTABIL11&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.itemcontabil2&quot;,&quot;title&quot;:&quot;Chave do item contábil 2&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_itemcontabil2&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.itemcontabil2&quot;,&quot;title&quot;:&quot;Chave do item contábil 2&quot;,&quot;prettyId&quot;:&quot;itemcontabil2&quot;,&quot;assignedMetadataField&quot;:&quot;BK_ITEM_CONTABIL2&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.itemcontabil3&quot;,&quot;title&quot;:&quot;Chave do item contábil 3&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_itemcontabil3&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.itemcontabil3&quot;,&quot;title&quot;:&quot;Chave do item contábil 3&quot;,&quot;prettyId&quot;:&quot;itemcontabil3&quot;,&quot;assignedMetadataField&quot;:&quot;BK_ITEM_CONTABIL3&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.itemcontabil4&quot;,&quot;title&quot;:&quot;Chave do item contábil 4&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_itemcontabil4&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.itemcontabil4&quot;,&quot;title&quot;:&quot;Chave do item contábil 4&quot;,&quot;prettyId&quot;:&quot;itemcontabil4&quot;,&quot;assignedMetadataField&quot;:&quot;BK_ITEM_CONTABIL4&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.itemcontabil5&quot;,&quot;title&quot;:&quot;Chave do item contábil 5&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_itemcontabil5&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.itemcontabil5&quot;,&quot;title&quot;:&quot;Chave do item contábil 5&quot;,&quot;prettyId&quot;:&quot;itemcontabil5&quot;,&quot;assignedMetadataField&quot;:&quot;BK_ITEM_CONTABIL5&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.itemcontabil6&quot;,&quot;title&quot;:&quot;Chave do item contábil 6&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_itemcontabil6&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.itemcontabil6&quot;,&quot;title&quot;:&quot;Chave do item contábil 6&quot;,&quot;prettyId&quot;:&quot;itemcontabil6&quot;,&quot;assignedMetadataField&quot;:&quot;BK_ITEM_CONTABIL6&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.itemcontabil7&quot;,&quot;title&quot;:&quot;Chave do item contábil 7&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_itemcontabil7&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.itemcontabil7&quot;,&quot;title&quot;:&quot;Chave do item contábil 7&quot;,&quot;prettyId&quot;:&quot;itemcontabil7&quot;,&quot;assignedMetadataField&quot;:&quot;BK_ITEM_CONTABIL7&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.itemcontabil8&quot;,&quot;title&quot;:&quot;Chave do item contábil 8&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_itemcontabil8&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.itemcontabil8&quot;,&quot;title&quot;:&quot;Chave do item contábil 8&quot;,&quot;prettyId&quot;:&quot;itemcontabil8&quot;,&quot;assignedMetadataField&quot;:&quot;BK_ITEM_CONTABIL8&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.itemcontabil.itemcontabil9&quot;,&quot;title&quot;:&quot;Chave do item contábil 9&quot;,&quot;prettyId&quot;:&quot;attr_itemcontabil_itemcontabil9&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.itemcontabil.itemcontabil9&quot;,&quot;title&quot;:&quot;Chave do item contábil 9&quot;,&quot;prettyId&quot;:&quot;itemcontabil9&quot;,&quot;assignedMetadataField&quot;:&quot;BK_ITEM_CONTABIL9&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}}],&quot;referencedAttributes&quot;:[],&quot;dateAttributes&quot;:[],&quot;simpleFacts&quot;:[],&quot;dateFacts&quot;:[],&quot;unassigneddateFacts&quot;:[],&quot;entitiesWithoutMetadata&quot;:[],&quot;fieldsWithMetadataConflict&quot;:[],&quot;datesWithFactConflict&quot;:[],&quot;entitiesWithoutValue&quot;:[]}}" enabled="enabled" guiName="Item Contabil" guiX="449" guiY="55" id="ITEM_CONTABIL1" mode="${LOAD_MODE_DIM}" retriesInterval="60" retriesNumber="5" type="GD_DATASET_WRITER"/>
+<Node charset="ISO-8859-1" enabled="enabled" fileURL="zip:(${DATA_SOURCE_DIR}/${gdc_agent_zip})#ItemContabil.csv*" guiName="ItemContabil" guiX="24" guiY="55" id="ITEM_CONTABIL2" type="DATA_READER"/>
+<Node enabled="disabled" guiName="Trash" guiX="307" guiY="55" id="TRASH" type="TRASH"/>
+<Node enabled="enabled" guiName="Treatment" guiX="168" guiY="55" id="TREATMENT" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import "trans/lib.ctl";
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.BK_ITEM_CONTABIL11 = $in.0.BK_ITEM_CONTABIL11;
+	$out.0.BK_ITEM_CONTABIL10 = $in.0.BK_ITEM_CONTABIL10;
+	$out.0.BK_ITEM_CONTABIL9 = $in.0.BK_ITEM_CONTABIL9;
+	$out.0.BK_ITEM_CONTABIL8 = $in.0.BK_ITEM_CONTABIL8;
+	$out.0.BK_ITEM_CONTABIL7 = $in.0.BK_ITEM_CONTABIL7;
+	$out.0.BK_ITEM_CONTABIL6 = $in.0.BK_ITEM_CONTABIL6;
+	$out.0.BK_ITEM_CONTABIL5 = $in.0.BK_ITEM_CONTABIL5;
+	$out.0.BK_ITEM_CONTABIL4 = $in.0.BK_ITEM_CONTABIL4;
+	$out.0.BK_ITEM_CONTABIL3 = $in.0.BK_ITEM_CONTABIL3;
+	$out.0.BK_ITEM_CONTABIL2 = $in.0.BK_ITEM_CONTABIL2;
+	$out.0.BK_ITEM_CONTABIL1 = $in.0.BK_ITEM_CONTABIL1;
+	$out.0.CODIGO_ITEM11 = $in.0.CODIGO_ITEM11;
+	$out.0.CODIGO_ITEM10 = $in.0.CODIGO_ITEM10;
+	$out.0.CODIGO_ITEM9 = $in.0.CODIGO_ITEM9;
+	$out.0.CODIGO_ITEM8 = $in.0.CODIGO_ITEM8;
+	$out.0.CODIGO_ITEM7 = $in.0.CODIGO_ITEM7;
+	$out.0.CODIGO_ITEM6 = $in.0.CODIGO_ITEM6;
+	$out.0.CODIGO_ITEM5 = $in.0.CODIGO_ITEM5;
+	$out.0.CODIGO_ITEM4 = $in.0.CODIGO_ITEM4;
+	$out.0.CODIGO_ITEM3 = $in.0.CODIGO_ITEM3;
+	$out.0.CODIGO_ITEM2 = $in.0.CODIGO_ITEM2;
+	$out.0.CODIGO_ITEM1 = $in.0.CODIGO_ITEM1;
+	
+	$out.0.DESC_ITEM11 = formatString($in.0.DESC_ITEM11, null);
+	$out.0.DESC_ITEM10 = formatString($in.0.DESC_ITEM10, null);
+	$out.0.DESC_ITEM9 = formatString($in.0.DESC_ITEM9, null);
+	$out.0.DESC_ITEM8 = formatString($in.0.DESC_ITEM8, null);
+	$out.0.DESC_ITEM7 = formatString($in.0.DESC_ITEM7, null);
+	$out.0.DESC_ITEM6 = formatString($in.0.DESC_ITEM6, null);
+	$out.0.DESC_ITEM5 = formatString($in.0.DESC_ITEM5, null);
+	$out.0.DESC_ITEM4 = formatString($in.0.DESC_ITEM4, null);
+	$out.0.DESC_ITEM3 = formatString($in.0.DESC_ITEM3, null);
+	$out.0.DESC_ITEM2 = formatString($in.0.DESC_ITEM2, null);
+	$out.0.DESC_ITEM1 = formatString($in.0.DESC_ITEM1, null);
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge fromNode="ITEM_CONTABIL2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (output)" toNode="TREATMENT:0"/>
+<Edge fromNode="TREATMENT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge4" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="ITEM_CONTABIL1:0"/>
+</Phase>
+</Graph>

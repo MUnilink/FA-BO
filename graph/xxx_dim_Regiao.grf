@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph author="diego.guedes" created="Tue Nov 07 04:31:59 CST 2017" guiVersion="3.4.4.P" id="1510146622375" licenseType="Commercial" modified="Wed Jun 03 08:02:20 CDT 2020" modifiedBy="diego.guedes" name="xxx_dim_Regiao" revision="1.162" showComponentDetails="true">
+<Global>
+<Metadata fileURL="${META_DIR}/Input_Estados.fmt" id="Metadata0"/>
+<Metadata fileURL="${META_DIR}/Input_Municipios.fmt" id="Metadata1"/>
+<Metadata id="Metadata12" previewAttachment="${DATA_SOURCE_DIR}/TOTVSANALYTICS/Regiao.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="Regiao_Input" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="COD_ESTADO_COD_MUNICIPIO" type="string"/>
+<Field name="COD_ESTADO" type="string"/>
+<Field name="DESC_ESTADO" type="string"/>
+<Field name="COD_MUNICIPIO" type="string"/>
+<Field eofAsDelimiter="false" name="DESC_MUNICIPIO" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata7" previewAttachment="${DATA_SOURCE_DIR}/TOTVSANALYTICS/Regiao.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="Regiao_Output" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="COD_ESTADO_COD_MUNICIPIO" type="string"/>
+<Field name="COD_ESTADO" type="string"/>
+<Field name="DESC_ESTADO" type="string"/>
+<Field name="COD_MUNICIPIO" type="string"/>
+<Field eofAsDelimiter="false" name="DESC_MUNICIPIO" type="string"/>
+<Field name="ESTADO" type="string"/>
+<Field name="CIDADE" type="string"/>
+</Record>
+</Metadata>
+<Property fileURL="workspace.prm" id="GraphParameter0"/>
+<LookupTable id="LookupTable0" lookupConfig="${META_DIR}/Lkp_Estados.cfg"/>
+<LookupTable id="LookupTable1" lookupConfig="${META_DIR}/Lkp_Municipios.cfg"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="141" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. CARGA DO DATASET DE REGIÃO (DIM)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="842" x="11" y="16"/>
+<Dictionary/>
+</Global>
+<Phase number="10">
+<Node enabled="enabled" guiName="LKP_ESTADOS" guiX="296" guiY="47" id="LKP_ESTADOS" joinKey="COD_ESTADO" leftOuterJoin="true" lookupTable="LookupTable0" type="LOOKUP_JOIN">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.COD_ESTADO_COD_MUNICIPIO = $in.0.COD_ESTADO_COD_MUNICIPIO;
+	$out.0.COD_ESTADO = $in.0.COD_ESTADO;
+	$out.0.DESC_ESTADO = $in.0.DESC_ESTADO;
+	$out.0.COD_MUNICIPIO = trim($in.0.COD_MUNICIPIO);
+	$out.0.DESC_MUNICIPIO = trim($in.0.DESC_MUNICIPIO);
+	$out.0.ESTADO = $in.1.Codigo_Localizacao;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node enabled="enabled" guiName="LKP_MUNICIPIO" guiX="434" guiY="47" id="LKP_MUNICIPIO" joinKey="DESC_MUNICIPIO" leftOuterJoin="true" lookupTable="LookupTable1" type="LOOKUP_JOIN">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.COD_ESTADO_COD_MUNICIPIO = $in.0.COD_ESTADO_COD_MUNICIPIO;
+	$out.0.COD_ESTADO = $in.0.COD_ESTADO;
+	$out.0.DESC_ESTADO = $in.0.DESC_ESTADO;
+	$out.0.COD_MUNICIPIO = $in.0.COD_MUNICIPIO;
+	$out.0.DESC_MUNICIPIO = $in.0.DESC_MUNICIPIO;
+	$out.0.ESTADO = $in.0.ESTADO;
+	$out.0.CIDADE = $in.1.Codigo_IBGE;
+
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node charset="ISO-8859-1" enabled="enabled" fileURL="zip:(${DATA_SOURCE_DIR}/${gdc_agent_zip})#Regiao.csv*" guiName="Região" guiX="21" guiY="48" id="REGIAO" type="DATA_READER"/>
+<Node dataset="dataset.regiao" datasetFieldMappings="{&quot;gd_dataset&quot;:{&quot;datasetId&quot;:&quot;dataset.regiao&quot;,&quot;datasetTitle&quot;:&quot;Região&quot;,&quot;attributes&quot;:[{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.regiao.cidadeibge&quot;,&quot;title&quot;:&quot;Cidade IBGE&quot;,&quot;prettyId&quot;:&quot;attr_regiao_cidadeibge&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.regiao.cidadeibge&quot;,&quot;title&quot;:&quot;Cidade IBGE&quot;,&quot;prettyId&quot;:&quot;cidadeibge&quot;,&quot;assignedMetadataField&quot;:&quot;CIDADE&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.regiao.codigodoestado&quot;,&quot;title&quot;:&quot;Código do Estado&quot;,&quot;prettyId&quot;:&quot;attr_regiao_codigodoestado&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.regiao.codigodoestado&quot;,&quot;title&quot;:&quot;Código do Estado&quot;,&quot;prettyId&quot;:&quot;codigodoestado&quot;,&quot;assignedMetadataField&quot;:&quot;COD_ESTADO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.regiao.codigodomunicipio&quot;,&quot;title&quot;:&quot;Código do Munícipio&quot;,&quot;prettyId&quot;:&quot;attr_regiao_codigodomunicipio&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.regiao.codigodomunicipio&quot;,&quot;title&quot;:&quot;Código do Munícipio&quot;,&quot;prettyId&quot;:&quot;codigodomunicipio&quot;,&quot;assignedMetadataField&quot;:&quot;COD_MUNICIPIO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.regiao.codigoeestadodomunicipio&quot;,&quot;title&quot;:&quot;ID Região&quot;,&quot;prettyId&quot;:&quot;attr_regiao_codigoeestadodomunicipio&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.regiao.codigoeestadodomunicipio&quot;,&quot;title&quot;:&quot;ID Região&quot;,&quot;prettyId&quot;:&quot;codigoeestadodomunicipio&quot;,&quot;assignedMetadataField&quot;:&quot;COD_ESTADO_COD_MUNICIPIO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.regiao.estado&quot;,&quot;title&quot;:&quot;Estado&quot;,&quot;prettyId&quot;:&quot;attr_regiao_estado&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.regiao.estado&quot;,&quot;title&quot;:&quot;Estado&quot;,&quot;prettyId&quot;:&quot;estado&quot;,&quot;assignedMetadataField&quot;:&quot;DESC_ESTADO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.regiao.estado&quot;,&quot;title&quot;:&quot;Estado&quot;,&quot;prettyId&quot;:&quot;estado&quot;,&quot;assignedMetadataField&quot;:&quot;DESC_ESTADO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.regiao.estadoibge&quot;,&quot;title&quot;:&quot;Estado IBGE&quot;,&quot;prettyId&quot;:&quot;attr_regiao_estadoibge&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.regiao.estadoibge&quot;,&quot;title&quot;:&quot;Estado IBGE&quot;,&quot;prettyId&quot;:&quot;estadoibge&quot;,&quot;assignedMetadataField&quot;:&quot;ESTADO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.regiao.municipio&quot;,&quot;title&quot;:&quot;Município&quot;,&quot;prettyId&quot;:&quot;attr_regiao_municipio&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.regiao.municipio&quot;,&quot;title&quot;:&quot;Município&quot;,&quot;prettyId&quot;:&quot;municipio&quot;,&quot;assignedMetadataField&quot;:&quot;DESC_MUNICIPIO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.regiao.municipio&quot;,&quot;title&quot;:&quot;Município&quot;,&quot;prettyId&quot;:&quot;municipio&quot;,&quot;assignedMetadataField&quot;:&quot;DESC_MUNICIPIO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}}}],&quot;referencedAttributes&quot;:[],&quot;dateAttributes&quot;:[],&quot;simpleFacts&quot;:[],&quot;dateFacts&quot;:[],&quot;fieldsWithMetadataConflict&quot;:[],&quot;entitiesWithoutMetadata&quot;:[],&quot;datesWithFactConflict&quot;:[],&quot;unassigneddateFacts&quot;:[],&quot;entitiesWithoutValue&quot;:[]}}" enabled="enabled" guiName="Regiao" guiX="710" guiY="47" id="REGIAO1" mode="${LOAD_MODE_DIM}" retriesInterval="60" retriesNumber="5" type="GD_DATASET_WRITER"/>
+<Node enabled="disabled" guiName="Trash" guiX="572" guiY="47" id="TRASH" type="TRASH"/>
+<Node enabled="enabled" guiName="Treatment" guiX="159" guiY="48" id="TREATMENT" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import "trans/lib.ctl";
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.COD_ESTADO_COD_MUNICIPIO = formatString($in.0.COD_ESTADO_COD_MUNICIPIO, null);
+	$out.0.COD_ESTADO = formatString($in.0.COD_ESTADO, null);
+	$out.0.DESC_ESTADO = formatString($in.0.DESC_ESTADO, null);
+	$out.0.COD_MUNICIPIO = formatString($in.0.COD_MUNICIPIO, null);
+	$out.0.DESC_MUNICIPIO = formatString($in.0.DESC_MUNICIPIO, null);
+	
+	$out.0.ESTADO = '';
+	$out.0.CIDADE = '';
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge debugMode="false" fromNode="LKP_ESTADOS:0" guiBendpoints="" guiRouter="Manhattan" id="Edge19" inPort="Port 0 (in)" metadata="Metadata7" outPort="Port 0 (joined records)" toNode="LKP_MUNICIPIO:0"/>
+<Edge debugMode="false" fromNode="LKP_MUNICIPIO:0" guiBendpoints="" guiRouter="Manhattan" id="Edge25" inPort="Port 0 (in)" metadata="Metadata7" outPort="Port 0 (joined records)" toNode="REGIAO1:0"/>
+<Edge debugMode="false" fromNode="REGIAO:0" guiBendpoints="" guiRouter="Manhattan" id="Edge18" inPort="Port 0 (in)" metadata="Metadata12" outPort="Port 0 (output)" toNode="TREATMENT:0"/>
+<Edge debugMode="false" fromNode="TREATMENT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata7" outPort="Port 0 (out)" toNode="LKP_ESTADOS:0"/>
+</Phase>
+</Graph>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph author="diego.guedes" created="Fri May 11 07:47:44 CDT 2018" guiVersion="3.4.4.P" id="1526048085478" licenseType="Commercial" modified="Mon May 11 08:34:06 CDT 2020" modifiedBy="diego.guedes" name="prd_dim_Deposito" revision="1.13" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata3" previewAttachment="${DATA_SOURCE_DIR}/TOTVSANALYTICS/Deposito.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="Deposito_Input" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="FILIAL_COD_DEPOSITO" type="string"/>
+<Field name="COD_DEPOSITO" type="string"/>
+<Field eofAsDelimiter="false" name="DESC_DEPOSITO" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata1" previewAttachment="${DATA_SOURCE_DIR}/TOTVSANALYTICS/Deposito.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="Deposito_Output" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="FILIAL_COD_DEPOSITO" type="string"/>
+<Field name="COD_DEPOSITO" type="string"/>
+<Field eofAsDelimiter="false" name="DESC_DEPOSITO" type="string"/>
+</Record>
+</Metadata>
+<Property fileURL="workspace.prm" id="GraphParameter0"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="150" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. CARGA DO DATASET DE DEPÓSITO (DIM)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="577" x="11" y="16"/>
+<Dictionary/>
+</Global>
+<Phase number="10">
+<Node dataset="dataset.deposito" datasetFieldMappings="{&quot;gd_dataset&quot;:{&quot;datasetId&quot;:&quot;dataset.deposito&quot;,&quot;datasetTitle&quot;:&quot;Depósito&quot;,&quot;attributes&quot;:[{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.deposito.codigodeposito&quot;,&quot;title&quot;:&quot;Código do depósito&quot;,&quot;prettyId&quot;:&quot;attr_deposito_codigodeposito&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.deposito.codigodeposito&quot;,&quot;title&quot;:&quot;Código do depósito&quot;,&quot;prettyId&quot;:&quot;codigodeposito&quot;,&quot;assignedMetadataField&quot;:&quot;COD_DEPOSITO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.deposito.deposito&quot;,&quot;title&quot;:&quot;Nome do depósito&quot;,&quot;prettyId&quot;:&quot;attr_deposito_deposito&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.deposito.deposito&quot;,&quot;title&quot;:&quot;Nome do depósito&quot;,&quot;prettyId&quot;:&quot;deposito&quot;,&quot;assignedMetadataField&quot;:&quot;DESC_DEPOSITO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.deposito.deposito&quot;,&quot;title&quot;:&quot;Nome do depósito&quot;,&quot;prettyId&quot;:&quot;deposito&quot;,&quot;assignedMetadataField&quot;:&quot;DESC_DEPOSITO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.deposito.key_deposito&quot;,&quot;title&quot;:&quot;Id do depósito&quot;,&quot;prettyId&quot;:&quot;attr_deposito_key_deposito&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.deposito.key_deposito&quot;,&quot;title&quot;:&quot;Id do depósito&quot;,&quot;prettyId&quot;:&quot;key_deposito&quot;,&quot;assignedMetadataField&quot;:&quot;FILIAL_COD_DEPOSITO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}}],&quot;referencedAttributes&quot;:[],&quot;dateAttributes&quot;:[],&quot;simpleFacts&quot;:[],&quot;dateFacts&quot;:[],&quot;unassigneddateFacts&quot;:[],&quot;entitiesWithoutMetadata&quot;:[],&quot;fieldsWithMetadataConflict&quot;:[],&quot;datesWithFactConflict&quot;:[],&quot;entitiesWithoutValue&quot;:[]}}" enabled="enabled" guiName="Depósito" guiX="449" guiY="55" id="DEPOSITO" mode="${LOAD_MODE_DIM}" retriesInterval="60" retriesNumber="5" type="GD_DATASET_WRITER"/>
+<Node charset="ISO-8859-1" enabled="enabled" fileURL="zip:(${DATA_SOURCE_DIR}/${gdc_agent_zip})#Deposito.csv*" guiName="Depósito" guiX="24" guiY="55" id="DEPOSITO1" type="DATA_READER"/>
+<Node enabled="disabled" guiName="Trash" guiX="307" guiY="55" id="TRASH" type="TRASH"/>
+<Node enabled="enabled" guiName="Treatment" guiX="168" guiY="55" id="TREATMENT" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import "trans/lib.ctl";
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.FILIAL_COD_DEPOSITO = $in.0.FILIAL_COD_DEPOSITO;
+	$out.0.COD_DEPOSITO = $in.0.COD_DEPOSITO;
+	
+	$out.0.DESC_DEPOSITO = formatString($in.0.DESC_DEPOSITO, null);
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge fromNode="DEPOSITO1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (output)" toNode="TREATMENT:0"/>
+<Edge debugMode="false" fromNode="TREATMENT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="DEPOSITO:0"/>
+</Phase>
+</Graph>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph author="mateus.romero" created="Tue Nov 21 06:08:43 CST 2017" guiVersion="3.4.4.P" id="1511273164594" licenseType="Commercial" modified="Wed May 13 09:05:17 CDT 2020" modifiedBy="diego.guedes" name="_Main_Comercial" revision="1.44" showComponentDetails="true">
+<Global>
+<Property fileURL="workspace.prm" id="GraphParameter0"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="249" id="Note3" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. CARGA DAS DIMENSÕES DO COMERCIAL" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="321" x="4" y="2"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="249" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="2. CARGA DAS FATOS DO COMERCIAL" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="284" x="332" y="2"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="161" id="Note2" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="3. DATA DE CARGA" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="188" x="623" y="2">
+<attr name="text"><![CDATA[Realiza a carga da data de última atualização.]]></attr>
+</Note>
+<Dictionary/>
+</Global>
+<Phase number="10">
+<Node enabled="enabled" graphName="${GRAPH_DIR}/com_dim_CFOP.grf" guiName="CFOP" guiX="189" guiY="48" id="CFOP" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+<Node enabled="enabled" graphName="${GRAPH_DIR}/com_dim_CondicaoPagamento.grf" guiName="Condição de Pagamento" guiX="18" guiY="48" id="CONDICAO_DE_PAGAMENTO" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+<Node enabled="enabled" graphName="${GRAPH_DIR}/com_dim_TES.grf" guiName="TES" guiX="166" guiY="149" id="TES" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+<Node enabled="enabled" graphName="${GRAPH_DIR}/com_dim_UnidadeMedida.grf" guiName="Unidade de Medida" guiX="18" guiY="149" id="UNIDADE_DE_MEDIDA" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+</Phase>
+<Phase number="20">
+<Node enabled="enabled" graphName="${GRAPH_DIR}/com_fct_Devolucoes.grf" guiName="Devoluções" guiX="478" guiY="48" id="DEVOLUCOES" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+<Node enabled="enabled" graphName="${GRAPH_DIR}/com_fct_Faturamento.grf" guiName="Faturamento" guiX="342" guiY="48" id="FATURAMENTO" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+<Node enabled="enabled" graphName="${GRAPH_DIR}/com_fct_Pedidos.grf" guiName="Pedidos" guiX="342" guiY="149" id="PEDIDOS" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+</Phase>
+<Phase number="30">
+<Node enabled="enabled" graphName="${GRAPH_DIR}/com_xxx_UltimaCarga.grf" guiName="Última Carga" guiX="653" guiY="62" id="ULTIMA_CARGA" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+</Phase>
+</Graph>

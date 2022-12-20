@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph author="diego.guedes" created="Fri May 11 07:47:44 CDT 2018" guiVersion="3.4.4.P" id="1526048085478" licenseType="Commercial" modified="Mon May 11 08:54:37 CDT 2020" modifiedBy="diego.guedes" name="mat_dim_Transportadora" revision="1.16" showComponentDetails="true">
+<Global>
+<Metadata id="Metadata0" previewAttachment="${DATA_SOURCE_DIR}/Transportadora.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="Transportadora_Input" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="BK_TRANSPORTADORA" type="string"/>
+<Field name="COD_TRANSPORTADORA" type="string"/>
+<Field name="TRANSPORTADORA" type="string"/>
+<Field eofAsDelimiter="false" name="TRANSPORTADORA_REDUZIDO" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata1" previewAttachment="${DATA_SOURCE_DIR}/Transportadora.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="Transportadora_Output" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="BK_TRANSPORTADORA" type="string"/>
+<Field name="COD_TRANSPORTADORA" type="string"/>
+<Field name="TRANSPORTADORA" type="string"/>
+<Field eofAsDelimiter="false" name="TRANSPORTADORA_REDUZIDO" type="string"/>
+</Record>
+</Metadata>
+<Property fileURL="workspace.prm" id="GraphParameter0"/>
+<Sequence cached="8" id="Sequence0" name="SequenciaHom" start="1" step="1" type="PRIMITIVE_SEQUENCE"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="150" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. CARGA DO DATASET DE TRANSPORTADORA (DIM)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="577" x="11" y="16"/>
+<Dictionary/>
+</Global>
+<Phase number="10">
+<Node charset="ISO-8859-1" enabled="enabled" fileURL="zip:(${DATA_SOURCE_DIR}/${gdc_agent_zip})#Transportadora.csv*" guiName="Transportadora" guiX="24" guiY="55" id="TRANSPORTADORA" type="DATA_READER"/>
+<Node dataset="dataset.transportadora" datasetFieldMappings="{&quot;gd_dataset&quot;:{&quot;datasetId&quot;:&quot;dataset.transportadora&quot;,&quot;datasetTitle&quot;:&quot;Transportadora&quot;,&quot;attributes&quot;:[{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.transportadora.cod_transportadora&quot;,&quot;title&quot;:&quot;Cod_Transportadora&quot;,&quot;prettyId&quot;:&quot;attr_transportadora_cod_transportadora&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.transportadora.cod_transportadora&quot;,&quot;title&quot;:&quot;Cod_Transportadora&quot;,&quot;prettyId&quot;:&quot;cod_transportadora&quot;,&quot;assignedMetadataField&quot;:&quot;COD_TRANSPORTADORA&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.transportadora.cod_transportadora&quot;,&quot;title&quot;:&quot;Cod_Transportadora&quot;,&quot;prettyId&quot;:&quot;cod_transportadora&quot;,&quot;assignedMetadataField&quot;:&quot;COD_TRANSPORTADORA&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.transportadora.descricao&quot;,&quot;title&quot;:&quot;Descrição&quot;,&quot;prettyId&quot;:&quot;attr_transportadora_descricao&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.transportadora.descricao&quot;,&quot;title&quot;:&quot;Descrição&quot;,&quot;prettyId&quot;:&quot;descricao&quot;,&quot;assignedMetadataField&quot;:&quot;TRANSPORTADORA&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.transportadora.idtransportadora&quot;,&quot;title&quot;:&quot;ID Transportadora&quot;,&quot;prettyId&quot;:&quot;attr_transportadora_idtransportadora&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.transportadora.idtransportadora&quot;,&quot;title&quot;:&quot;ID Transportadora&quot;,&quot;prettyId&quot;:&quot;idtransportadora&quot;,&quot;assignedMetadataField&quot;:&quot;BK_TRANSPORTADORA&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.transportadora.nome_reduzido&quot;,&quot;title&quot;:&quot;Nome_Reduzido&quot;,&quot;prettyId&quot;:&quot;attr_transportadora_nome_reduzido&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.transportadora.nome_reduzido&quot;,&quot;title&quot;:&quot;Nome_Reduzido&quot;,&quot;prettyId&quot;:&quot;nome_reduzido&quot;,&quot;assignedMetadataField&quot;:&quot;TRANSPORTADORA_REDUZIDO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}}],&quot;referencedAttributes&quot;:[],&quot;dateAttributes&quot;:[],&quot;simpleFacts&quot;:[],&quot;dateFacts&quot;:[],&quot;datesWithFactConflict&quot;:[],&quot;unassigneddateFacts&quot;:[],&quot;entitiesWithoutValue&quot;:[],&quot;fieldsWithMetadataConflict&quot;:[],&quot;entitiesWithoutMetadata&quot;:[]}}" enabled="enabled" guiName="Transportadora" guiX="449" guiY="55" id="TRANSPORTADORA1" mode="${LOAD_MODE_DIM}" retriesInterval="60" retriesNumber="5" type="GD_DATASET_WRITER"/>
+<Node enabled="disabled" guiName="Trash" guiX="307" guiY="55" id="TRASH" type="TRASH"/>
+<Node enabled="enabled" guiName="Treatment" guiX="168" guiY="55" id="TREATMENT" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import "trans/lib.ctl";
+
+// Transforms input record into output record.
+function integer transform() {
+	if (GOODDATA_DEMO_MODE == 'S') sequence(SequenciaHom).next();
+	
+	$out.0.BK_TRANSPORTADORA = $in.0.BK_TRANSPORTADORA;
+	$out.0.COD_TRANSPORTADORA = $in.0.COD_TRANSPORTADORA;
+	
+	$out.0.TRANSPORTADORA = formatString($in.0.TRANSPORTADORA, 'TRANSP. ' + (1 + sequence(SequenciaHom).current()));
+	$out.0.TRANSPORTADORA_REDUZIDO = formatString($in.0.TRANSPORTADORA_REDUZIDO, 'TRANSP. ' + (1 + sequence(SequenciaHom).current()));
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge fromNode="TRANSPORTADORA:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (output)" toNode="TREATMENT:0"/>
+<Edge fromNode="TREATMENT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="TRANSPORTADORA1:0"/>
+</Phase>
+</Graph>

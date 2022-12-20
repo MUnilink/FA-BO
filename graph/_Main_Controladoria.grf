@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph author="andre.dini" created="Thu May 17 09:45:54 CDT 2018" guiVersion="3.4.4.P" id="1526670391040" licenseType="Commercial" modified="Wed May 13 09:04:48 CDT 2020" modifiedBy="diego.guedes" name="_Main_Controladoria" revision="1.12" showComponentDetails="true">
+<Global>
+<Property fileURL="workspace.prm" id="GraphParameter0"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="254" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. CARGA DAS DIMENSÕES DE CONTABILIDADE" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="317" x="19" y="15"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="253" id="Note1" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="2. CARGA DAS FATOS DE CONTABILIDADE" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="289" x="344" y="16"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="161" id="Note2" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="3. DATA DE CARGA" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="188" x="644" y="15">
+<attr name="text"><![CDATA[Realiza a carga da data de última atualização.]]></attr>
+</Note>
+<Dictionary/>
+</Global>
+<Phase number="10">
+<Node enabled="enabled" graphName="${GRAPH_DIR}/ctr_dim_ClasseValor.grf" guiName="Classe Valor" guiX="28" guiY="63" id="CLASSE_VALOR" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+<Node enabled="enabled" graphName="${GRAPH_DIR}/ctr_dim_ContaContabil.grf" guiName="Conta Contabil" guiX="170" guiY="63" id="CONTA_CONTABIL" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+<Node enabled="enabled" graphName="${GRAPH_DIR}/ctr_dim_ItemContabil.grf" guiName="Item Contabil" guiX="28" guiY="163" id="ITEM_CONTABIL" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+</Phase>
+<Phase number="20">
+<Node enabled="enabled" graphName="${GRAPH_DIR}/ctr_fct_Contabilidade.grf" guiName="Contabilidade" guiX="354" guiY="63" id="CONTABILIDADE" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+<Node enabled="enabled" graphName="${GRAPH_DIR}/ctr_fct_LancamentoContabil.grf" guiName="Lancamento Contabil" guiX="354" guiY="163" id="LANCAMENTO_CONTABIL" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+<Node enabled="enabled" graphName="${GRAPH_DIR}/ctr_fct_Orcado.grf" guiName="Orçado" guiX="491" guiY="63" id="ORCADO" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+</Phase>
+<Phase number="30">
+<Node enabled="enabled" graphName="${GRAPH_DIR}/ctr_xxx_UltimaCarga.grf" guiName="Última Carga" guiX="674" guiY="75" id="ULTIMA_CARGA" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+</Phase>
+</Graph>

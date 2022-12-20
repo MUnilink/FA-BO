@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph author="mateus.romero" created="Tue Nov 21 06:08:43 CST 2017" guiVersion="3.4.4.P" id="1511348377577" licenseType="Commercial" modified="Wed May 13 08:17:48 CDT 2020" modifiedBy="diego.guedes" name="prd_fct_ProducaoRealizada" revision="1.39" showComponentDetails="true">
+<Global>
+<Metadata fileURL="${META_DIR}/_2Dates.fmt" id="Metadata5"/>
+<Metadata fileURL="${META_DIR}/sintax.fmt" id="Metadata4"/>
+<Metadata id="Metadata1" previewAttachment="${DATA_SOURCE_DIR}/PRODUCAO/ProdReal.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="ProdReal_Input" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="COD_EMPRESA" type="string"/>
+<Field name="COD_ESTABEL" type="string"/>
+<Field name="TIPO_PRODUTO" type="string"/>
+<Field name="TIPO_PRODUCAO" type="string"/>
+<Field name="PEDIDO" type="string"/>
+<Field name="SEQUENCIA_ORDEM" type="string"/>
+<Field name="PRIORIDADE_ORDEM" type="string"/>
+<Field name="ORDEM" type="string"/>
+<Field name="DATA_EXTRACAO" type="string"/>
+<Field name="DATA_EMISSAO_ORDEM" type="string"/>
+<Field name="DATA_TERMINO_ORDEM" type="string"/>
+<Field name="BK_ITEM" type="string"/>
+<Field name="BK_FAMILIA_MATERIAL" type="string"/>
+<Field name="BK_FAMILIA_COMERCIAL" type="string"/>
+<Field name="BK_GRUPO_ESTOQUE" type="string"/>
+<Field name="BK_GRUPO_CLIENTE" type="string"/>
+<Field name="BK_DEPOSITO" type="string"/>
+<Field name="BK_CLIENTE" type="string"/>
+<Field name="BK_REGIAO" type="string"/>
+<Field name="QTD_PRODUCAO" type="string"/>
+<Field name="QTD_REFUGADA" type="string"/>
+<Field name="VAL_CUST_PRODUCAO" type="string"/>
+<Field name="VAL_PROGRAMADO" type="string"/>
+<Field name="VAL_MATERIAL_PROGRAMADO" type="string"/>
+<Field name="VAL_MAO_DE_OBRA_PROGRAMADO" type="string"/>
+<Field name="VAL_CUSTO_REFUGADO" type="string"/>
+<Field name="INICIO_MOVIMENTO_REAL" type="string"/>
+<Field name="FIM_MOVIMENTO_REAL" type="string"/>
+<Field name="INICIO_MOVIMENTO_PREVISTO" type="string"/>
+<Field name="FIM_MOVIMENTO_PREVISTO" type="string"/>
+<Field name="VL_UNITARIO_PRODUTO" type="string"/>
+<Field eofAsDelimiter="false" name="DATA" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata3" previewAttachment="${DATA_SOURCE_DIR}/PRODUCAO/ProdReal.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="ProdReal_Output" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="COD_EMPRESA" type="string"/>
+<Field name="COD_ESTABEL" type="string"/>
+<Field name="TIPO_PRODUTO" type="string"/>
+<Field name="TIPO_PRODUCAO" type="string"/>
+<Field name="PEDIDO" type="string"/>
+<Field name="SEQUENCIA_ORDEM" type="string"/>
+<Field name="PRIORIDADE_ORDEM" type="string"/>
+<Field name="ORDEM" type="string"/>
+<Field format="yyyyMMdd HH:mm:ss" name="DATA_EXTRACAO" type="date"/>
+<Field format="yyyyMMdd HH:mm:ss" name="DATA_EMISSAO_ORDEM" type="date"/>
+<Field format="yyyyMMdd HH:mm:ss" name="DATA_TERMINO_ORDEM" type="date"/>
+<Field name="BK_ITEM" type="string"/>
+<Field name="BK_FAMILIA_MATERIAL" type="string"/>
+<Field name="BK_FAMILIA_COMERCIAL" type="string"/>
+<Field name="BK_GRUPO_ESTOQUE" type="string"/>
+<Field name="BK_GRUPO_CLIENTE" type="string"/>
+<Field name="BK_DEPOSITO" type="string"/>
+<Field name="BK_CLIENTE" type="string"/>
+<Field name="BK_REGIAO" type="string"/>
+<Field name="QTD_PRODUCAO" type="decimal"/>
+<Field name="QTD_REFUGADA" type="decimal"/>
+<Field name="VAL_CUST_PRODUCAO" type="decimal"/>
+<Field name="VAL_PROGRAMADO" type="decimal"/>
+<Field name="VAL_MATERIAL_PROGRAMADO" type="decimal"/>
+<Field name="VAL_MAO_DE_OBRA_PROGRAMADO" type="decimal"/>
+<Field name="VAL_CUSTO_REFUGADO" type="decimal"/>
+<Field format="yyyyMMdd HH:mm:ss" name="INICIO_MOVIMENTO_REAL" type="date"/>
+<Field format="yyyyMMdd HH:mm:ss" name="FIM_MOVIMENTO_REAL" type="date"/>
+<Field format="yyyyMMdd HH:mm:ss" name="INICIO_MOVIMENTO_PREVISTO" type="date"/>
+<Field format="yyyyMMdd HH:mm:ss" name="FIM_MOVIMENTO_PREVISTO" type="date"/>
+<Field name="VL_UNITARIO_PRODUTO" type="decimal"/>
+<Field eofAsDelimiter="false" format="yyyyMMdd HH:mm:ss" name="DATA" type="date"/>
+<Field name="Lead_Time_Real" type="long"/>
+<Field name="Lead_Time_Previsto" type="long"/>
+<Field name="TIPO_PROD" type="string"/>
+<Field name="Modulo" type="string"/>
+<Field name="Tabela" type="string"/>
+<Field name="pk_Modulo" type="string"/>
+</Record>
+</Metadata>
+<Property fileURL="workspace.prm" id="GraphParameter0"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="175" id="Note1" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="2. REMOVER DADOS" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="483" x="805" y="4">
+<attr name="text"><![CDATA[Realiza a remoção dos dados duplicados do ambiente, de acordo com o método de carga (Full Load / Incremental).]]></attr>
+</Note>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="160" id="Note6" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="3. REMOVER DADOS (MONTHS_TO_LOAD)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="483" x="805" y="194">
+<attr name="text"><![CDATA[Apaga os dados históricos do workspace do GoodData, caso estes sejam muito antigos, garantindo assim a eficiência na geração de relatórios da plataforma.]]></attr>
+</Note>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="113" id="Note2" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="4. CARGA DO DATASET DE PRODUÇÃO REALIZADA (FATO)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="483" x="805" y="365"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="165" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. LEITURA / TRATAMENTO DOS DADOS" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="767" x="11" y="9"/>
+<Dictionary/>
+</Global>
+<Phase number="10">
+<Node enabled="enabled" guiName="ExtFilter" guiX="345" guiY="69" id="EXT_FILTER1" type="EXT_FILTER">
+<attr name="filterExpression"><![CDATA[//#CTL2
+$in.0.COD_EMPRESA <> null]]></attr>
+</Node>
+<Node enabled="enabled" guiName="MONTHS_TO_LOAD Filter" guiX="164" guiY="69" id="MONTHS_TO_LOAD_FILTER" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import 'trans/lib.ctl';
+
+// Transforms input record into output record.
+function integer transform() {
+	if(($in.0.DATA == null) or (trim($in.0.DATA) == '')) {
+		$out.0.* = null;
+	} else {
+		data = str2date($in.0.DATA, '${DATE_PATTERN}', '${DATE_LOCALE}');
+		if ((data < GOODDATA_MINDATE) || (data > GOODDATA_MAXDATE) || (data < ETL_MAXDATE)) {
+			$out.0.* = null;
+		} else {
+			$out.0.* = $in.0.*;
+		}
+	}
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Node charset="ISO-8859-1" enabled="enabled" fileURL="zip:(${DATA_SOURCE_DIR}/${gdc_agent_zip})#ProdReal.csv*" guiName="ProdReal" guiX="23" guiY="69" id="PROD_REAL" type="DATA_READER"/>
+<Node enabled="enabled" guiName="SimpleCopy" guiX="629" guiY="67" id="SIMPLE_COPY" type="SIMPLE_COPY"/>
+<Node enabled="enabled" guiName="Treatment" guiX="486" guiY="69" id="TREATMENT" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import "trans/lib.ctl";
+
+// Transforms input record into output record.	
+function integer transform() {
+	$out.0.COD_EMPRESA = $in.0.COD_EMPRESA;
+	$out.0.COD_ESTABEL = $in.0.COD_ESTABEL;
+	$out.0.BK_ITEM = $in.0.BK_ITEM;
+	$out.0.BK_FAMILIA_MATERIAL = $in.0.BK_FAMILIA_MATERIAL;
+	$out.0.BK_FAMILIA_COMERCIAL = $in.0.BK_FAMILIA_COMERCIAL;
+	$out.0.BK_GRUPO_ESTOQUE = $in.0.BK_GRUPO_ESTOQUE;
+	$out.0.BK_GRUPO_CLIENTE = $in.0.BK_GRUPO_CLIENTE;
+	$out.0.BK_DEPOSITO = $in.0.BK_DEPOSITO;
+	$out.0.BK_CLIENTE = $in.0.BK_CLIENTE;
+	$out.0.BK_REGIAO = $in.0.BK_REGIAO;
+	$out.0.ORDEM = $in.0.ORDEM;
+	
+	$out.0.TIPO_PRODUTO = formatString($in.0.TIPO_PRODUTO, null);
+	$out.0.TIPO_PRODUCAO = formatString($in.0.TIPO_PRODUCAO, null);
+	$out.0.PEDIDO = formatString($in.0.PEDIDO, null);
+	$out.0.SEQUENCIA_ORDEM = formatString($in.0.SEQUENCIA_ORDEM, null);
+	$out.0.PRIORIDADE_ORDEM = formatString($in.0.PRIORIDADE_ORDEM, null);
+	$out.0.TIPO_PROD = 'REALIZADA';
+	
+	$out.0.QTD_PRODUCAO = formatDecimal($in.0.QTD_PRODUCAO, true);
+	$out.0.QTD_REFUGADA = formatDecimal($in.0.QTD_REFUGADA, true);
+	$out.0.VAL_CUST_PRODUCAO = formatDecimal($in.0.VAL_CUST_PRODUCAO, true);
+	$out.0.VAL_PROGRAMADO = formatDecimal($in.0.VAL_PROGRAMADO, true);
+	$out.0.VAL_MATERIAL_PROGRAMADO = formatDecimal($in.0.VAL_MATERIAL_PROGRAMADO, true);
+	$out.0.VAL_MAO_DE_OBRA_PROGRAMADO = formatDecimal($in.0.VAL_MAO_DE_OBRA_PROGRAMADO, true);
+	$out.0.VAL_CUSTO_REFUGADO = formatDecimal($in.0.VAL_CUSTO_REFUGADO, true);
+	$out.0.VL_UNITARIO_PRODUTO = formatDecimal($in.0.VL_UNITARIO_PRODUTO, true);
+	
+	$out.0.DATA_EXTRACAO = formatDate($in.0.DATA_EXTRACAO);
+	$out.0.INICIO_MOVIMENTO_REAL = formatDate($in.0.INICIO_MOVIMENTO_REAL);
+	$out.0.FIM_MOVIMENTO_REAL = formatDate($in.0.FIM_MOVIMENTO_REAL);
+	$out.0.INICIO_MOVIMENTO_PREVISTO = formatDate($in.0.INICIO_MOVIMENTO_PREVISTO);
+	$out.0.FIM_MOVIMENTO_PREVISTO = formatDate($in.0.FIM_MOVIMENTO_PREVISTO);
+	$out.0.DATA_EMISSAO_ORDEM = formatDate($in.0.DATA_EMISSAO_ORDEM);
+	$out.0.DATA_TERMINO_ORDEM = formatDate($in.0.DATA_TERMINO_ORDEM);
+	$out.0.DATA = formatDate($in.0.DATA);
+	$out.0.DATA_EXTRACAO = formatDate($in.0.DATA_EXTRACAO);
+	$out.0.DATA_EXTRACAO = formatDate($in.0.DATA_EXTRACAO);
+	$out.0.DATA_EXTRACAO = formatDate($in.0.DATA_EXTRACAO);
+	
+	if (($out.0.INICIO_MOVIMENTO_REAL == null) or ($out.0.FIM_MOVIMENTO_REAL == null)) {
+		$out.0.Lead_Time_Real = 0;
+	} else {
+		$out.0.Lead_Time_Real = dateDiff($out.0.FIM_MOVIMENTO_REAL, $out.0.INICIO_MOVIMENTO_REAL, day);
+	}
+	
+	if (($out.0.FIM_MOVIMENTO_PREVISTO == null) or ($out.0.INICIO_MOVIMENTO_PREVISTO == null)) {
+		$out.0.Lead_Time_Previsto = 0;
+	} else {
+		$out.0.Lead_Time_Previsto = dateDiff($out.0.FIM_MOVIMENTO_PREVISTO, $out.0.INICIO_MOVIMENTO_PREVISTO, day);
+	}
+	
+	$out.0.Modulo = 'PRODUCAO';
+	$out.0.Tabela = 'PRODUCAO REALIZADA';
+	$out.0.pk_Modulo = $out.0.Modulo + '|' + $out.0.Tabela;
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge debugMode="false" fromNode="EXT_FILTER1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge8" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (accepted)" toNode="TREATMENT:0"/>
+<Edge debugMode="false" fromNode="MONTHS_TO_LOAD_FILTER:0" guiBendpoints="" guiRouter="Manhattan" id="Edge13" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="EXT_FILTER1:0"/>
+<Edge fromNode="PROD_REAL:0" guiBendpoints="" guiRouter="Manhattan" id="Edge3" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (output)" toNode="MONTHS_TO_LOAD_FILTER:0"/>
+<Edge debugMode="false" fromNode="SIMPLE_COPY:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="AGGREGATE_MENOR_DATA2:0"/>
+<Edge debugMode="false" fromNode="SIMPLE_COPY:1" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 1 (out)" toNode="AGGREGATE_MENOR_DATA1:0"/>
+<Edge fromNode="SIMPLE_COPY:2" guiBendpoints="" guiRouter="Manhattan" id="Edge7" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 2 (out)" toNode="SIMPLE_COPY1:0"/>
+<Edge debugMode="false" fromNode="TREATMENT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="SIMPLE_COPY:0"/>
+</Phase>
+<Phase number="20">
+<Node enabled="enabled" guiName="Aggregate" guiX="826" guiY="76" id="AGGREGATE_MENOR_DATA2" mapping="$Min_Date:=min($DATA);$Max_Date:=max($DATA);" type="AGGREGATE">
+<attr name="guiDescription"><![CDATA[OBTÉM MAIOR E MENOR DATA]]></attr>
+</Node>
+<Node enabled="enabled" guiName="MAQL DML Execute" guiX="1126" guiY="76" id="MAQL_DML_EXECUTE_DELETE_DATA_FATO_HKL1" maqlInputField="syntax_content" type="MAQL_DML_EXECUTE">
+<attr name="guiDescription"><![CDATA[APAGA DADOS FATO HKL]]></attr>
+</Node>
+<Node enabled="enabled" guiName="Reformat" guiX="978" guiY="76" id="REFORMAT_MENOR_DATA2" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+
+// Transforms input record into output record.
+function integer transform() {
+	string loadMode = '${LOAD_MODE_FCT}';
+	if (upperCase(loadMode) == 'INCREMENTAL') {
+		$out.0.syntax_content = 'DELETE FROM {attr.producao.factsof} WHERE {datadeextracao.date.yyyymmdd} BETWEEN '+'"'+date2str($in.0.Min_Date, "yyyy-MM-dd")+'" AND "'+date2str($in.0.Max_Date, "yyyy-MM-dd")+'"';
+	} else {
+		$out.0.syntax_content = 'DELETE FROM {attr.producao.factsof}';
+	}
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+<attr name="guiDescription"><![CDATA[GERA STATEMENT DE DELETE]]></attr>
+</Node>
+<Edge debugMode="false" fromNode="AGGREGATE_MENOR_DATA2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge6" inPort="Port 0 (in)" metadata="Metadata5" outPort="Port 0 (out)" toNode="REFORMAT_MENOR_DATA2:0"/>
+<Edge debugMode="false" fromNode="REFORMAT_MENOR_DATA2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge16" inPort="Port 0 (input)" metadata="Metadata4" outPort="Port 0 (out)" toNode="MAQL_DML_EXECUTE_DELETE_DATA_FATO_HKL1:0"/>
+</Phase>
+<Phase number="25">
+<Node enabled="enabled" guiName="Aggregate" guiX="826" guiY="251" id="AGGREGATE_MENOR_DATA1" mapping="$Min_Date:=min($DATA);$Max_Date:=max($DATA);" type="AGGREGATE">
+<attr name="guiDescription"><![CDATA[OBTÉM MAIOR E MENOR DATA]]></attr>
+</Node>
+<Node enabled="enabled" guiName="MAQL DML Execute" guiX="1126" guiY="251" id="MAQL_DML_EXECUTE_DELETE_DATA_FATO_HKL2" maqlInputField="syntax_content" type="MAQL_DML_EXECUTE">
+<attr name="guiDescription"><![CDATA[APAGA DADOS FATO HKL]]></attr>
+</Node>
+<Node enabled="enabled" guiName="Reformat" guiX="978" guiY="251" id="REFORMAT_MENOR_DATA1" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import 'trans/lib.ctl';
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.syntax_content = 'DELETE FROM {attr.producao.factsof} WHERE {datadeextracao.date.yyyymmdd} < "' + ETL_MAXDATE + '"';
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+<attr name="guiDescription"><![CDATA[GERA STATEMENT DE DELETE]]></attr>
+</Node>
+<Edge debugMode="false" fromNode="AGGREGATE_MENOR_DATA1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge9" inPort="Port 0 (in)" metadata="Metadata5" outPort="Port 0 (out)" toNode="REFORMAT_MENOR_DATA1:0"/>
+<Edge debugMode="false" fromNode="REFORMAT_MENOR_DATA1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge12" inPort="Port 0 (input)" metadata="Metadata4" outPort="Port 0 (out)" toNode="MAQL_DML_EXECUTE_DELETE_DATA_FATO_HKL2:0"/>
+</Phase>
+<Phase number="30">
+<Node dataset="dataset.producao" datasetFieldMappings="{&quot;gd_dataset&quot;:{&quot;datasetId&quot;:&quot;dataset.producao&quot;,&quot;datasetTitle&quot;:&quot;Produção Realizada&quot;,&quot;attributes&quot;:[{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.producao.tipodeordemdopedido&quot;,&quot;title&quot;:&quot;Tipo de ordem realizada&quot;,&quot;prettyId&quot;:&quot;attr_producao_tipodeordemdopedido&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.producao.tipodeordemdopedido&quot;,&quot;title&quot;:&quot;Tipo de ordem realizada&quot;,&quot;prettyId&quot;:&quot;tipodeordemdopedido&quot;,&quot;assignedMetadataField&quot;:&quot;TIPO_PRODUCAO&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.producao.tipodeproducao&quot;,&quot;title&quot;:&quot;Tipo de produção&quot;,&quot;prettyId&quot;:&quot;attr_producao_tipodeproducao&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.producao.tipodeproducao&quot;,&quot;title&quot;:&quot;Tipo de produção&quot;,&quot;prettyId&quot;:&quot;tipodeproducao&quot;,&quot;assignedMetadataField&quot;:&quot;TIPO_PROD&quot;,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;assignedMetadataField&quot;:null,&quot;selectedDisplayForm&quot;:null}}],&quot;referencedAttributes&quot;:[{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.cliente.key_cliente&quot;,&quot;title&quot;:&quot;ID Cliente&quot;,&quot;prettyId&quot;:&quot;attr_cliente_key_cliente&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.cliente.key_cliente&quot;,&quot;title&quot;:&quot;ID Cliente&quot;,&quot;prettyId&quot;:&quot;cliente__key_cliente&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_CLIENTE&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.cliente.key_cliente&quot;,&quot;title&quot;:&quot;ID Cliente&quot;,&quot;prettyId&quot;:&quot;cliente__key_cliente&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.deposito.key_deposito&quot;,&quot;title&quot;:&quot;Chave do depósito&quot;,&quot;prettyId&quot;:&quot;attr_deposito_key_deposito&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.deposito.key_deposito&quot;,&quot;title&quot;:&quot;Chave do depósito&quot;,&quot;prettyId&quot;:&quot;deposito__key_deposito&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_DEPOSITO&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.deposito.key_deposito&quot;,&quot;title&quot;:&quot;Chave do depósito&quot;,&quot;prettyId&quot;:&quot;deposito__key_deposito&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.empresa.codigodaempresa&quot;,&quot;title&quot;:&quot;ID Empresa&quot;,&quot;prettyId&quot;:&quot;attr_empresa_codigodaempresa&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.empresa.codigodaempresa&quot;,&quot;title&quot;:&quot;ID Empresa&quot;,&quot;prettyId&quot;:&quot;empresa__codigodaempresa&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;COD_EMPRESA&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.empresa.codigodaempresa&quot;,&quot;title&quot;:&quot;ID Empresa&quot;,&quot;prettyId&quot;:&quot;empresa__codigodaempresa&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.familiacomercial.idfamiliacomercial&quot;,&quot;title&quot;:&quot;ID Família Comercial&quot;,&quot;prettyId&quot;:&quot;attr_familiacomercial_idfamiliacomercial&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.familiacomercial.idfamiliacomercial&quot;,&quot;title&quot;:&quot;ID Família Comercial&quot;,&quot;prettyId&quot;:&quot;familiacomercial__idfamiliacomercial&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_FAMILIA_COMERCIAL&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.familiacomercial.idfamiliacomercial&quot;,&quot;title&quot;:&quot;ID Família Comercial&quot;,&quot;prettyId&quot;:&quot;familiacomercial__idfamiliacomercial&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.familiamaterial.idfamiliamaterial&quot;,&quot;title&quot;:&quot;ID Família Material&quot;,&quot;prettyId&quot;:&quot;attr_familiamaterial_idfamiliamaterial&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.familiamaterial.idfamiliamaterial&quot;,&quot;title&quot;:&quot;ID Família Material&quot;,&quot;prettyId&quot;:&quot;familiamaterial__idfamiliamaterial&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_FAMILIA_MATERIAL&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.familiamaterial.idfamiliamaterial&quot;,&quot;title&quot;:&quot;ID Família Material&quot;,&quot;prettyId&quot;:&quot;familiamaterial__idfamiliamaterial&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.filial.codigodafilial&quot;,&quot;title&quot;:&quot;ID Filial&quot;,&quot;prettyId&quot;:&quot;attr_filial_codigodafilial&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filial.codigodafilial&quot;,&quot;title&quot;:&quot;ID Filial&quot;,&quot;prettyId&quot;:&quot;filial__codigodafilial&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;COD_ESTABEL&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filial.codigodafilial&quot;,&quot;title&quot;:&quot;ID Filial&quot;,&quot;prettyId&quot;:&quot;filial__codigodafilial&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.grupodeestoque.key_grupo_de_estoque&quot;,&quot;title&quot;:&quot;ID Grupo de Estoque&quot;,&quot;prettyId&quot;:&quot;attr_grupodeestoque_key_grupo_de_estoque&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.grupodeestoque.key_grupo_de_estoque&quot;,&quot;title&quot;:&quot;ID Grupo de Estoque&quot;,&quot;prettyId&quot;:&quot;grupodeestoque__key_grupo_de_estoque&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_GRUPO_ESTOQUE&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.grupodeestoque.key_grupo_de_estoque&quot;,&quot;title&quot;:&quot;ID Grupo de Estoque&quot;,&quot;prettyId&quot;:&quot;grupodeestoque__key_grupo_de_estoque&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.grupodocliente.key_grupo_do_cliente&quot;,&quot;title&quot;:&quot;ID Grupo do Cliente&quot;,&quot;prettyId&quot;:&quot;attr_grupodocliente_key_grupo_do_cliente&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.grupodocliente.key_grupo_do_cliente&quot;,&quot;title&quot;:&quot;ID Grupo do Cliente&quot;,&quot;prettyId&quot;:&quot;grupodocliente__key_grupo_do_cliente&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_GRUPO_CLIENTE&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.grupodocliente.key_grupo_do_cliente&quot;,&quot;title&quot;:&quot;ID Grupo do Cliente&quot;,&quot;prettyId&quot;:&quot;grupodocliente__key_grupo_do_cliente&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.modulo.iddomodulo&quot;,&quot;title&quot;:&quot;Id do módulo&quot;,&quot;prettyId&quot;:&quot;attr_modulo_iddomodulo&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.modulo.iddomodulo&quot;,&quot;title&quot;:&quot;Id do módulo&quot;,&quot;prettyId&quot;:&quot;modulo__iddomodulo&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;pk_Modulo&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.modulo.iddomodulo&quot;,&quot;title&quot;:&quot;Id do módulo&quot;,&quot;prettyId&quot;:&quot;modulo__iddomodulo&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.pedidosdim.ordemdopedido&quot;,&quot;title&quot;:&quot;Número da ordem de produção&quot;,&quot;prettyId&quot;:&quot;attr_pedidosdim_ordemdopedido&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.pedidosdim.ordemdopedido&quot;,&quot;title&quot;:&quot;Número da ordem de produção&quot;,&quot;prettyId&quot;:&quot;pedidosdim__ordemdopedido&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;ORDEM&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.pedidosdim.ordemdopedido&quot;,&quot;title&quot;:&quot;Número da ordem de produção&quot;,&quot;prettyId&quot;:&quot;pedidosdim__ordemdopedido&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.produto.idproduto&quot;,&quot;title&quot;:&quot;ID Produto&quot;,&quot;prettyId&quot;:&quot;attr_produto_idproduto&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.produto.idproduto&quot;,&quot;title&quot;:&quot;ID Produto&quot;,&quot;prettyId&quot;:&quot;produto__idproduto&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_ITEM&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.produto.idproduto&quot;,&quot;title&quot;:&quot;ID Produto&quot;,&quot;prettyId&quot;:&quot;produto__idproduto&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.regiao.codigoeestadodomunicipio&quot;,&quot;title&quot;:&quot;ID Região&quot;,&quot;prettyId&quot;:&quot;attr_regiao_codigoeestadodomunicipio&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.regiao.codigoeestadodomunicipio&quot;,&quot;title&quot;:&quot;ID Região&quot;,&quot;prettyId&quot;:&quot;regiao__codigoeestadodomunicipio&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_REGIAO&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.regiao.codigoeestadodomunicipio&quot;,&quot;title&quot;:&quot;ID Região&quot;,&quot;prettyId&quot;:&quot;regiao__codigoeestadodomunicipio&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}}],&quot;dateAttributes&quot;:[{&quot;gd_dataset_date_attribute&quot;:{&quot;id&quot;:&quot;datadeextracao.date&quot;,&quot;title&quot;:&quot;Date (Data)&quot;,&quot;prettyId&quot;:&quot;datadeextracao&quot;,&quot;assignedMetadataField&quot;:&quot;DATA&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;datadeextracao.date.yyyymmdd&quot;,&quot;title&quot;:&quot;yyyy-mm-dd (Data)&quot;,&quot;prettyId&quot;:&quot;datadeextracao_date_yyyymmdd&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;datadeextracao.date.yyyymmdd&quot;,&quot;title&quot;:&quot;yyyy-mm-dd (Data)&quot;,&quot;prettyId&quot;:&quot;datadeextracao_date_yyyymmdd&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}},&quot;associatedFact&quot;:null}},{&quot;gd_dataset_date_attribute&quot;:{&quot;id&quot;:&quot;datatermio.date&quot;,&quot;title&quot;:&quot;Date (Data Término)&quot;,&quot;prettyId&quot;:&quot;datatermio&quot;,&quot;assignedMetadataField&quot;:&quot;DATA_TERMINO_ORDEM&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;datatermio.date.yyyymmdd&quot;,&quot;title&quot;:&quot;yyyy-mm-dd (Data Término)&quot;,&quot;prettyId&quot;:&quot;datatermio_date_yyyymmdd&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;datatermio.date.yyyymmdd&quot;,&quot;title&quot;:&quot;yyyy-mm-dd (Data Término)&quot;,&quot;prettyId&quot;:&quot;datatermio_date_yyyymmdd&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}},&quot;associatedFact&quot;:null}}],&quot;simpleFacts&quot;:[{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.producao.leadtimeprevisto&quot;,&quot;title&quot;:&quot;Lead time previsto&quot;,&quot;prettyId&quot;:&quot;leadtimeprevisto&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;Lead_Time_Previsto&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.producao.leadtimerealizado&quot;,&quot;title&quot;:&quot;Lead time realizado&quot;,&quot;prettyId&quot;:&quot;leadtimerealizado&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;Lead_Time_Real&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.producao.quantidadeproduzida&quot;,&quot;title&quot;:&quot;Quantidade produzida&quot;,&quot;prettyId&quot;:&quot;quantidadeproduzida&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;QTD_PRODUCAO&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.producao.quantidaderefugada&quot;,&quot;title&quot;:&quot;Quantidade refugada&quot;,&quot;prettyId&quot;:&quot;quantidaderefugada&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;QTD_REFUGADA&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.producao.valordamaodeobraprogramada&quot;,&quot;title&quot;:&quot;Valor da mão-de-obra&quot;,&quot;prettyId&quot;:&quot;valordamaodeobraprogramada&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;VAL_MAO_DE_OBRA_PROGRAMADO&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.producao.valordocustodeproducaorefugada&quot;,&quot;title&quot;:&quot;Valor de custo refugado&quot;,&quot;prettyId&quot;:&quot;valordocustodeproducaorefugada&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;VAL_CUSTO_REFUGADO&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.producao.valordocustodeproducao&quot;,&quot;title&quot;:&quot;Valor do custo realizado&quot;,&quot;prettyId&quot;:&quot;valordocustodeproducao&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;VAL_CUST_PRODUCAO&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.producao.valormaterialprogramado&quot;,&quot;title&quot;:&quot;Valor material&quot;,&quot;prettyId&quot;:&quot;valormaterialprogramado&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;VAL_MATERIAL_PROGRAMADO&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.producao.valorprogramado&quot;,&quot;title&quot;:&quot;Valor programado OP&quot;,&quot;prettyId&quot;:&quot;valorprogramado&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;VAL_PROGRAMADO&quot;}},{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.producao.valorunitarioproduto&quot;,&quot;title&quot;:&quot;Valor unitário do produto&quot;,&quot;prettyId&quot;:&quot;valorunitarioproduto&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;VL_UNITARIO_PRODUTO&quot;}}],&quot;dateFacts&quot;:[],&quot;entitiesWithoutValue&quot;:[],&quot;entitiesWithoutMetadata&quot;:[],&quot;datesWithFactConflict&quot;:[],&quot;unassigneddateFacts&quot;:[],&quot;fieldsWithMetadataConflict&quot;:[]}}" enabled="enabled" guiName="Produção Realizada" guiX="1115" guiY="405" id="PRODUCAO_REALIZADA1" mode="${LOAD_MODE_FCT}" retriesInterval="60" retriesNumber="5" type="GD_DATASET_WRITER"/>
+<Node enabled="enabled" guiName="SimpleCopy" guiX="826" guiY="405" id="SIMPLE_COPY1" type="SIMPLE_COPY"/>
+<Node enabled="disabled" guiName="Trash" guiX="978" guiY="405" id="TRASH" type="TRASH"/>
+<Edge debugMode="false" fromNode="SIMPLE_COPY1:0" guiBendpoints="" guiRouter="Manhattan" id="Edge10" inPort="Port 0 (in)" metadata="Metadata3" outPort="Port 0 (out)" toNode="PRODUCAO_REALIZADA1:0"/>
+</Phase>
+</Graph>

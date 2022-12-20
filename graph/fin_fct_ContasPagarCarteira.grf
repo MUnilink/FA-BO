@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph author="mateus.romero" created="Tue Nov 21 06:08:43 CST 2017" guiVersion="3.4.4.P" id="1511348377577" licenseType="Commercial" modified="Wed May 13 08:28:27 CDT 2020" modifiedBy="diego.guedes" name="fin_fct_ContasPagarCarteira" revision="1.40" showComponentDetails="true">
+<Global>
+<Metadata fileURL="${META_DIR}/_2Dates.fmt" id="Metadata3"/>
+<Metadata fileURL="${META_DIR}/sintax.fmt" id="Metadata4"/>
+<Metadata id="Metadata1" previewAttachment="${DATA_SOURCE_DIR}/PagamentoCarteira.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="PagamentoCarteira_Input" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="BK_EMPRESA" type="string"/>
+<Field name="BK_FILIAL" type="string"/>
+<Field name="BK_FILIAL_ORIGEM" type="string"/>
+<Field name="BK_ESPEC_DOC" type="string"/>
+<Field name="BK_BCO" type="string"/>
+<Field name="BK_CENTRO_CUSTO" type="string"/>
+<Field name="BK_NAT_FINANCEIRA" type="string"/>
+<Field name="BK_FORNECEDOR" type="string"/>
+<Field name="BK_GRUPO_FORNECEDOR" type="string"/>
+<Field name="DATA_EXTRACAO" type="string"/>
+<Field name="BK_REGIAO" type="string"/>
+<Field name="DATA_DE_EMISSAO" type="string"/>
+<Field name="VENCIMENTO_REAL" type="string"/>
+<Field name="PREFIXO_TITULO" type="string"/>
+<Field name="NUMERO_TITULO" type="string"/>
+<Field name="NUMERO_DA_PARCELA" type="string"/>
+<Field name="NUMERO_DO_BORDERO" type="string"/>
+<Field eofAsDelimiter="false" name="SALDO" type="string"/>
+</Record>
+</Metadata>
+<Metadata id="Metadata2" previewAttachment="${DATA_SOURCE_DIR}/PagamentoCarteira.csv" previewAttachmentCharset="ISO-8859-1">
+<Record fieldDelimiter="," name="PagamentoCarteira_Output" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\n" skipSourceRows="1" type="delimited">
+<Field name="BK_EMPRESA" type="string"/>
+<Field name="BK_FILIAL" type="string"/>
+<Field name="BK_FILIAL_ORIGEM" type="string"/>
+<Field name="BK_ESPEC_DOC" type="string"/>
+<Field name="BK_BCO" type="string"/>
+<Field name="BK_CENTRO_CUSTO" type="string"/>
+<Field name="BK_NAT_FINANCEIRA" type="string"/>
+<Field name="BK_FORNECEDOR" type="string"/>
+<Field name="BK_GRUPO_FORNECEDOR" type="string"/>
+<Field format="yyyyMMdd HH:mm:ss" name="DATA_EXTRACAO" type="date"/>
+<Field name="BK_REGIAO" type="string"/>
+<Field format="yyyyMMdd HH:mm:ss" name="DATA_DE_EMISSAO" type="date"/>
+<Field format="yyyyMMdd HH:mm:ss" name="VENCIMENTO_REAL" type="date"/>
+<Field name="PREFIXO_TITULO" type="string"/>
+<Field name="NUMERO_TITULO" type="string"/>
+<Field name="NUMERO_DA_PARCELA" type="string"/>
+<Field name="NUMERO_DO_BORDERO" type="string"/>
+<Field eofAsDelimiter="false" name="SALDO" type="decimal"/>
+<Field name="CHAVE_TITULO" type="string"/>
+<Field name="Tabela" type="string"/>
+<Field name="Modulo" type="string"/>
+<Field name="pk_Modulo" type="string"/>
+</Record>
+</Metadata>
+<Property fileURL="workspace.prm" id="GraphParameter0"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="165" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. CARGA DO DATASET DE PAGAMENTO CARTEIRA (FATO)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="593" x="14" y="15">
+<attr name="text"><![CDATA[ATENÇÃO - Especificamente esta tabela fato deve ser sempre carregada como FULL_LOAD.]]></attr>
+</Note>
+<Dictionary/>
+</Global>
+<Phase number="10">
+<Node charset="ISO-8859-1" enabled="enabled" fileURL="zip:(${DATA_SOURCE_DIR}/${gdc_agent_zip})#PagamentoCarteira.csv*" guiName="PagamentoCarteira" guiX="33" guiY="75" id="PAGAMENTO_CARTEIRA" type="DATA_READER"/>
+<Node dataset="dataset.pagamentocarteira" datasetFieldMappings="{&quot;gd_dataset&quot;:{&quot;datasetId&quot;:&quot;dataset.pagamentocarteira&quot;,&quot;datasetTitle&quot;:&quot;Pagamento Carteira&quot;,&quot;attributes&quot;:[],&quot;referencedAttributes&quot;:[{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.banco.idbanco&quot;,&quot;title&quot;:&quot;Chave do banco&quot;,&quot;prettyId&quot;:&quot;attr_banco_idbanco&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.banco.idbanco&quot;,&quot;title&quot;:&quot;Chave do banco&quot;,&quot;prettyId&quot;:&quot;banco__idbanco&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_BCO&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.banco.idbanco&quot;,&quot;title&quot;:&quot;Chave do banco&quot;,&quot;prettyId&quot;:&quot;banco__idbanco&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.bordero.numerodobordero&quot;,&quot;title&quot;:&quot;Número do bordero&quot;,&quot;prettyId&quot;:&quot;attr_bordero_numerodobordero&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.bordero.numerodobordero&quot;,&quot;title&quot;:&quot;Número do bordero&quot;,&quot;prettyId&quot;:&quot;bordero__numerodobordero&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;NUMERO_DO_BORDERO&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.bordero.numerodobordero&quot;,&quot;title&quot;:&quot;Número do bordero&quot;,&quot;prettyId&quot;:&quot;bordero__numerodobordero&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.centrodecusto.idcentrodecusto&quot;,&quot;title&quot;:&quot;Chave do centro de custo 11&quot;,&quot;prettyId&quot;:&quot;attr_centrodecusto_idcentrodecusto&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.idcentrodecusto&quot;,&quot;title&quot;:&quot;Chave do centro de custo 11&quot;,&quot;prettyId&quot;:&quot;centrodecusto__idcentrodecusto&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_CENTRO_CUSTO&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.centrodecusto.idcentrodecusto&quot;,&quot;title&quot;:&quot;Chave do centro de custo 11&quot;,&quot;prettyId&quot;:&quot;centrodecusto__idcentrodecusto&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.empresa.codigodaempresa&quot;,&quot;title&quot;:&quot;ID Empresa&quot;,&quot;prettyId&quot;:&quot;attr_empresa_codigodaempresa&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.empresa.codigodaempresa&quot;,&quot;title&quot;:&quot;ID Empresa&quot;,&quot;prettyId&quot;:&quot;empresa__codigodaempresa&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_EMPRESA&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.empresa.codigodaempresa&quot;,&quot;title&quot;:&quot;ID Empresa&quot;,&quot;prettyId&quot;:&quot;empresa__codigodaempresa&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.especiedocumento.idespeciedodocumento&quot;,&quot;title&quot;:&quot;Chave da espécie do documento&quot;,&quot;prettyId&quot;:&quot;attr_especiedocumento_idespeciedodocumento&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.especiedocumento.idespeciedodocumento&quot;,&quot;title&quot;:&quot;Chave da espécie do documento&quot;,&quot;prettyId&quot;:&quot;especiedocumento__idespeciedodocumento&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_ESPEC_DOC&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.especiedocumento.idespeciedodocumento&quot;,&quot;title&quot;:&quot;Chave da espécie do documento&quot;,&quot;prettyId&quot;:&quot;especiedocumento__idespeciedodocumento&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.filial.codigodafilial&quot;,&quot;title&quot;:&quot;ID Filial&quot;,&quot;prettyId&quot;:&quot;attr_filial_codigodafilial&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filial.codigodafilial&quot;,&quot;title&quot;:&quot;ID Filial&quot;,&quot;prettyId&quot;:&quot;filial__codigodafilial&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_FILIAL&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filial.codigodafilial&quot;,&quot;title&quot;:&quot;ID Filial&quot;,&quot;prettyId&quot;:&quot;filial__codigodafilial&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.filialorigem.idfilialorigem&quot;,&quot;title&quot;:&quot;ID Filial Origem&quot;,&quot;prettyId&quot;:&quot;attr_filialorigem_idfilialorigem&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filialorigem.idfilialorigem&quot;,&quot;title&quot;:&quot;ID Filial Origem&quot;,&quot;prettyId&quot;:&quot;filialorigem__idfilialorigem&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_FILIAL_ORIGEM&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.filialorigem.idfilialorigem&quot;,&quot;title&quot;:&quot;ID Filial Origem&quot;,&quot;prettyId&quot;:&quot;filialorigem__idfilialorigem&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.fornecedor.idfornecedor&quot;,&quot;title&quot;:&quot;ID Fornecedor&quot;,&quot;prettyId&quot;:&quot;attr_fornecedor_idfornecedor&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.fornecedor.idfornecedor&quot;,&quot;title&quot;:&quot;ID Fornecedor&quot;,&quot;prettyId&quot;:&quot;fornecedor__idfornecedor&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_FORNECEDOR&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.fornecedor.idfornecedor&quot;,&quot;title&quot;:&quot;ID Fornecedor&quot;,&quot;prettyId&quot;:&quot;fornecedor__idfornecedor&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.grupodofornecedor.idgrupodofornecedor&quot;,&quot;title&quot;:&quot;ID Grupo do Fornecedor&quot;,&quot;prettyId&quot;:&quot;attr_grupodofornecedor_idgrupodofornecedor&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.grupodofornecedor.idgrupodofornecedor&quot;,&quot;title&quot;:&quot;ID Grupo do Fornecedor&quot;,&quot;prettyId&quot;:&quot;grupodofornecedor__idgrupodofornecedor&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_GRUPO_FORNECEDOR&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.grupodofornecedor.idgrupodofornecedor&quot;,&quot;title&quot;:&quot;ID Grupo do Fornecedor&quot;,&quot;prettyId&quot;:&quot;grupodofornecedor__idgrupodofornecedor&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.modulo.iddomodulo&quot;,&quot;title&quot;:&quot;Id do módulo&quot;,&quot;prettyId&quot;:&quot;attr_modulo_iddomodulo&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.modulo.iddomodulo&quot;,&quot;title&quot;:&quot;Id do módulo&quot;,&quot;prettyId&quot;:&quot;modulo__iddomodulo&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;pk_Modulo&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.modulo.iddomodulo&quot;,&quot;title&quot;:&quot;Id do módulo&quot;,&quot;prettyId&quot;:&quot;modulo__iddomodulo&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.naturezafinanceira.idnaturezafinanceira&quot;,&quot;title&quot;:&quot;Chave da natureza financeira&quot;,&quot;prettyId&quot;:&quot;attr_naturezafinanceira_idnaturezafinanceira&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.naturezafinanceira.idnaturezafinanceira&quot;,&quot;title&quot;:&quot;Chave da natureza financeira&quot;,&quot;prettyId&quot;:&quot;naturezafinanceira__idnaturezafinanceira&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_NAT_FINANCEIRA&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.naturezafinanceira.idnaturezafinanceira&quot;,&quot;title&quot;:&quot;Chave da natureza financeira&quot;,&quot;prettyId&quot;:&quot;naturezafinanceira__idnaturezafinanceira&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.regiao.codigoeestadodomunicipio&quot;,&quot;title&quot;:&quot;ID Região&quot;,&quot;prettyId&quot;:&quot;attr_regiao_codigoeestadodomunicipio&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.regiao.codigoeestadodomunicipio&quot;,&quot;title&quot;:&quot;ID Região&quot;,&quot;prettyId&quot;:&quot;regiao__codigoeestadodomunicipio&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;BK_REGIAO&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.regiao.codigoeestadodomunicipio&quot;,&quot;title&quot;:&quot;ID Região&quot;,&quot;prettyId&quot;:&quot;regiao__codigoeestadodomunicipio&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}},{&quot;gd_dataset_attribute&quot;:{&quot;id&quot;:&quot;attr.titulo.chavedotitulo&quot;,&quot;title&quot;:&quot;Chave do título&quot;,&quot;prettyId&quot;:&quot;attr_titulo_chavedotitulo&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.titulo.chavedotitulo&quot;,&quot;title&quot;:&quot;Chave do título&quot;,&quot;prettyId&quot;:&quot;titulo__chavedotitulo&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}],&quot;assignedMetadataField&quot;:&quot;CHAVE_TITULO&quot;,&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;label.titulo.chavedotitulo&quot;,&quot;title&quot;:&quot;Chave do título&quot;,&quot;prettyId&quot;:&quot;titulo__chavedotitulo&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:false}}}}],&quot;dateAttributes&quot;:[{&quot;gd_dataset_date_attribute&quot;:{&quot;id&quot;:&quot;datadeextracao.date&quot;,&quot;title&quot;:&quot;Date (Data)&quot;,&quot;prettyId&quot;:&quot;datadeextracao&quot;,&quot;assignedMetadataField&quot;:&quot;DATA_DE_EMISSAO&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;datadeextracao.date.yyyymmdd&quot;,&quot;title&quot;:&quot;yyyy-mm-dd (Data)&quot;,&quot;prettyId&quot;:&quot;datadeextracao_date_yyyymmdd&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;datadeextracao.date.yyyymmdd&quot;,&quot;title&quot;:&quot;yyyy-mm-dd (Data)&quot;,&quot;prettyId&quot;:&quot;datadeextracao_date_yyyymmdd&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}},&quot;associatedFact&quot;:null}},{&quot;gd_dataset_date_attribute&quot;:{&quot;id&quot;:&quot;datadevencimentodotitulo.date&quot;,&quot;title&quot;:&quot;Date (Data de Vencimento do Título)&quot;,&quot;prettyId&quot;:&quot;datadevencimentodotitulo&quot;,&quot;assignedMetadataField&quot;:&quot;VENCIMENTO_REAL&quot;,&quot;displayForms&quot;:[{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;datadevencimentodotitulo.date.yyyymmdd&quot;,&quot;title&quot;:&quot;yyyy-mm-dd (Data de Vencimento do Título)&quot;,&quot;prettyId&quot;:&quot;datadevencimentodotitulo_date_yyyymmdd&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}}],&quot;selectedDisplayForm&quot;:{&quot;gd_dataset_attribute_display_form&quot;:{&quot;id&quot;:&quot;datadevencimentodotitulo.date.yyyymmdd&quot;,&quot;title&quot;:&quot;yyyy-mm-dd (Data de Vencimento do Título)&quot;,&quot;prettyId&quot;:&quot;datadevencimentodotitulo_date_yyyymmdd&quot;,&quot;assignedMetadataField&quot;:null,&quot;type&quot;:&quot;STRING&quot;,&quot;referenceKey&quot;:true}},&quot;associatedFact&quot;:null}}],&quot;simpleFacts&quot;:[{&quot;gd_dataset_fact&quot;:{&quot;id&quot;:&quot;fact.pagamentocarteira.saldo&quot;,&quot;title&quot;:&quot;Saldo Pagamento Carteira&quot;,&quot;prettyId&quot;:&quot;saldo&quot;,&quot;type&quot;:&quot;DECIMAL&quot;,&quot;assignedMetadataField&quot;:&quot;SALDO&quot;}}],&quot;dateFacts&quot;:[],&quot;entitiesWithoutValue&quot;:[],&quot;entitiesWithoutMetadata&quot;:[],&quot;datesWithFactConflict&quot;:[],&quot;unassigneddateFacts&quot;:[],&quot;fieldsWithMetadataConflict&quot;:[]}}" enabled="enabled" guiName="Pagamento Carteira" guiX="456" guiY="75" id="PAGAMENTO_CARTEIRA1" retriesInterval="60" retriesNumber="5" type="GD_DATASET_WRITER"/>
+<Node enabled="disabled" guiName="Trash" guiX="317" guiY="75" id="TRASH" type="TRASH"/>
+<Node enabled="enabled" guiName="Treatment" guiX="180" guiY="75" id="TREATMENT" type="REFORMAT">
+<attr name="transform"><![CDATA[//#CTL2
+import "trans/lib.ctl";
+
+// Transforms input record into output record.
+function integer transform() {
+	$out.0.BK_EMPRESA = $in.0.BK_EMPRESA;
+	$out.0.BK_FILIAL = $in.0.BK_FILIAL;
+	$out.0.BK_FILIAL_ORIGEM = $in.0.BK_FILIAL_ORIGEM;
+	$out.0.BK_ESPEC_DOC = $in.0.BK_ESPEC_DOC;
+	$out.0.BK_BCO = $in.0.BK_BCO;
+	$out.0.BK_CENTRO_CUSTO = $in.0.BK_CENTRO_CUSTO;
+	$out.0.BK_NAT_FINANCEIRA = $in.0.BK_NAT_FINANCEIRA;
+	$out.0.BK_FORNECEDOR = $in.0.BK_FORNECEDOR;
+	$out.0.BK_GRUPO_FORNECEDOR = $in.0.BK_GRUPO_FORNECEDOR;
+	$out.0.BK_REGIAO = $in.0.BK_REGIAO;
+	$out.0.CHAVE_TITULO = $in.0.NUMERO_TITULO + '|' + $in.0.PREFIXO_TITULO + '|' + $in.0.NUMERO_DA_PARCELA;
+	
+	$out.0.NUMERO_TITULO = formatString($in.0.NUMERO_TITULO, null);
+	$out.0.NUMERO_DA_PARCELA = formatString($in.0.NUMERO_DA_PARCELA, null);
+	$out.0.NUMERO_DO_BORDERO = formatString($in.0.NUMERO_DO_BORDERO, null);
+	$out.0.PREFIXO_TITULO = formatString($in.0.PREFIXO_TITULO, null);
+	
+	$out.0.DATA_DE_EMISSAO = formatDate($in.0.DATA_DE_EMISSAO);
+	$out.0.DATA_EXTRACAO = formatDate($in.0.DATA_EXTRACAO);
+	$out.0.VENCIMENTO_REAL = formatDate($in.0.VENCIMENTO_REAL);
+	
+	$out.0.SALDO = formatDecimal($in.0.SALDO, true);
+	
+	$out.0.Modulo = 'FINANCEIRO';
+	$out.0.Tabela = 'CONTAS A PAGAR (CARTEIRA)';
+	$out.0.pk_Modulo = $out.0.Modulo + '|' + $out.0.Tabela;
+	
+	return ALL;
+}
+
+// Called during component initialization.
+// function boolean init() {}
+
+// Called during each graph run before the transform is executed. May be used to allocate and initialize resources
+// required by the transform. All resources allocated within this method should be released
+// by the postExecute() method.
+// function void preExecute() {}
+
+// Called only if transform() throws an exception.
+// function integer transformOnError(string errorMessage, string stackTrace) {}
+
+// Called during each graph run after the entire transform was executed. Should be used to free any resources
+// allocated within the preExecute() method.
+// function void postExecute() {}
+
+// Called to return a user-defined error message when an error occurs.
+// function string getMessage() {}
+]]></attr>
+</Node>
+<Edge fromNode="PAGAMENTO_CARTEIRA:0" guiBendpoints="" guiRouter="Manhattan" id="Edge3" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (output)" toNode="TREATMENT:0"/>
+<Edge fromNode="TREATMENT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="PAGAMENTO_CARTEIRA1:0"/>
+</Phase>
+</Graph>

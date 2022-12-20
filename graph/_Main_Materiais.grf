@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?><Graph author="andre.dini" created="Thu May 17 09:45:54 CDT 2018" guiVersion="3.4.4.P" id="1526670391040" licenseType="Commercial" modified="Wed Jan 05 11:08:05 BRST 2022" modifiedBy="Usuário" name="_Main_Materiais" revision="1.11" showComponentDetails="true">
+<Global>
+<Property fileURL="workspace.prm" id="GraphParameter0"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="248" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. CARGA DAS DIMENSÕES DE MATERIAIS" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="291" x="9" y="5"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="248" id="Note1" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="2. CARGA DAS FATOS DE MATERIAIS" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="321" x="308" y="5"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="161" id="Note2" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="3. DATA DE CARGA" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="188" x="637" y="5">
+<attr name="text"><![CDATA[Realiza a carga da data de última atualização.]]></attr>
+</Note>
+<Dictionary/>
+</Global>
+<Phase number="10">
+<Node enabled="enabled" graphName="${GRAPH_DIR}/mat_dim_AprovacaoCompra.grf" guiName="Aprovação" guiX="158" guiY="153" id="APROVACAO" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+<Node enabled="enabled" graphName="${GRAPH_DIR}/mat_dim_Comprador.grf" guiName="Comprador" guiX="158" guiY="53" id="COMPRADOR" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+<Node enabled="enabled" graphName="${GRAPH_DIR}/mat_dim_SituacaoCompra.grf" guiName="Situação Compra" guiX="22" guiY="53" id="SITUACAO_COMPRA" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+<Node enabled="enabled" graphName="${GRAPH_DIR}/mat_dim_Transportadora.grf" guiName="Transportadora" guiX="22" guiY="153" id="TRANSPORTADORA" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+</Phase>
+<Phase number="20">
+<Node enabled="enabled" graphName="${GRAPH_DIR}/mat_fct_Compras.grf" guiName="Compras" guiX="325" guiY="53" id="COMPRAS" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+<Node enabled="enabled" graphName="${GRAPH_DIR}/mat_fct_ComprasCarteira.grf" guiName="Compras Carteira" guiX="481" guiY="53" id="COMPRAS_CARTEIRA" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+<Node enabled="enabled" graphName="${GRAPH_DIR}/mat_fct_ComprasDevolucao.grf" guiName="Compras Devolução" guiX="319" guiY="153" id="COMPRAS_DEVOLUCAO" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+<Node enabled="enabled" graphName="${GRAPH_DIR}/mat_fct_ComprasRecebimento.grf" guiName="Compras recebimento" guiX="468" guiY="153" id="COMPRAS_RECEBIMENTO" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+</Phase>
+<Phase number="30">
+<Node enabled="enabled" graphName="${GRAPH_DIR}/mat_xxx_UltimaCarga.grf" guiName="Última Carga" guiX="667" guiY="65" id="ULTIMA_CARGA" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+</Phase>
+</Graph>

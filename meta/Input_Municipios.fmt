@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><Record fieldDelimiter="|" label="Municipios.csv" name="Input_Municipios" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
+<Field name="Codigo_IBGE" type="string"/>
+<Field name="Municipio" type="string"/>
+<Field eofAsDelimiter="false" name="Localizacao" type="string"/>
+</Record>
