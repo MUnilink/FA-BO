@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><Graph author="diego.guedes" created="Fri May 11 07:47:44 CDT 2018" guiVersion="3.4.4.P" id="1526048085478" licenseType="Commercial" modified="Thu Dec 29 17:37:57 BRST 2022" modifiedBy="Manoel" name="com_dim_TES" revision="1.23" showComponentDetails="true">
+<?xml version="1.0" encoding="UTF-8"?><Graph author="manoel.jose" created="Fri May 11 07:47:44 CDT 2018" guiVersion="3.4.4.P" id="1526048085478" licenseType="Commercial" modified="Wed Jan 04 15:48:39 BRST 2023" modifiedBy="Manoel" name="com_dim_TES" revision="1.26" showComponentDetails="true">
 <Global>
 <Metadata id="Metadata0" previewAttachment="${DATA_DIR}/planilhaPCO.CSV" previewAttachmentCharset="ISO-8859-1">
 <Record fieldDelimiter="," label="planilhaPCO.CSV" name="planilhaPCO_in" previewAttachment="${DATA_DIR}/planilhaPCO.CSV" previewAttachmentCharset="ISO-8859-1" quoteChar="&quot;" quotedStrings="true" recordDelimiter="\r\n" skipSourceRows="1" type="delimited">
@@ -41,9 +41,7 @@
 </Record>
 </Metadata>
 <Property fileURL="workspace.prm" id="GraphParameter0"/>
-<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="150" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. CARGA DO DATASET DE TES (DIM)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="562" x="199" y="13"/>
-<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="129" id="Note1" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. CARGA DO DATASET DE TES (DIM)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="562" x="199" y="162"/>
-<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="150" id="Note2" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. CARGA DO DATASET DE TES (DIM)" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="562" x="199" y="290"/>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="418" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. CARGA DAS DIMs DAS TABELAS DE ORÇAMENTO" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="562" x="199" y="13"/>
 <Dictionary/>
 </Global>
 <Phase number="10">
@@ -156,9 +154,7 @@ function integer transform() {
 // function string getMessage() {}
 ]]></attr>
 </Node>
-<Edge fromNode="ESTRUTURA_E:0" guiBendpoints="" guiRouter="Manhattan" id="Edge1" inPort="Port 0 (in)" metadata="Metadata17" outPort="Port 0 (output)" toNode="TREATMENT:0"/>
 <Edge debugMode="true" fromNode="PLANILHA_E:0" guiBendpoints="" guiRouter="Manhattan" id="Edge2" inPort="Port 0 (in)" metadata="Metadata0" outPort="Port 0 (output)" toNode="TREATMENT2:0"/>
-<Edge fromNode="TREATMENT:0" guiBendpoints="" guiRouter="Manhattan" id="Edge0" inPort="Port 0 (in)" metadata="Metadata1" outPort="Port 0 (out)" toNode="ESTRUTURA_L:0"/>
 <Edge debugMode="true" fromNode="TREATMENT2:0" guiBendpoints="" guiRouter="Manhattan" id="Edge3" inPort="Port 0 (in)" metadata="Metadata2" outPort="Port 0 (out)" toNode="PLANILHA_L:0"/>
 </Phase>
 </Graph>
