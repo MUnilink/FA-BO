@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><Graph author="mateus.romero" created="Tue Nov 21 06:08:43 CST 2017" guiVersion="3.4.4.P" id="1511348377577" licenseType="Commercial" modified="Thu Jan 26 10:39:31 BRST 2023" modifiedBy="Manoel" name="com_fct_Faturamento" revision="1.45" showComponentDetails="true">
+<?xml version="1.0" encoding="UTF-8"?><Graph author="mateus.romero" created="Tue Nov 21 06:08:43 CST 2017" guiVersion="3.4.4.P" id="1511348377577" licenseType="Commercial" modified="Thu Jan 26 11:35:03 BRST 2023" modifiedBy="Manoel" name="com_fct_Faturamento" revision="1.51" showComponentDetails="true">
 <Global>
 <Metadata fileURL="${META_DIR}/_2Dates.fmt" id="Metadata2"/>
 <Metadata fileURL="${META_DIR}/sintax.fmt" id="Metadata4"/>
@@ -186,6 +186,7 @@ function integer transform() {
 	$out.0.ORIGEM_DO_LANCAMENTO = formatString($in.0.ORIGEM_DO_LANCAMENTO, null);
 	
 	$out.0.DATA_SAIDA_NF = formatDate($in.0.DATA_SAIDA_NF);
+	$out.0.DATA_DE_EMISSAO = formatDate($in.0.DATA_DE_EMISSAO);
 	$out.0.DATA_COMP = formatDate($in.0.DATA_DE_EMISSAO);
 	
 	$out.0.VL_FATURAMENTO_TOTAL = formatDecimal($in.0.VL_FATURAMENTO_TOTAL, true);
