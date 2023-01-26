@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><Graph author="mateus.romero" created="Tue Nov 21 06:08:43 CST 2017" guiVersion="3.4.4.P" id="1511348377577" licenseType="Commercial" modified="Wed Jan 25 16:59:44 BRST 2023" modifiedBy="Manoel" name="com_fct_Faturamento" revision="1.44" showComponentDetails="true">
+<?xml version="1.0" encoding="UTF-8"?><Graph author="mateus.romero" created="Tue Nov 21 06:08:43 CST 2017" guiVersion="3.4.4.P" id="1511348377577" licenseType="Commercial" modified="Thu Jan 26 10:39:31 BRST 2023" modifiedBy="Manoel" name="com_fct_Faturamento" revision="1.45" showComponentDetails="true">
 <Global>
 <Metadata fileURL="${META_DIR}/_2Dates.fmt" id="Metadata2"/>
 <Metadata fileURL="${META_DIR}/sintax.fmt" id="Metadata4"/>
@@ -57,6 +57,7 @@
 <Field eofAsDelimiter="false" name="NUMERO_DA_NOTA_FISCAL" nullable="true" shift="0" size="0" type="string"/>
 <Field eofAsDelimiter="false" name="NUMERO_PEDIDO_VENDA" nullable="true" shift="0" size="0" type="string"/>
 <Field eofAsDelimiter="false" name="NUMERO_ITEM" nullable="true" shift="0" size="0" type="string"/>
+<Field format="yyyyMMdd HH:mm:ss" name="DATA_COMP" type="date"/>
 <Field eofAsDelimiter="false" format="yyyyMMdd HH:mm:ss" name="DATA_DE_EMISSAO" nullable="true" shift="0" size="0" type="date"/>
 <Field eofAsDelimiter="false" format="yyyyMMdd HH:mm:ss" name="DATA_SAIDA_NF" nullable="true" shift="0" size="0" type="date"/>
 <Field eofAsDelimiter="false" name="TIPO_DE_FRETE" nullable="true" shift="0" size="0" type="string"/>
@@ -94,7 +95,6 @@
 <Field eofAsDelimiter="false" length="12" name="QTD" nullable="true" scale="2" shift="0" size="0" type="decimal"/>
 <Field eofAsDelimiter="false" length="12" name="VL_UNITARIO" nullable="true" scale="2" shift="0" size="0" type="decimal"/>
 <Field eofAsDelimiter="false" length="12" name="VL_SEGURO" nullable="true" scale="2" shift="0" size="0" type="decimal"/>
-<Field format="yyyyMMdd HH:mm:ss" name="DATA_COMP" type="date"/>
 <Field name="pk_Modulo" type="string"/>
 </Record>
 </Metadata>
@@ -185,7 +185,6 @@ function integer transform() {
 	$out.0.TIPO_DE_NOTA_FISCAL = formatString($in.0.TIPO_DE_NOTA_FISCAL, null);
 	$out.0.ORIGEM_DO_LANCAMENTO = formatString($in.0.ORIGEM_DO_LANCAMENTO, null);
 	
-	$out.0.DATA_DE_EMISSAO = formatDate($in.0.DATA_DE_EMISSAO);
 	$out.0.DATA_SAIDA_NF = formatDate($in.0.DATA_SAIDA_NF);
 	$out.0.DATA_COMP = formatDate($in.0.DATA_DE_EMISSAO);
 	
