@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><Graph author="mateus.romero" created="Tue Nov 21 06:08:43 CST 2017" guiVersion="3.4.4.P" id="1511273164594" licenseType="Commercial" modified="Wed Jan 25 16:45:10 BRST 2023" modifiedBy="Manoel" name="_Main" revision="1.82" showComponentDetails="true">
+<?xml version="1.0" encoding="UTF-8"?><Graph author="mateus.romero" created="Tue Nov 21 06:08:43 CST 2017" guiVersion="3.4.4.P" id="1511273164594" licenseType="Commercial" modified="Mon Jan 30 14:16:47 BRST 2023" modifiedBy="Manoel" name="_Main" revision="1.84" showComponentDetails="true">
 <Global>
 <Property fileURL="workspace.prm" id="GraphParameter0"/>
 <Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="175" id="Note0" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="1. DOWNLOAD DOS ARQUIVOS" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="218" x="14" y="20">
@@ -22,15 +22,15 @@
 <Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="185" id="Note2" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="7. CONTROLADORIA" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="161" x="857" y="211">
 <attr name="text"><![CDATA[Realiza a carga dos dados específica para Controladoria.]]></attr>
 </Note>
-<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="185" id="Note5" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="7. CONTROLADORIA" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="161" x="1033" y="211">
-<attr name="text"><![CDATA[Realiza a carga dos dados específica para Controladoria.]]></attr>
+<Note alignment="1" backgroundColorB="225" backgroundColorG="255" backgroundColorR="255" enabled="true" folded="false" height="185" id="Note5" textColorB="0" textColorG="0" textColorR="0" textFontSize="8" title="7. CONTROLADORIA" titleColorB="0" titleColorG="0" titleColorR="0" titleFontSize="10" width="161" x="857" y="419">
+<attr name="text"><![CDATA[Realiza a carga dos dados específica para a gestão de orçamento.]]></attr>
 </Note>
 <Dictionary/>
 </Global>
-<Phase number="5">
+<Phase number="1">
 <Node baseURL="https://${USER_PWD_SECURE_DI}@secure-di.gooddata.com/project-uploads/${GDC_PROJECT_ID}/today/${gdc_agent_zip}" destination="${DATA_SOURCE_DIR}" enabled="enabled" guiName="File Download" guiX="59" guiY="103" id="FILE_DOWNLOAD" type="FILE_DOWNLOAD"/>
 </Phase>
-<Phase number="10">
+<Phase number="2">
 <Node enabled="enabled" graphName="${GRAPH_DIR}/xxx_dim_CentroCusto.grf" guiName="Centro de Custo" guiX="524" guiY="303" id="CENTRO_DE_CUSTO" ignoreGraphFail="false" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
 <Node enabled="enabled" graphName="${GRAPH_DIR}/xxx_dim_Cliente.grf" guiName="Cliente" guiX="255" guiY="103" id="CLIENTE" ignoreGraphFail="false" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
 <Node enabled="enabled" graphName="${GRAPH_DIR}/xxx_dim_Empresa.grf" guiName="Empresa" guiX="391" guiY="103" id="EMPRESA" ignoreGraphFail="false" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
@@ -43,20 +43,16 @@
 <Node enabled="enabled" graphName="${GRAPH_DIR}/xxx_dim_Regiao.grf" guiName="Regiao" guiX="524" guiY="204" id="REGIAO" ignoreGraphFail="false" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
 <Node enabled="enabled" graphName="${GRAPH_DIR}/xxx_dim_Vendedor.grf" guiName="Vendedor" guiX="391" guiY="303" id="VENDEDOR" ignoreGraphFail="false" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
 </Phase>
-<Phase number="30">
+<Phase number="4">
+<Node enabled="enabled" graphName="${GRAPH_DIR}/_Main_Comercial.grf" guiName="_Main Comercial" guiX="694" guiY="103" id="_MAIN_COMERCIAL" ignoreGraphFail="false" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
 <Node enabled="enabled" graphName="${GRAPH_DIR}/_Main_Financeiro.grf" guiName="_Main Financeiro" guiX="874" guiY="103" id="_MAIN_FINANCEIRO" ignoreGraphFail="false" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
-</Phase>
-<Phase number="40">
-<Node enabled="enabled" graphName="${GRAPH_DIR}/_Main_Producao.grf" guiName="_Main Produção" guiX="1050" guiY="100" id="_MAIN_PRODUCAO1" ignoreGraphFail="false" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
-</Phase>
-<Phase number="50">
 <Node enabled="enabled" graphName="${GRAPH_DIR}/_Main_Materiais.grf" guiName="_Main Materiais" guiX="694" guiY="291" id="_MAIN_MATERIAIS" ignoreGraphFail="false" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+<Node enabled="disabled" graphName="${GRAPH_DIR}/_Main_Producao.grf" guiName="_Main Produção" guiX="1050" guiY="100" id="_MAIN_PRODUCAO1" ignoreGraphFail="false" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
 </Phase>
-<Phase number="60">
+<Phase number="8">
 <Node enabled="enabled" graphName="${GRAPH_DIR}/_Main_Controladoria.grf" guiName="_Main Controladoria" guiX="868" guiY="291" id="_MAIN_CONTROLADORIA1" ignoreGraphFail="false" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
 </Phase>
-<Phase number="128">
-<Node enabled="enabled" graphName="${GRAPH_DIR}/_Main_Comercial.grf" guiName="_Main Comercial" guiX="694" guiY="103" id="_MAIN_COMERCIAL" ignoreGraphFail="false" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
-<Node enabled="disabled" graphName="${GRAPH_DIR}/_Main_Orcamento.grf" guiName="_Main Orçamento" guiX="1044" guiY="291" id="_MAIN_ORCAMENTO" ignoreGraphFail="false" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
+<Phase number="32">
+<Node enabled="disabled" graphName="${GRAPH_DIR}/_Main_Orcamento.grf" guiName="_Main Orçamento" guiX="868" guiY="499" id="_MAIN_ORCAMENTO" ignoreGraphFail="false" paramsToPass="gdc_agent_zip;LOAD_MODE_FCT;LOAD_MODE_DIM;NUMBER_LOCALE;NUMBER_PATTERN;NUMBER_MAXSIZE;DATE_LOCALE;DATE_PATTERN;MONTHS_TO_LOAD;DEMO_MODE;DEMO_DATE;DATE_TIMEZONE" type="RUN_GRAPH"/>
 </Phase>
 </Graph>
